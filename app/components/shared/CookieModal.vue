@@ -2,12 +2,13 @@
 import { computed, ref, onMounted, toRef } from 'vue'
 import uiRu from '~/../data/common/ui/ru'
 import uiEn from '~/../data/common/ui/en'
+import uiNl from '~/../data/common/ui/nl'
 
 const props = defineProps({
   locale: { type: String, default: null },
 })
 const { locale } = useLocale(toRef(props, 'locale'))
-const uiByLocale = { ru: uiRu, en: uiEn }
+const uiByLocale = { ru: uiRu, en: uiEn, nl: uiNl }
 const ui = computed(() => uiByLocale[locale.value])
 const STORAGE_KEY = 'cookie-modal-shown'
 

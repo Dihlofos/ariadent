@@ -2,9 +2,10 @@
 import { computed } from 'vue'
 import uiRu from '~/../data/common/ui/ru'
 import uiEn from '~/../data/common/ui/en'
+import uiNl from '~/../data/common/ui/nl'
 
 const { locale, setLocale } = useLocale()
-const uiByLocale = { ru: uiRu, en: uiEn }
+const uiByLocale = { ru: uiRu, en: uiEn, nl: uiNl }
 const ui = computed(() => uiByLocale[locale.value])
 const scrolled = ref(false)
 
@@ -29,6 +30,7 @@ onUnmounted(() => {
         <div class="header__locale" role="group" :aria-label="ui.languageSwitcher">
           <button type="button" :aria-pressed="locale === 'ru'" @click="setLocale('ru')">Русский</button>
           <button type="button" :aria-pressed="locale === 'en'" @click="setLocale('en')">English</button>
+          <button type="button" :aria-pressed="locale === 'nl'" @click="setLocale('nl')">Nederlands</button>
         </div>
       </div>
     </Container>

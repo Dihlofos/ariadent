@@ -1,7 +1,7 @@
 import { computed, inject, provide, ref, unref } from 'vue'
 
 const localeKey = Symbol('app-locale')
-const supportedLocales = ['ru', 'en']
+const supportedLocales = ['ru', 'en', 'nl']
 
 export function provideLocale() {
   const locale = ref('ru')

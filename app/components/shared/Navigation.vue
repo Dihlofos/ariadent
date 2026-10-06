@@ -2,15 +2,17 @@
 import { computed, toRef } from 'vue'
 import navigationRu from '~/../data/common/navigation/ru'
 import navigationEn from '~/../data/common/navigation/en'
+import navigationNl from '~/../data/common/navigation/nl'
 import uiRu from '~/../data/common/ui/ru'
 import uiEn from '~/../data/common/ui/en'
+import uiNl from '~/../data/common/ui/nl'
 
 const props = defineProps({
   locale: { type: String, default: null },
 })
 const { locale } = useLocale(toRef(props, 'locale'))
-const navigationByLocale = { ru: navigationRu, en: navigationEn }
-const uiByLocale = { ru: uiRu, en: uiEn }
+const navigationByLocale = { ru: navigationRu, en: navigationEn, nl: navigationNl }
+const uiByLocale = { ru: uiRu, en: uiEn, nl: uiNl }
 const navigation = computed(() => navigationByLocale[locale.value])
 const ui = computed(() => uiByLocale[locale.value])
 const mobileOpen = ref(false)
