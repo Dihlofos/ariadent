@@ -1,12 +1,9 @@
 <script setup>
-import { computed } from 'vue'
-import uiRu from '~/../data/common/ui/ru'
-import uiEn from '~/../data/common/ui/en'
-import uiNl from '~/../data/common/ui/nl'
-
+defineProps({
+  navigation: { type: Object, required: true },
+  ui: { type: Object, required: true },
+})
 const { locale, setLocale } = useLocale()
-const uiByLocale = { ru: uiRu, en: uiEn, nl: uiNl }
-const ui = computed(() => uiByLocale[locale.value])
 const scrolled = ref(false)
 
 function onScroll() {
@@ -26,11 +23,10 @@ onUnmounted(() => {
   <header class="header" :class="{ 'header--scrolled': scrolled }">
     <Container>
       <div class="header__inner">
-        <Navigation />
+        <Navigation :navigation="navigation" :ui="ui" />
         <div class="header__locale" role="group" :aria-label="ui.languageSwitcher">
           <button type="button" :aria-pressed="locale === 'ru'" @click="setLocale('ru')">Русский</button>
           <button type="button" :aria-pressed="locale === 'en'" @click="setLocale('en')">English</button>
-          <button type="button" :aria-pressed="locale === 'nl'" @click="setLocale('nl')">Nederlands</button>
         </div>
       </div>
     </Container>

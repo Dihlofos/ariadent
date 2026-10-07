@@ -1,15 +1,7 @@
 <script setup>
-import { computed, toRef } from 'vue'
-import footerRu from '~/../data/sections/footer/ru'
-import footerEn from '~/../data/sections/footer/en'
-import footerNl from '~/../data/sections/footer/nl'
-
-const props = defineProps({
-  locale: { type: String, default: null },
+defineProps({
+  footerData: { type: Object, required: true },
 })
-const { locale } = useLocale(toRef(props, 'locale'))
-const footerByLocale = { ru: footerRu, en: footerEn, nl: footerNl }
-const footerData = computed(() => footerByLocale[locale.value])
 </script>
 
 <template>
