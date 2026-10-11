@@ -46,9 +46,20 @@ defineProps({
               </a>
             </div>
           </div>
+
+          <div class="hero__portrait hero__portrait--card" aria-hidden="true">
+            <Image
+              :src="images.portrait"
+              alt=""
+              class="hero__portrait-image"
+              width="1536"
+              height="1024"
+              loading="eager"
+            />
+          </div>
         </div>
 
-        <div class="hero__portrait" aria-hidden="true">
+        <div class="hero__portrait hero__portrait--desktop" aria-hidden="true">
           <Image
             :src="images.portrait"
             alt=""
@@ -143,6 +154,26 @@ defineProps({
       width: 57rem;
       height: 38rem;
       transform: translateX(-50%);
+    }
+  }
+
+  &__portrait--desktop {
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__portrait--card {
+    display: none;
+
+    @media (max-width: $tablet) {
+      top: 2rem;
+      display: block;
+    }
+
+    @media (max-width: $mobile) {
+      top: auto;
+      bottom: 0;
     }
   }
 
