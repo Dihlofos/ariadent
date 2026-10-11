@@ -77,6 +77,14 @@ function accept() {
     padding: 0.6rem 1.6rem;
     border: none;
     cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      background: $blue;
+    }
 
     @media (max-width: $mobile) {
       padding: 2rem;

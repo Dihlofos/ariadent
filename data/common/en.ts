@@ -7,36 +7,72 @@ export default {
     ogImage: '/images/favicons/favicon.svg',
   },
   navigation: {
+    brand: {
+      alt: 'Ariadent',
+      link: '#hero',
+    },
+    location: {
+      label: 'Amsterdam',
+      link: '#contacts',
+    },
+    schedule: [
+      'Monday–Friday: 08:00–20:00',
+      'Saturday: 10:00–16:00',
+    ],
+    phones: [
+      { label: '06 57 55 85 76', href: 'tel:+31657558576' },
+      { label: '020 408 28 70', href: 'tel:+31204082870' },
+    ],
+    appointment: {
+      label: 'Book an appointment',
+      link: '#appointment',
+    },
+    call: {
+      label: 'Call us',
+      href: 'tel:+31657558576',
+    },
     navItems: [
-      { label: 'Home', link: '#hero' },
-      { label: 'Features', link: '#features' },
-      { label: 'About us', link: '#about' },
-      { label: 'Contact', link: '#contact' },
+      { label: 'Services', link: '#services' },
+      { label: 'Insurance and payment', link: '#insurance' },
+      { label: 'For patients', link: '#patients' },
+      { label: 'About the clinic', link: '#about' },
+      { label: 'Contacts and address', link: '#contacts' },
     ],
     images: {
-      burger: '/images/burger.svg',
-      close: '/images/close.svg',
+      logo: '/images/text-logo.svg',
+      marker: '/images/marker.svg',
+      phone: '/images/phone.svg',
+      phoneWhite: '/images/phone-white.svg',
+      time: '/images/time.svg',
     },
   },
   footer: {
     type: 'footer',
-    title: 'Contact us',
-    contacts: [
-      { label: 'Registration enquiries', email: 'name@mail.ru' },
-      { label: 'Press enquiries', email: 'pressame@mail.ru' },
-    ],
-    info: {
-      text: 'To request media accreditation for the event, email us with the following information:',
-      items: [
-        'Name of the media outlet and programme, and the planned publication date;',
-        'Full names and contact phone numbers of the correspondent and all members of the filming crew.',
-      ],
+    brand: {
+      alt: 'Ariadent',
+      link: '#hero',
     },
-    docs: [
-      { href: '/docs/policy.pdf', label: 'Privacy Policy' },
-      { href: '/docs/reject.pdf', label: 'Participant Waiver' },
-      { href: '/docs/reject_child.pdf', label: 'Parent/Guardian Waiver for a Child' },
+    privacy: {
+      text: 'Privacy policy',
+      link: '/docs/policy.pdf',
+    },
+    address: ['Hugo de Vrieslaan 85', '1097 EH Amsterdam'],
+    phones: [
+      { label: '020 408 28 70', href: 'tel:+31204082870' },
+      { label: '06 57 55 85 76', href: 'tel:+31657558576' },
     ],
+    schedule: [
+      'Monday–Friday: 08:00–20:00',
+      'Saturday: 10:00–16:00',
+    ],
+    email: 'info@ariadenttandprothese.nl',
+    images: {
+      logo: '/images/text-logo.svg',
+      marker: '/images/marker.svg',
+      phone: '/images/phone.svg',
+      time: '/images/time.svg',
+      email: '/images/email.svg',
+    },
   },
   ui: {
     languageSwitcher: 'Choose language',

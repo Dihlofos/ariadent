@@ -33,7 +33,11 @@ const props = defineProps({
   justify-content: center;
   gap: 8px;
   border-radius: 8px;
-  transition: all 150ms ease;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
 
   &:disabled {
     opacity: 0.5;
@@ -78,7 +82,6 @@ const props = defineProps({
     background: $magenta;
     text-decoration: none;
     padding: 2.3rem;
-    cursor: pointer;
     flex-shrink: 0;
 
     &:hover {

@@ -33,8 +33,8 @@ body {
   min-width: 320px;
   margin: 0 auto;
   font-family: $monserrat;
-  background-color: $darkBlue;
-  color: $white;
+  background-color: $lightBlue;
+  color: $blue;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -51,6 +51,17 @@ body,
 
 button {
   font-family: $monserrat;
+}
+
+a[href],
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 0.2rem solid $orange;
+  outline-offset: 0.3rem;
 }
 
 main {

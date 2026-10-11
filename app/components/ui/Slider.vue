@@ -104,6 +104,14 @@ const nextRef = ref(null)
 .slider {
   --slider-slide-width: 37rem;
 
+  @media (max-width: $tablet) {
+    --slider-slide-width: 30rem;
+  }
+
+  @media (max-width: $mobile) {
+    --slider-slide-width: 28rem;
+  }
+
   // ═══ Desktop: Swiper ═══
   &__desktop {
     display: flex;
@@ -136,15 +144,16 @@ const nextRef = ref(null)
     display: flex;
     align-items: center;
     justify-content: center;
-    background: none;
+    background-color: transparent;
     border: none;
+    border-radius: 50%;
     cursor: pointer;
     padding: 0;
-    transition: opacity 0.2s;
+    transition: background-color 0.3s ease;
     z-index: 5;
 
     &:hover {
-      opacity: 0.8;
+      background-color: rgba(6, 60, 173, 0.08);
     }
 
     &--disabled,
@@ -175,21 +184,6 @@ const nextRef = ref(null)
     flex-shrink: 0;
     scroll-snap-align: start;
     width: var(--slider-slide-width);
-  }
-}
-
-// ═══════════════════════════════════════════
-// Адаптив через CSS (без JS)
-// ═══════════════════════════════════════════
-@media (max-width: $tablet) {
-  .slider {
-    --slider-slide-width: 30rem;
-  }
-}
-
-@media (max-width: $mobile) {
-  .slider {
-    --slider-slide-width: 28rem;
   }
 }
 </style>
