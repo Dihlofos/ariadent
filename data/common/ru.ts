@@ -24,7 +24,7 @@ export default {
       { label: '020 408 28 70', href: 'tel:+31204082870' },
     ],
     appointment: {
-      label: 'Записаться ко врачу',
+      label: 'Записаться на прием',
       link: '#appointment',
     },
     call: {

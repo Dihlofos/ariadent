@@ -20,6 +20,10 @@ const common = computed(() => localeData.value.common)
   flex-direction: column;
   min-height: 100vh;
   overflow: hidden;
+
+  @media (max-width: $mobile) {
+    padding-top: 7.8rem;
+  }
 }
 
 // Ensure content pushes footer down

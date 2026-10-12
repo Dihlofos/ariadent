@@ -35,10 +35,15 @@ function createClickHandler(options: AnchorOptions) {
 
     mouseEvent.preventDefault()
 
+    const header = document.querySelector<HTMLElement>('.header')
+    const fixedHeaderOffset = header && window.getComputedStyle(header).position === 'fixed'
+      ? Math.ceil(header.getBoundingClientRect().height)
+      : null
     const opts = { ...DEFAULTS, ...options }
+
     smoothScroll.animateScroll(target, null, {
       speed: opts.speed,
-      offset: opts.offset,
+      offset: options.offset ?? fixedHeaderOffset ?? opts.offset,
     })
   }
 }

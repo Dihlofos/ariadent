@@ -85,6 +85,15 @@ onBeforeUnmount(() => {
           {{ navigation.appointment.label }}
         </a>
 
+        <a
+          v-if="navigation.phones[0]"
+          :href="navigation.phones[0].href"
+          class="header__mobile-phone"
+        >
+          <Image :src="navigation.images.phone" alt="" width="18" height="18" />
+          <span>{{ navigation.phones[0].label }}</span>
+        </a>
+
         <button
           ref="menuToggle"
           class="header__menu-toggle"
@@ -140,7 +149,7 @@ onBeforeUnmount(() => {
 .header {
   position: relative;
   z-index: 20;
-  background: $lightBlue;
+//   background: $lightBlue;
   padding: 4.5rem 0 1.3rem;
 
   @media (max-width: $tablet) {
@@ -148,7 +157,17 @@ onBeforeUnmount(() => {
   }
 
   @media (max-width: $mobile) {
-    padding: 1.2rem 1rem 1rem;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+   //  padding: 0.8rem 1rem 1rem;
+   padding: 0.8rem 1.6rem;
+   background: rgba(255, 255, 255, 0.88);
+   border-bottom: 0.1rem solid rgba(6, 60, 173, 0.1);
+   backdrop-filter: blur(1.2rem);
+   -webkit-backdrop-filter: blur(1.2rem);
   }
 
   & > .container {
@@ -168,9 +187,17 @@ onBeforeUnmount(() => {
     }
 
     @media (max-width: $mobile) {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      column-gap: 0;
       height: 5.6rem;
-      padding: 0 1.6rem;
-      border-radius: 18px;
+      // padding: 0 1.6rem;
+      // border-radius: 18px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
     }
   }
 
@@ -195,6 +222,10 @@ onBeforeUnmount(() => {
     @media (max-width: $mobile) {
       width: 10.8rem;
       height: auto;
+    }
+
+    @media (max-width: 360px) {
+      width: 9.4rem;
     }
   }
 
@@ -304,6 +335,36 @@ onBeforeUnmount(() => {
     color: $white;
   }
 
+  &__mobile-phone {
+    display: none;
+    align-items: center;
+    gap: 0.8rem;
+    color: $blue;
+    font-family: $monserrat;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+
+    @media (max-width: $mobile) {
+      display: inline-flex;
+      justify-self: center;
+      margin-left: 0;
+    }
+
+    @media (max-width: 360px) {
+      gap: 0.6rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__mobile-phone:hover {
+    color: $orange;
+  }
+
   &__bottom {
     display: flex;
     align-items: center;
@@ -338,8 +399,11 @@ onBeforeUnmount(() => {
     }
 
     @media (max-width: $mobile) {
+      left: -1.6rem;
+      width: calc(100% + 3.2rem);
       padding-right: 1.6rem;
       padding-left: 1.6rem;
+      border-radius: 0;
     }
   }
 
@@ -355,6 +419,7 @@ onBeforeUnmount(() => {
     }
 
     @media (max-width: $mobile) {
+      margin-top: 0.8rem;
       padding-top: 1.6rem;
       padding-bottom: 1.6rem;
     }
@@ -481,7 +546,17 @@ onBeforeUnmount(() => {
     }
 
     @media (max-width: $mobile) {
-      margin-left: auto;
+      width: 4.4rem;
+      flex: 0 0 4.4rem;
+      margin-left: 0;
+      padding: 0;
+      border-radius: 50%;
+    }
+  }
+
+  &__menu-label {
+    @media (max-width: $mobile) {
+      display: none;
     }
   }
 

@@ -19,8 +19,8 @@ export default {
     items: [
       {
         id: 'direct-appointment',
-        title: 'No dentist referral needed',
-        description: 'Book directly — no referral from a dentist is required.',
+        title: 'Implant-supported tooth restoration',
+        description: 'We use proven materials with a high implant success rate.',
         image: {
           src: '/images/benefits/check.png',
           alt: '',
@@ -316,15 +316,7 @@ export default {
         placeholder: 'How should we address you?',
         autocomplete: 'name',
         inputmode: 'text',
-      },
-      {
-        id: 'appointment-birthday',
-        name: 'birthday',
-        type: 'text',
-        label: 'Date of birth',
-        placeholder: 'Day, month, year',
-        autocomplete: 'bday',
-        inputmode: 'numeric',
+        required: true,
       },
       {
         id: 'appointment-phone',
@@ -334,6 +326,7 @@ export default {
         placeholder: 'For example: 06 57 55 85 76',
         autocomplete: 'tel',
         inputmode: 'tel',
+        required: true,
       },
       {
         id: 'appointment-email',
@@ -343,6 +336,7 @@ export default {
         placeholder: 'For example: name@example.com',
         autocomplete: 'email',
         inputmode: 'email',
+        required: true,
       },
     ],
     message: {
@@ -350,8 +344,32 @@ export default {
       name: 'message',
       label: 'Message',
       placeholder: 'Briefly tell us what is bothering you',
+      required: false,
     },
     submitText: 'Send',
+    feedback: {
+      error: {
+        title: 'Something went wrong',
+        description: 'Please try again. If it still does not work, try again later.',
+        buttonText: 'Back',
+        image: {
+          src: '/images/appointment/error-question.png',
+          alt: '',
+          width: 268,
+          height: 272,
+        },
+      },
+      success: {
+        title: 'Request received',
+        description: 'We will contact you shortly.',
+        image: {
+          src: '/images/appointment/success-check.png',
+          alt: '',
+          width: 408,
+          height: 412,
+        },
+      },
+    },
     image: {
       src: '/images/appointment/dentures.png',
       alt: 'Example of a dental prosthesis',
@@ -379,19 +397,19 @@ export default {
         id: 'sea-loakz',
         name: 'sea. Loakz',
         ratingLabel: 'Rating: 5 out of 5',
-        text: 'Fantastisch, ik ben zeer tevreden over deze praktijk Ariadent. Ik kwam met veel spanning in mijn lijf, maar die behandelaar straalde zoveel rust uit dat ik mij meteen op mijn gemak voelde. Hij is zeer vakkundig en hij heeft mijn mond weer mooi gemaakt. Ik hoef mij niet meer te schamen voor het lelijke gebit wat ik had. Ik durf weer lekker stralend te lachen. Ik zeg: dubt u over uw slechte gebit, ga naar deze praktijk. Doen!!!!',
+        text: 'Fantastic! I am very happy with Ariadent. I arrived feeling very anxious, but the clinician was so calm that I immediately felt at ease. He is highly skilled and restored my smile beautifully. I no longer feel ashamed of how my teeth used to look, and I can smile confidently again. If you are worried about the condition of your teeth, I strongly recommend this clinic.',
       },
       {
         id: 'harry-arts',
         name: 'Harry Arts',
         ratingLabel: 'Rating: 5 out of 5',
-        text: 'Ik had best angst voor de behandeling maar dat is heel erg meegevallen. Dankzij de behandelaar was ik snel over de angst heen. Ik heb een mooie prothese die onmiddellijk goed zat. Ook cosmetisch is het perfect. Ik kan dit iedereen aanraden.',
+        text: 'I was very anxious about the treatment, but it turned out much better than expected. The clinician quickly put me at ease. I received a beautiful denture that fit perfectly right away, and the cosmetic result is excellent. I would recommend this clinic to everyone.',
       },
       {
         id: 'gerda-kleerkoper',
         name: 'Gerda Kleerkoper',
         ratingLabel: 'Rating: 5 out of 5',
-        text: 'Wat een kunstenaar, heb een moeilijke kaak maar ziet er prachtig uit, zeer aan te bevelen en vriendelijke adorabele man.',
+        text: 'What an artist! I have a difficult jaw, but the result looks wonderful. Highly recommended — a friendly and delightful professional.',
       },
     ],
     moreButton: {

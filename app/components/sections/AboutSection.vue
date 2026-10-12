@@ -33,14 +33,15 @@ defineProps({
             />
           </div>
 
-          <Image
-            v-else
-            :src="item.image.src"
-            :alt="item.image.alt"
-            :width="item.image.width"
-            :height="item.image.height"
-            class="about__image"
-          />
+          <div v-else class="about__media">
+            <Image
+              :src="item.image.src"
+              :alt="item.image.alt"
+              :width="item.image.width"
+              :height="item.image.height"
+              class="about__image"
+            />
+          </div>
         </article>
       </div>
     </Container>
@@ -74,12 +75,10 @@ defineProps({
     display: grid;
     margin-top: 6.3rem;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 17.7rem 22.4rem;
     gap: 4rem;
 
     @media (max-width: $tablet) {
       margin-top: 4.5rem;
-      grid-template-rows: none;
       gap: 2rem;
     }
 
@@ -91,14 +90,18 @@ defineProps({
   }
 
   &__card {
-    position: relative;
+    display: grid;
+    min-width: 0;
+    min-height: 17.7rem;
     padding: 2rem;
+    grid-template-columns: 30rem minmax(0, 1fr);
+    column-gap: 1.4rem;
     border: 2px solid $white;
     border-radius: 22px;
 
     @media (max-width: $tablet) {
       display: flex;
-      min-width: 0;
+      min-height: 0;
       flex-direction: column;
     }
 
@@ -107,28 +110,38 @@ defineProps({
     }
   }
 
+  &__card:nth-child(n + 3) {
+    min-height: 22.4rem;
+
+    @media (max-width: $tablet) {
+      min-height: 0;
+    }
+  }
+
   &__content {
-    width: 30rem;
+    min-width: 0;
 
     @media (max-width: $tablet) {
       width: 100%;
     }
   }
 
-  &__card:nth-child(4) .about__content {
-    width: 33rem;
+  &__card:nth-child(4) {
+    grid-template-columns: 33rem minmax(0, 1fr);
 
     @media (max-width: $tablet) {
-      width: 100%;
+      grid-template-columns: none;
     }
   }
 
   &__card-title {
     display: inline-flex;
-    height: 3.2rem;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 3.2rem;
     align-items: center;
     margin: 0;
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 20px;
     background: $orange;
     color: $white;
@@ -136,17 +149,11 @@ defineProps({
     font-size: 1.8rem;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
-    white-space: nowrap;
+    line-height: 120%;
+    overflow-wrap: break-word;
 
     @media (max-width: $tablet) {
       align-self: flex-start;
-      height: auto;
-      min-height: 3.2rem;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      line-height: 120%;
-      white-space: normal;
     }
 
     @media (max-width: $mobile) {
@@ -162,6 +169,7 @@ defineProps({
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    overflow-wrap: break-word;
   }
 
   &__description p {
@@ -172,35 +180,39 @@ defineProps({
     margin-top: 1.5rem;
   }
 
-  &__image {
-    position: absolute;
-    top: 1.8rem;
-    right: 1.8rem;
-    width: auto;
-    height: calc(100% - 3.6rem);
+  &__media {
+    min-width: 0;
+    min-height: 0;
+    align-self: start;
+    overflow: hidden;
     border-radius: 10px;
-    object-fit: cover;
+
+    picture {
+      display: block;
+      width: 100%;
+    }
 
     @media (max-width: $tablet) {
-      position: static;
       width: 100%;
-      height: 22rem;
+      height: auto;
       margin-top: 2rem;
     }
 
     @media (max-width: $mobile) {
-      height: 20rem;
       margin-top: 1.5rem;
     }
   }
 
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
   &__logos {
-    position: absolute;
-    top: 1.8rem;
-    right: 1.8rem;
     display: flex;
-    width: 17.2rem;
-    height: calc(100% - 3.6rem);
+    min-width: 0;
+    min-height: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -210,15 +222,13 @@ defineProps({
     background: $white;
 
     @media (max-width: $tablet) {
-      position: static;
       width: 100%;
-      height: 22rem;
+      height: auto;
       margin-top: 2rem;
       padding: 2.5rem;
     }
 
     @media (max-width: $mobile) {
-      height: 20rem;
       margin-top: 1.5rem;
       padding: 2rem;
     }

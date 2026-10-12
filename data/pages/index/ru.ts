@@ -6,7 +6,7 @@ export default {
       bold: 'ARIADENT',
     },
     subtitle: 'Протезирование и имплантация зубов с вниманием к комфорту и естественному виду.',
-    button: { text: 'Записаться ко врачу', link: '#appointment' },
+    button: { text: 'Записаться на прием', link: '#appointment' },
     secondaryButton: { text: 'Посмотреть примеры работ', link: '#results' },
     images: {
       portrait: '/images/hero/hero.png',
@@ -19,8 +19,8 @@ export default {
     items: [
       {
         id: 'direct-appointment',
-        title: 'Без направления стоматолога',
-        description: 'Записываем на прием напрямую — без направления от стоматолога.',
+        title: 'Восстановление зубов на имплантах',
+        description: 'Используем проверенные материалы с высокой приживаемостью.',
         image: {
           src: '/images/benefits/check.png',
           alt: '',
@@ -316,15 +316,7 @@ export default {
         placeholder: 'Как к вам обращаться',
         autocomplete: 'name',
         inputmode: 'text',
-      },
-      {
-        id: 'appointment-birthday',
-        name: 'birthday',
-        type: 'text',
-        label: 'Дата рождения',
-        placeholder: 'День, месяц, год',
-        autocomplete: 'bday',
-        inputmode: 'numeric',
+        required: true,
       },
       {
         id: 'appointment-phone',
@@ -334,6 +326,7 @@ export default {
         placeholder: 'Например: 06 57 55 85 76',
         autocomplete: 'tel',
         inputmode: 'tel',
+        required: true,
       },
       {
         id: 'appointment-email',
@@ -343,6 +336,7 @@ export default {
         placeholder: 'Например: naam@example.com',
         autocomplete: 'email',
         inputmode: 'email',
+        required: true,
       },
     ],
     message: {
@@ -350,8 +344,32 @@ export default {
       name: 'message',
       label: 'Сообщение',
       placeholder: 'Коротко расскажите, что вас беспокоит',
+      required: false,
     },
     submitText: 'Отправить',
+    feedback: {
+      error: {
+        title: 'Что-то пошло не так',
+        description: 'Повторите попытку — если не поможет, попробуйте чуть позже.',
+        buttonText: 'Назад',
+        image: {
+          src: '/images/appointment/error-question.png',
+          alt: '',
+          width: 268,
+          height: 272,
+        },
+      },
+      success: {
+        title: 'Заявка принята',
+        description: 'Свяжемся с вами в ближайшее время.',
+        image: {
+          src: '/images/appointment/success-check.png',
+          alt: '',
+          width: 408,
+          height: 412,
+        },
+      },
+    },
     image: {
       src: '/images/appointment/dentures.png',
       alt: 'Пример зубного протеза',
@@ -373,25 +391,25 @@ export default {
         id: 'scott-vontobel',
         name: 'Scott Vontobel',
         ratingLabel: 'Оценка: 5 из 5',
-        text: "After over 15 calls this morning I found this Office to help fix an emergency situation, spoke to the owner. He asked me if I can come in right away. I was in and out of the door in less than an hour with a great solution and a lot less money than I expected. Really couldn't be happier.",
+        text: 'Сегодня утром я обзвонил более 15 клиник, прежде чем нашёл эту, готовую помочь в экстренной ситуации. Я поговорил с владельцем, и он попросил меня приехать сразу. Меньше чем за час всё было готово: я получил отличное решение за гораздо меньшие деньги, чем ожидал. Я очень доволен.',
       },
       {
         id: 'sea-loakz',
         name: 'sea. Loakz',
         ratingLabel: 'Оценка: 5 из 5',
-        text: 'Fantastisch, ik ben zeer tevreden over deze praktijk Ariadent. Ik kwam met veel spanning in mijn lijf, maar die behandelaar straalde zoveel rust uit dat ik mij meteen op mijn gemak voelde. Hij is zeer vakkundig en hij heeft mijn mond weer mooi gemaakt. Ik hoef mij niet meer te schamen voor het lelijke gebit wat ik had. Ik durf weer lekker stralend te lachen. Ik zeg: dubt u over uw slechte gebit, ga naar deze praktijk. Doen!!!!',
+        text: 'Фантастика! Я очень доволен клиникой Ariadent. Я пришёл с сильным волнением, но специалист был настолько спокоен, что я сразу почувствовал себя комфортно. Он очень профессионален и прекрасно восстановил мою улыбку. Мне больше не нужно стесняться того, как раньше выглядели мои зубы, и я снова могу уверенно улыбаться. Если вас беспокоит состояние зубов, смело обращайтесь в эту клинику. Рекомендую!',
       },
       {
         id: 'harry-arts',
         name: 'Harry Arts',
         ratingLabel: 'Оценка: 5 из 5',
-        text: 'Ik had best angst voor de behandeling maar dat is heel erg meegevallen. Dankzij de behandelaar was ik snel over de angst heen. Ik heb een mooie prothese die onmiddellijk goed zat. Ook cosmetisch is het perfect. Ik kan dit iedereen aanraden.',
+        text: 'Я очень боялся лечения, но всё прошло гораздо легче, чем ожидал. Благодаря специалисту страх быстро исчез. Мне установили прекрасный протез, который сразу идеально подошёл. Результат отлично выглядит. Смело рекомендую эту клинику всем.',
       },
       {
         id: 'gerda-kleerkoper',
         name: 'Gerda Kleerkoper',
         ratingLabel: 'Оценка: 5 из 5',
-        text: 'Wat een kunstenaar, heb een moeilijke kaak maar ziet er prachtig uit, zeer aan te bevelen en vriendelijke adorabele man.',
+        text: 'Настоящий мастер! У меня сложная челюсть, но результат выглядит прекрасно. Очень рекомендую — дружелюбный и замечательный специалист.',
       },
     ],
     moreButton: {

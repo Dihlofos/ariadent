@@ -8,6 +8,10 @@
 
 html {
   scroll-padding-top: 4.5rem; // компенсация fixed header для smooth-scroll
+
+  @media (max-width: $mobile) {
+    scroll-padding-top: 7.8rem;
+  }
 }
 
 .visually-hidden {

@@ -84,7 +84,7 @@ function formatStepNumber(index) {
 
   &__card {
     display: grid;
-    height: 10.2rem;
+    min-height: 10.2rem;
     padding: 2rem 3rem;
     grid-template-columns: 7rem 24rem minmax(0, 1fr) 4.13rem;
     align-items: center;
@@ -93,7 +93,6 @@ function formatStepNumber(index) {
     background: $white;
 
     @media (max-width: $tablet) {
-      height: auto;
       min-height: 13rem;
       grid-template-columns: 6rem 18rem minmax(0, 1fr) 4.13rem;
       column-gap: 2rem;
@@ -151,7 +150,7 @@ function formatStepNumber(index) {
     margin: 0;
     color: $blue;
     font-family: $monserrat;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;

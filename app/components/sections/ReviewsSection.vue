@@ -133,7 +133,7 @@ defineProps({
   }
 
   &__card {
-    height: 37.8rem;
+    min-height: 37.8rem;
     padding: 2.2rem;
     border-radius: 22px;
     background: $white;

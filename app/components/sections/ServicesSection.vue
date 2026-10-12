@@ -198,14 +198,16 @@ const activeTab = computed(() => (
   }
 
   &__card {
-    position: relative;
-    height: 25.6rem;
+    display: grid;
+    min-height: 25.6rem;
+    padding: 2.35rem 3.18rem 2.35rem 2.47rem;
+    grid-template-columns: 27.5rem minmax(0, 1fr);
+    column-gap: 2.81rem;
     border-radius: 22px;
     background: $white;
 
     @media (max-width: $tablet) {
       display: flex;
-      height: auto;
       min-height: 0;
       flex-direction: column;
       padding: 2rem;
@@ -219,9 +221,6 @@ const activeTab = computed(() => (
   }
 
   &__media {
-    position: absolute;
-    top: 2.35rem;
-    left: 2.47rem;
     width: 27.5rem;
     height: 20.9rem;
 
@@ -232,7 +231,6 @@ const activeTab = computed(() => (
     }
 
     @media (max-width: $tablet) {
-      position: static;
       width: 100%;
       height: 20rem;
       flex: 0 0 auto;
@@ -257,20 +255,15 @@ const activeTab = computed(() => (
   }
 
   &__content {
-    position: absolute;
-    top: 2.35rem;
-    right: 3.18rem;
-    bottom: 2.35rem;
-    left: 32.78rem;
     display: flex;
+    min-width: 0;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1.6rem;
 
     @media (max-width: $tablet) {
-      position: static;
       flex: 0 0 auto;
       justify-content: flex-start;
-      gap: 1.6rem;
       margin-top: 1.6rem;
     }
 
@@ -298,14 +291,10 @@ const activeTab = computed(() => (
     margin: 0;
     color: $blue;
     font-family: $monserrat;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
-    @media (max-width: $mobile) {
-      font-size: 1.2rem;
-    }
   }
 
   &__more {

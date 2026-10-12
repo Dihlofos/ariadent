@@ -58,7 +58,7 @@ defineProps({
 
   &__card {
     position: relative;
-    height: 15.6rem;
+    min-height: 15.6rem;
     padding: 2rem 2.1rem;
     border-radius: 22px;
     background: $white;
@@ -73,20 +73,17 @@ defineProps({
       min-height: 18rem;
       border-radius: 18px;
     }
+
+    @media (hover: hover) {
+      &:hover .benefits__image {
+        scale: 1.04;
+      }
+    }
   }
 
   &__content {
     position: relative;
     z-index: 2;
-    max-width: 70%;
-
-    @media (max-width: $tablet) {
-      width: calc(100% - 14rem);
-    }
-
-    @media (max-width: $mobile) {
-      width: calc(100% - 12rem);
-    }
   }
 
   &__title {
@@ -97,16 +94,30 @@ defineProps({
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+
+     max-width: 70%;
+
+    @media (max-width: $tablet) {
+      width: calc(100% - 14rem);
+    }
+
+    @media (max-width: $mobile) {
+      width: calc(100% - 12rem);
+    }
   }
 
   &__description {
     margin: 0;
     color: $blue;
     font-family: $monserrat;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+     @media (max-width: $tablet) {
+      width: calc(100% - 10rem);
+    }
   }
 
   &__image {
@@ -114,6 +125,9 @@ defineProps({
     z-index: 1;
     max-width: none;
     pointer-events: none;
+    scale: 1;
+    transform-origin: center;
+    transition: scale 0.3s ease;
   }
 
   &__image--check {
