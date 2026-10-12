@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-  title: { type: [String, Array], required: true },
+  title: { type: String, required: true },
   tag: { type: String, default: 'h2' },
   tone: { type: String, default: 'brand' },
 })
@@ -12,12 +12,7 @@ defineProps({
     class="section-title"
     :class="{ 'section-title--light': tone === 'light' }"
   >
-    <template v-if="Array.isArray(title)">
-      <span v-for="line in title" :key="line" class="section-title__line">
-        {{ line }}
-      </span>
-    </template>
-    <template v-else>{{ title }}</template>
+    {{ title }}
   </component>
 </template>
 
@@ -31,10 +26,6 @@ defineProps({
   font-weight: 400;
   line-height: 100%;
   text-align: center;
-
-  &__line {
-    display: block;
-  }
 
   &--light {
     color: $white;

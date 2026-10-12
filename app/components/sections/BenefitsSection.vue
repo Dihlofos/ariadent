@@ -10,17 +10,9 @@ defineProps({
       <div class="benefits__grid">
         <article v-for="item in items" :key="item.id" class="benefits__card">
           <div class="benefits__content">
-            <h2 class="benefits__title">
-              <span v-for="line in item.title" :key="line" class="benefits__line">
-                {{ line }}
-              </span>
-            </h2>
+            <h3 class="benefits__title">{{ item.title }}</h3>
 
-            <p class="benefits__description">
-              <span v-for="line in item.description" :key="line" class="benefits__line">
-                {{ line }}
-              </span>
-            </p>
+            <p class="benefits__description">{{ item.description }}</p>
           </div>
 
           <Image
@@ -86,6 +78,7 @@ defineProps({
   &__content {
     position: relative;
     z-index: 2;
+    max-width: 70%;
 
     @media (max-width: $tablet) {
       width: calc(100% - 14rem);
@@ -116,10 +109,6 @@ defineProps({
     line-height: normal;
   }
 
-  &__line {
-    display: block;
-  }
-
   &__image {
     position: absolute;
     z-index: 1;
@@ -130,8 +119,8 @@ defineProps({
   &__image--check {
     top: -6.3rem;
     right: -2.4rem;
-    width: 15.4rem;
-    height: 15.85rem;
+    width: 13.2rem;
+    height: 13.6rem;
 
     @media (max-width: $tablet) {
       top: 1.5rem;
@@ -152,8 +141,8 @@ defineProps({
   &__image--tooth {
     top: -6.2rem;
     right: -2.4rem;
-    width: 15.4rem;
-    height: 15.9rem;
+    width: 13.2rem;
+    height: 13.6rem;
 
     @media (max-width: $tablet) {
       top: 1.5rem;
@@ -174,21 +163,21 @@ defineProps({
   &__image--coins {
     top: -6.45rem;
     right: -5.2rem;
-    width: 18.3rem;
-    height: 15.55rem;
+    width: 15.5rem;
+    height: 15.5rem;
 
     @media (max-width: $tablet) {
       top: 1.5rem;
       right: -1.5rem;
-      width: 15.5rem;
-      height: 13.17rem;
+      width: 14.5rem;
+      height: 14.5rem;
     }
 
     @media (max-width: $mobile) {
       top: 50%;
       right: -0.5rem;
-      width: 14.5rem;
-      height: 12.33rem;
+      width: 13.5rem;
+      height: 13.5rem;
       transform: translateY(-50%);
     }
   }

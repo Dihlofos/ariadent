@@ -26,11 +26,7 @@ defineProps({
               height="60"
             />
             <div class="reviews__author">
-              <h3 class="reviews__name">
-                <span v-for="line in item.name" :key="line" class="reviews__name-line">
-                  {{ line }}
-                </span>
-              </h3>
+              <h3 class="reviews__name">{{ item.name }}</h3>
               <Image
                 :src="images.stars"
                 :alt="item.ratingLabel"
@@ -74,7 +70,7 @@ defineProps({
 
 <style lang="scss">
 .reviews {
-  padding: 6.3rem 0 9.6rem;
+  padding: 7.5rem 0 9.6rem;
 
   @media (max-width: $tablet) {
     padding: 5rem 2rem 7rem;
@@ -95,7 +91,7 @@ defineProps({
   }
 
   &__description {
-    margin: 4.3rem 0 0;
+    margin: 4.9rem 0 0;
     color: $blue;
     font-family: $monserrat;
     font-size: 1.8rem;
@@ -117,7 +113,7 @@ defineProps({
 
   &__grid {
     display: grid;
-    margin-top: 6.2rem;
+    margin-top: 4.4rem;
     grid-template-columns: repeat(4, 26rem);
     gap: 4rem;
 
@@ -200,10 +196,6 @@ defineProps({
     @media (max-width: $mobile) {
       font-size: 1.6rem;
     }
-  }
-
-  &__name-line {
-    display: block;
   }
 
   &__stars {

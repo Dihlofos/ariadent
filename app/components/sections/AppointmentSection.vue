@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
-  title: { type: Array, required: true },
-  description: { type: Array, required: true },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
   fields: { type: Array, required: true },
   message: { type: Object, required: true },
   submitText: { type: String, required: true },
@@ -14,11 +14,7 @@ defineProps({
     <Container>
       <div class="appointment__card">
         <div class="appointment__intro">
-          <h2 id="appointment-title" class="appointment__title">
-            <span v-for="line in title" :key="line" class="appointment__title-line">
-              {{ line }}
-            </span>
-          </h2>
+          <h2 id="appointment-title" class="appointment__title">{{ title }}</h2>
 
           <div class="appointment__media">
             <Image
@@ -30,11 +26,7 @@ defineProps({
             />
           </div>
 
-          <p class="appointment__description">
-            <span v-for="line in description" :key="line" class="appointment__description-line">
-              {{ line }}
-            </span>
-          </p>
+          <p class="appointment__description">{{ description }}</p>
         </div>
 
         <form class="appointment__form" @submit.prevent>
@@ -132,6 +124,7 @@ defineProps({
     position: absolute;
     top: 3.52rem;
     left: 4.18rem;
+    width: 50rem;
     margin: 0;
     color: $white;
     font-family: $monserrat;
@@ -143,6 +136,7 @@ defineProps({
 
     @media (max-width: $tablet) {
       position: static;
+      width: auto;
       order: 1;
       font-size: 2.4rem;
     }
@@ -154,10 +148,6 @@ defineProps({
     @media (max-width: 350px) {
       font-size: 2rem;
     }
-  }
-
-  &__title-line {
-    display: block;
   }
 
   &__media {
@@ -214,6 +204,7 @@ defineProps({
     z-index: 2;
     bottom: 4.3rem;
     left: 22.9rem;
+    width: 31rem;
     margin: 0;
     color: $white;
     font-family: $monserrat;
@@ -224,6 +215,7 @@ defineProps({
 
     @media (max-width: $tablet) {
       position: static;
+      width: auto;
       order: 2;
       margin-top: 2rem;
       font-size: 1.5rem;
@@ -233,10 +225,6 @@ defineProps({
       margin-top: 1.5rem;
       font-size: 1.4rem;
     }
-  }
-
-  &__description-line {
-    display: block;
   }
 
   &__form {

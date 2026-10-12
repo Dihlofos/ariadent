@@ -21,12 +21,12 @@ function accept() {
 </script>
 
 <template>
-  <div v-show="isVisible" class="cookie-modal">
+  <div v-show="isVisible" class="cookie-modal" aria-live="polite">
     <div class="cookie-modal__text">
       <p>{{ ui.cookieMessage }}</p>
     </div>
 
-    <button class="cookie-modal__close" @click="accept">
+    <button type="button" class="cookie-modal__close" @click="accept">
       {{ ui.cookieAccept }}
     </button>
   </div>
@@ -40,42 +40,50 @@ function accept() {
   transform: translateX(-50%);
   z-index: 1000;
   display: flex;
-  align-items: flex-start;
-  gap: 1.6rem;
-  background-color: $white;
-  color: $black;
+  align-items: center;
+  gap: 2rem;
+  width: calc(100% - 4rem);
+  max-width: 68rem;
   padding: 1.6rem 2rem;
-  max-width: 48.6rem;
-  border-radius: 10px;
+  border: 0.2rem solid $white;
+  border-radius: 22px;
+  background-color: $blue;
+  box-shadow: 0 0.8rem 2.4rem rgba($darkBlue, 0.2);
+  color: $white;
 
   @media (max-width: $tablet) {
-    max-width: 90%;
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
+    max-width: 64rem;
   }
 
   @media (max-width: $mobile) {
+    bottom: 1rem;
     left: 1rem;
     right: 1rem;
-    max-width: unset;
+    gap: 1.2rem;
+    width: auto;
+    max-width: none;
+    padding: 1.4rem 1.5rem;
+    border-radius: 18px;
     transform: none;
   }
 
   &__close {
-    flex-grow: 0;
-    flex-shrink: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: $magenta;
+    justify-content: center;
+    flex: 0 0 auto;
+    min-width: 7.2rem;
+    min-height: 4.4rem;
+    padding: 0.8rem 1.6rem;
+    border: 0.1rem solid $orange;
+    border-radius: 20px;
+    background-color: $orange;
+    color: $white;
     font-family: $monserrat;
     font-size: 1.6rem;
-    font-weight: 600;
-    color: $white;
-    border-radius: 30px;
-    padding: 0.6rem 1.6rem;
-    border: none;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
     cursor: pointer;
     transition:
       background-color 0.3s ease,
@@ -83,30 +91,36 @@ function accept() {
       color 0.3s ease;
 
     &:hover {
-      background: $blue;
+      border-color: $white;
+      background-color: $white;
+      color: $blue;
     }
 
     @media (max-width: $mobile) {
-      padding: 2rem;
+      min-width: 5.2rem;
+      min-height: 4.8rem;
+      padding: 0.6rem 1rem;
+      font-size: 1.4rem;
     }
   }
 
   &__text {
-    color: $black;
-    max-width: 37.4rem;
+    flex: 1 1 auto;
+    min-width: 0;
+    color: $white;
 
     p {
-      color: $black;
+      margin: 0;
+      color: inherit;
       font-family: $monserrat;
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-style: normal;
       font-weight: 400;
-      line-height: 1.3;
-      margin: 0;
+      line-height: 1.4;
 
       @media (max-width: $mobile) {
-        font-size: 1.4rem;
-        line-height: 1.1;
+        font-size: 1.2rem;
+        line-height: 1.35;
       }
     }
   }

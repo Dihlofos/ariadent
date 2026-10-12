@@ -5,13 +5,9 @@ export default {
       regular: 'DENTAL CLINIC',
       bold: 'ARIADENT',
     },
-    subtitle: [
-      'Dental prosthetics and implants',
-      'with care for your comfort',
-      'and a natural appearance.',
-    ],
+    subtitle: 'Dental prosthetics and implants with care for your comfort and a natural appearance.',
     button: { text: 'Book an appointment', link: '#appointment' },
-    secondaryButton: { text: 'View our work', link: '#works' },
+    secondaryButton: { text: 'View our work', link: '#results' },
     images: {
       portrait: '/images/hero/hero.png',
       logo: '/images/logo.svg',
@@ -23,8 +19,8 @@ export default {
     items: [
       {
         id: 'direct-appointment',
-        title: ['No dentist', 'referral', 'needed'],
-        description: ['Book directly — no referral', 'from a dentist', 'is required.'],
+        title: 'No dentist referral needed',
+        description: 'Book directly — no referral from a dentist is required.',
         image: {
           src: '/images/benefits/check.png',
           alt: '',
@@ -35,32 +31,32 @@ export default {
       },
       {
         id: 'urgent-repair',
-        title: ['Urgent', 'denture', 'repair'],
-        description: ['We repair your denture', 'while you wait', 'at the clinic.'],
+        title: 'Urgent denture repair',
+        description: 'We repair your denture while you wait at the clinic.',
         image: {
           src: '/images/benefits/tooth.png',
           alt: '',
           variant: 'tooth',
-          width: 154,
-          height: 159,
+          width: 308,
+          height: 317,
         },
       },
       {
         id: 'insurance',
-        title: ['Up to 90%', 'covered by basic', 'insurance'],
-        description: ['We offer treatment options', 'based on your insurance', 'coverage.'],
+        title: 'Up to 90% covered by basic insurance',
+        description: 'We offer treatment options based on your insurance coverage.',
         image: {
           src: '/images/benefits/coins.png',
           alt: '',
           variant: 'coins',
-          width: 366,
-          height: 311,
+          width: 342,
+          height: 342,
         },
       },
       {
         id: 'after-hours',
-        title: ['Help outside', 'working', 'hours'],
-        description: ['We help in emergencies', 'and accept patients outside', 'working hours.'],
+        title: 'Help outside working hours',
+        description: 'We help in emergencies and accept patients outside working hours.',
         image: {
           src: '/images/benefits/clock.png',
           alt: '',
@@ -204,52 +200,34 @@ export default {
     items: [
       {
         id: 'consultation',
-        title: ['Examination', 'and consultation'],
-        description: [
-          'We discuss your concerns and assess your teeth, gums, jaw, and current denture.',
-          'Together, we review your wishes and possible treatment options.',
-        ],
+        title: 'Examination and consultation',
+        description: 'We discuss your concerns and assess your teeth, gums, jaw, and current denture. Together, we review your wishes and possible treatment options.',
       },
       {
         id: 'treatment-plan',
-        title: ['Treatment', 'plan'],
-        description: [
-          'We suggest suitable options and explain their features, timing, and cost.',
-          'If treatment by another specialist or implant placement is needed first,',
-          'we explain the next steps.',
-        ],
+        title: 'Treatment plan',
+        description: 'We suggest suitable options and explain their features, timing, and cost. If treatment by another specialist or implant placement is needed first, we explain the next steps.',
       },
       {
         id: 'impressions',
-        title: ['Impressions', 'and bite'],
-        description: [
-          'We take impressions of your jaws and evaluate how your teeth meet.',
-          'We discuss the shape, colour, and position of your future teeth.',
-        ],
+        title: 'Impressions and bite',
+        description: 'We take impressions of your jaws and evaluate how your teeth meet. We discuss the shape, colour, and position of your future teeth.',
       },
       {
         id: 'fitting',
-        title: ['Fitting', 'and fabrication'],
-        description: [
-          'We first try in the restoration to check its fit, bite, appearance,',
-          'speech, and chewing. We make any necessary adjustments before',
-          'producing the final denture.',
-        ],
+        title: 'Fitting and fabrication',
+        description: 'We first try in the restoration to check its fit, bite, appearance, speech, and chewing. We make any necessary adjustments before producing the final denture.',
       },
       {
         id: 'installation',
-        title: ['Installation', 'and follow-up'],
-        description: [
-          'We fit your denture, check its position, and explain how to wear',
-          'and care for it. After placement, we perform a follow-up examination',
-          'and adjust it if needed.',
-        ],
+        title: 'Installation and follow-up',
+        description: 'We fit your denture, check its position, and explain how to wear and care for it. After placement, we perform a follow-up examination and adjust it if needed.',
       },
     ],
   },
   results: {
     type: 'results',
-    title: ['WHAT THE', 'RESULT LOOKS LIKE'],
+    title: 'WHAT THE RESULT LOOKS LIKE',
     description: 'Prosthetic and implant treatment results from our patients.',
     labels: {
       before: 'Before',
@@ -327,12 +305,8 @@ export default {
   },
   appointment: {
     type: 'appointment',
-    title: ['Need an urgent', 'repair or want to', 'find a solution?'],
-    description: [
-      'Leave a request — we will contact you,',
-      'book your appointment, and explain',
-      'what treatment options are available.',
-    ],
+    title: 'Need an urgent repair or want to find a solution?',
+    description: 'Leave a request — we will contact you, book your appointment, and explain what treatment options are available.',
     fields: [
       {
         id: 'appointment-name',
@@ -397,25 +371,25 @@ export default {
     items: [
       {
         id: 'scott-vontobel',
-        name: ['Scott', 'Vontobel'],
+        name: 'Scott Vontobel',
         ratingLabel: 'Rating: 5 out of 5',
         text: "After over 15 calls this morning I found this Office to help fix an emergency situation, spoke to the owner. He asked me if I can come in right away. I was in and out of the door in less than an hour with a great solution and a lot less money than I expected. Really couldn't be happier.",
       },
       {
         id: 'sea-loakz',
-        name: ['sea. Loakz'],
+        name: 'sea. Loakz',
         ratingLabel: 'Rating: 5 out of 5',
         text: 'Fantastisch, ik ben zeer tevreden over deze praktijk Ariadent. Ik kwam met veel spanning in mijn lijf, maar die behandelaar straalde zoveel rust uit dat ik mij meteen op mijn gemak voelde. Hij is zeer vakkundig en hij heeft mijn mond weer mooi gemaakt. Ik hoef mij niet meer te schamen voor het lelijke gebit wat ik had. Ik durf weer lekker stralend te lachen. Ik zeg: dubt u over uw slechte gebit, ga naar deze praktijk. Doen!!!!',
       },
       {
         id: 'harry-arts',
-        name: ['Harry Arts'],
+        name: 'Harry Arts',
         ratingLabel: 'Rating: 5 out of 5',
         text: 'Ik had best angst voor de behandeling maar dat is heel erg meegevallen. Dankzij de behandelaar was ik snel over de angst heen. Ik heb een mooie prothese die onmiddellijk goed zat. Ook cosmetisch is het perfect. Ik kan dit iedereen aanraden.',
       },
       {
         id: 'gerda-kleerkoper',
-        name: ['Gerda', 'Kleerkoper'],
+        name: 'Gerda Kleerkoper',
         ratingLabel: 'Rating: 5 out of 5',
         text: 'Wat een kunstenaar, heb een moeilijke kaak maar ziet er prachtig uit, zeer aan te bevelen en vriendelijke adorabele man.',
       },
@@ -480,12 +454,20 @@ export default {
           'ARIADENT is a member of the Organisatie van Nederlandse Tandprothetici (ONT), and our clinicians are registered with the KwaliteitsRegister TandProthetici (KRTP).',
           'We maintain our qualifications and regularly update our professional knowledge in dental prosthetics.',
         ],
-        image: {
-          src: '/images/about/certifications.png',
-          alt: 'Ariadent professional registry memberships',
-          width: 341,
-          height: 372,
-        },
+        logos: [
+          {
+            src: '/images/about/krtp-logo.png',
+            alt: 'KwaliteitsRegister TandProthetici',
+            width: 254,
+            height: 74,
+          },
+          {
+            src: '/images/about/ont-logo.png',
+            alt: 'Organisatie van Nederlandse Tandprothetici',
+            width: 254,
+            height: 109,
+          },
+        ],
       },
     ],
   },
@@ -524,7 +506,7 @@ export default {
   },
   faq: {
     type: 'faq',
-    title: ['FREQUENTLY ASKED', 'QUESTIONS'],
+    title: 'FREQUENTLY ASKED QUESTIONS',
     description: 'Answers to the most common questions about dentures, implants, costs, and appointments.',
     images: {
       arrowDown: '/images/faq/arrow-down.svg',

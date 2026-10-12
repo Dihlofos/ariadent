@@ -77,7 +77,7 @@ defineProps({
           </div>
 
           <div class="contacts__actions">
-            <a :href="appointmentButton.link" class="contacts__appointment">
+            <a :href="appointmentButton.link" class="contacts__appointment" v-anchor>
               {{ appointmentButton.text }}
             </a>
             <a

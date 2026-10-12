@@ -33,8 +33,8 @@ export default {
     },
     navItems: [
       { label: 'Services', link: '#services' },
-      { label: 'Insurance and payment', link: '#insurance' },
-      { label: 'For patients', link: '#patients' },
+      { label: 'Insurance and payment', link: '#benefits' },
+      { label: 'For patients', link: '#treatment-process' },
       { label: 'About the clinic', link: '#about' },
       { label: 'Contacts and address', link: '#contacts' },
     ],

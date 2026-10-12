@@ -21,21 +21,9 @@ function formatStepNumber(index) {
             {{ formatStepNumber(index) }}
           </span>
 
-          <h3 class="treatment-process__card-title">
-            <span v-for="line in item.title" :key="line" class="treatment-process__title-line">
-              {{ line }}
-            </span>
-          </h3>
+          <h3 class="treatment-process__card-title">{{ item.title }}</h3>
 
-          <p class="treatment-process__description">
-            <span
-              v-for="line in item.description"
-              :key="line"
-              class="treatment-process__description-line"
-            >
-              {{ line }}
-            </span>
-          </p>
+          <p class="treatment-process__description">{{ item.description }}</p>
 
           <span class="treatment-process__check" aria-hidden="true">
             <Image
@@ -114,9 +102,9 @@ function formatStepNumber(index) {
     @media (max-width: $mobile) {
       min-height: 0;
       padding: 2rem 1.5rem;
-      grid-template-columns: 5rem minmax(0, 1fr) 4.13rem;
+      grid-template-columns: 7rem minmax(0, 1fr) 4.13rem;
       grid-template-rows: auto auto;
-      column-gap: 1.2rem;
+      column-gap: 1.4rem;
       row-gap: 1.5rem;
     }
   }
@@ -136,6 +124,7 @@ function formatStepNumber(index) {
     @media (max-width: $mobile) {
       grid-column: 1;
       grid-row: 1;
+      white-space: nowrap;
     }
   }
 
@@ -158,10 +147,6 @@ function formatStepNumber(index) {
     }
   }
 
-  &__title-line {
-    display: block;
-  }
-
   &__description {
     margin: 0;
     color: $blue;
@@ -175,10 +160,6 @@ function formatStepNumber(index) {
       grid-column: 1 / -1;
       grid-row: 2;
     }
-  }
-
-  &__description-line {
-    display: block;
   }
 
   &__check {

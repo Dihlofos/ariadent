@@ -9,7 +9,7 @@ defineProps({
     <Container>
       <div class="footer__grid">
         <div class="footer__brand">
-          <a :href="footerData.brand.link" class="footer__logo-link">
+          <a :href="footerData.brand.link" class="footer__logo-link" v-anchor>
             <Image
               :src="footerData.images.logo"
               :alt="footerData.brand.alt"

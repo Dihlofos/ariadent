@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-  title: { type: [String, Array], required: true },
+  title: { type: String, required: true },
   description: { type: String, required: true },
   labels: { type: Object, required: true },
   items: { type: Array, required: true },
@@ -43,11 +43,17 @@ defineProps({
   }
 
   &__title {
+    max-width: 70rem;
+    margin-right: auto;
+    margin-left: auto;
+
     @media (max-width: $tablet) {
+      max-width: 60rem;
       font-size: 5.5rem;
     }
 
     @media (max-width: $mobile) {
+      max-width: 100%;
       font-size: 3.6rem;
     }
   }
@@ -91,6 +97,7 @@ defineProps({
 
     @media (max-width: 600px) {
       grid-template-columns: minmax(0, 1fr);
+      row-gap: 3rem;
     }
   }
 }

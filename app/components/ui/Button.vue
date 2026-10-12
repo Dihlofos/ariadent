@@ -13,6 +13,7 @@ const props = defineProps({
     v-if="to"
     :href="to"
     :class="['button', `button--${variant}`, `button--${size}`]"
+    v-anchor
   >
     <slot />
   </a>

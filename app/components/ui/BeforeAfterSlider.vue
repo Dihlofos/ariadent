@@ -13,10 +13,15 @@ const props = defineProps({
 const frame = ref(null)
 const position = ref(50)
 const isDragging = ref(false)
+const activePointerId = ref(null)
+const pointerType = ref('')
+const gestureStart = ref({ x: 0, y: 0 })
 const splitStyle = computed(() => ({ '--split': `${position.value}%` }))
 const valueText = computed(() => (
   `${props.beforeLabel}: ${Math.round(position.value)}%, ${props.afterLabel}: ${Math.round(100 - position.value)}%`
 ))
+
+const DRAG_THRESHOLD = 6
 
 function setPosition(clientX) {
   const rect = frame.value?.getBoundingClientRect()
@@ -27,20 +32,56 @@ function setPosition(clientX) {
 }
 
 function onPointerDown(event) {
-  event.preventDefault()
-  isDragging.value = true
-  frame.value?.setPointerCapture(event.pointerId)
-  setPosition(event.clientX)
+  if (!event.isPrimary) return
+
+  activePointerId.value = event.pointerId
+  pointerType.value = event.pointerType
+  gestureStart.value = { x: event.clientX, y: event.clientY }
+
+  if (event.pointerType !== 'touch') {
+    event.preventDefault()
+    isDragging.value = true
+    frame.value?.setPointerCapture(event.pointerId)
+    setPosition(event.clientX)
+  }
 }
 
 function onPointerMove(event) {
-  if (!isDragging.value) return
+  if (event.pointerId !== activePointerId.value) return
+
+  if (!isDragging.value) {
+    const deltaX = event.clientX - gestureStart.value.x
+    const deltaY = event.clientY - gestureStart.value.y
+
+    if (Math.max(Math.abs(deltaX), Math.abs(deltaY)) < DRAG_THRESHOLD) return
+
+    if (Math.abs(deltaY) >= Math.abs(deltaX)) {
+      activePointerId.value = null
+      pointerType.value = ''
+      return
+    }
+
+    isDragging.value = true
+    frame.value?.setPointerCapture(event.pointerId)
+  }
+
   event.preventDefault()
   setPosition(event.clientX)
 }
 
 function onPointerEnd(event) {
+  if (
+    event.pointerId === activePointerId.value
+    && pointerType.value === 'touch'
+    && !isDragging.value
+  ) {
+    setPosition(event.clientX)
+  }
+
   isDragging.value = false
+  activePointerId.value = null
+  pointerType.value = ''
+
   if (frame.value?.hasPointerCapture(event.pointerId)) {
     frame.value.releasePointerCapture(event.pointerId)
   }
@@ -120,7 +161,7 @@ function onKeydown(event) {
   border-radius: 22px;
   cursor: ew-resize;
   outline: none;
-  touch-action: none;
+  touch-action: pan-y;
   user-select: none;
   transition: box-shadow 0.3s ease;
 

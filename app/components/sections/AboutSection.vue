@@ -21,7 +21,20 @@ defineProps({
             </div>
           </div>
 
+          <div v-if="item.logos" class="about__logos">
+            <Image
+              v-for="logo in item.logos"
+              :key="logo.src"
+              :src="logo.src"
+              :alt="logo.alt"
+              :width="logo.width"
+              :height="logo.height"
+              class="about__logo"
+            />
+          </div>
+
           <Image
+            v-else
             :src="item.image.src"
             :alt="item.image.alt"
             :width="item.image.width"
@@ -181,11 +194,40 @@ defineProps({
     }
   }
 
-  &__card:nth-child(4) &__image {
+  &__logos {
+    position: absolute;
+    top: 1.8rem;
+    right: 1.8rem;
+    display: flex;
+    width: 17.2rem;
+    height: calc(100% - 3.6rem);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1.4rem;
+    border-radius: 10px;
+    background: $white;
+
     @media (max-width: $tablet) {
-      background: $white;
-      object-fit: contain;
+      position: static;
+      width: 100%;
+      height: 22rem;
+      margin-top: 2rem;
+      padding: 2.5rem;
     }
+
+    @media (max-width: $mobile) {
+      height: 20rem;
+      margin-top: 1.5rem;
+      padding: 2rem;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    max-width: 14.4rem;
+    height: auto;
   }
 }
 </style>

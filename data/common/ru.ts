@@ -33,8 +33,8 @@ export default {
     },
     navItems: [
       { label: 'Услуги', link: '#services' },
-      { label: 'Страховка и оплата', link: '#insurance' },
-      { label: 'Пациентам', link: '#patients' },
+      { label: 'Страховка и оплата', link: '#benefits' },
+      { label: 'Пациентам', link: '#treatment-process' },
       { label: 'О клинике', link: '#about' },
       { label: 'Контакты и адрес', link: '#contacts' },
     ],

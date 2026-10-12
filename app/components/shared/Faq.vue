@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 
 const props = defineProps({
-  title: { type: [String, Array], required: true },
+  title: { type: String, required: true },
   description: { type: String, required: true },
   items: { type: Array, required: true },
   images: { type: Object, required: true },
@@ -101,11 +101,17 @@ function isOpen(index) {
   }
 
   &__title {
+    max-width: 90rem;
+    margin-right: auto;
+    margin-left: auto;
+
     @media (max-width: $tablet) {
+      max-width: 70rem;
       font-size: 5.5rem;
     }
 
     @media (max-width: $mobile) {
+      max-width: 100%;
       font-size: 3.6rem;
     }
   }

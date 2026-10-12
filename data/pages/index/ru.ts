@@ -5,13 +5,9 @@ export default {
       regular: 'КЛИНИКА',
       bold: 'ARIADENT',
     },
-    subtitle: [
-      'Протезирование и имплантация зубов',
-      'с вниманием к комфорту',
-      'и естественному виду.',
-    ],
+    subtitle: 'Протезирование и имплантация зубов с вниманием к комфорту и естественному виду.',
     button: { text: 'Записаться ко врачу', link: '#appointment' },
-    secondaryButton: { text: 'Посмотреть примеры работ', link: '#works' },
+    secondaryButton: { text: 'Посмотреть примеры работ', link: '#results' },
     images: {
       portrait: '/images/hero/hero.png',
       logo: '/images/logo.svg',
@@ -23,8 +19,8 @@ export default {
     items: [
       {
         id: 'direct-appointment',
-        title: ['Без', 'направления', 'стоматолога'],
-        description: ['Записываем на прием', 'напрямую — без направления', 'от стоматолога.'],
+        title: 'Без направления стоматолога',
+        description: 'Записываем на прием напрямую — без направления от стоматолога.',
         image: {
           src: '/images/benefits/check.png',
           alt: '',
@@ -35,32 +31,32 @@ export default {
       },
       {
         id: 'urgent-repair',
-        title: ['Срочный', 'ремонт', 'протезов'],
-        description: ['Ремонтируем протез,', 'пока вы ожидаете', 'в клинике.'],
+        title: 'Срочный ремонт протезов',
+        description: 'Ремонтируем протез, пока вы ожидаете в клинике.',
         image: {
           src: '/images/benefits/tooth.png',
           alt: '',
           variant: 'tooth',
-          width: 154,
-          height: 159,
+          width: 308,
+          height: 317,
         },
       },
       {
         id: 'insurance',
-        title: ['До 90% оплаты', 'по базовой', 'страховке'],
-        description: ['Предлагаем варианты', 'протезирования с учетом', 'страхового покрытия.'],
+        title: 'До 90% оплаты по базовой страховке',
+        description: 'Предлагаем варианты протезирования с учетом страхового покрытия.',
         image: {
           src: '/images/benefits/coins.png',
           alt: '',
           variant: 'coins',
-          width: 366,
-          height: 311,
+          width: 342,
+          height: 342,
         },
       },
       {
         id: 'after-hours',
-        title: ['Помощь', 'в нерабочее', 'время'],
-        description: ['Идем навстречу в экстренных', 'ситуациях и принимаем', 'в нерабочее время.'],
+        title: 'Помощь в нерабочее время',
+        description: 'Идем навстречу в экстренных ситуациях и принимаем в нерабочее время.',
         image: {
           src: '/images/benefits/clock.png',
           alt: '',
@@ -204,52 +200,34 @@ export default {
     items: [
       {
         id: 'consultation',
-        title: ['Осмотр', 'и консультация'],
-        description: [
-          'Разбираемся, что вас беспокоит, оцениваем состояние зубов, десен, челюсти',
-          'и существующего протеза. Обсуждаем ваши пожелания и возможные варианты лечения.',
-        ],
+        title: 'Осмотр и консультация',
+        description: 'Разбираемся, что вас беспокоит, оцениваем состояние зубов, десен, челюсти и существующего протеза. Обсуждаем ваши пожелания и возможные варианты лечения.',
       },
       {
         id: 'treatment-plan',
-        title: ['План', 'лечения'],
-        description: [
-          'Предлагаем подходящие варианты, объясняем их особенности, сроки и стоимость.',
-          'Если сначала нужно лечение у другого специалиста или установка имплантов,',
-          'рассказываем, что потребуется сделать.',
-        ],
+        title: 'План лечения',
+        description: 'Предлагаем подходящие варианты, объясняем их особенности, сроки и стоимость. Если сначала нужно лечение у другого специалиста или установка имплантов, рассказываем, что потребуется сделать.',
       },
       {
         id: 'impressions',
-        title: ['Слепки', 'и прикус'],
-        description: [
-          'Снимаем слепки челюстей и определяем, как смыкаются зубы.',
-          'Обсуждаем форму, цвет и положение будущих зубов.',
-        ],
+        title: 'Слепки и прикус',
+        description: 'Снимаем слепки челюстей и определяем, как смыкаются зубы. Обсуждаем форму, цвет и положение будущих зубов.',
       },
       {
         id: 'fitting',
-        title: ['Примерка', 'и изготовление'],
-        description: [
-          'Сначала примеряем конструкцию, чтобы проверить посадку, прикус, внешний вид,',
-          'речь и жевание. Если необходимо, вносим изменения, а затем изготавливаем',
-          'финальный протез.',
-        ],
+        title: 'Примерка и изготовление',
+        description: 'Сначала примеряем конструкцию, чтобы проверить посадку, прикус, внешний вид, речь и жевание. Если необходимо, вносим изменения, а затем изготавливаем финальный протез.',
       },
       {
         id: 'installation',
-        title: ['Установка', 'и контроль'],
-        description: [
-          'Устанавливаем ваш протез, проверяем его посадку и объясняем правила носки',
-          'и ухода. После установки проводим контрольный осмотр и при необходимости',
-          'корректируем протез.',
-        ],
+        title: 'Установка и контроль',
+        description: 'Устанавливаем ваш протез, проверяем его посадку и объясняем правила носки и ухода. После установки проводим контрольный осмотр и при необходимости корректируем протез.',
       },
     ],
   },
   results: {
     type: 'results',
-    title: ['КАК ВЫГЛЯДИТ', 'РЕЗУЛЬТАТ'],
+    title: 'КАК ВЫГЛЯДИТ РЕЗУЛЬТАТ',
     description: 'Результаты протезирования и имплантации наших пациентов.',
     labels: {
       before: 'До',
@@ -327,12 +305,8 @@ export default {
   },
   appointment: {
     type: 'appointment',
-    title: ['Нужен срочный', 'ремонт или хотите', 'подобрать решение?'],
-    description: [
-      'Оставьте заявку — мы свяжемся',
-      'с вами, запишем на прием',
-      'и расскажем, что можно сделать.',
-    ],
+    title: 'Нужен срочный ремонт или хотите подобрать решение?',
+    description: 'Оставьте заявку — мы свяжемся с вами, запишем на прием и расскажем, что можно сделать.',
     fields: [
       {
         id: 'appointment-name',
@@ -397,25 +371,25 @@ export default {
     items: [
       {
         id: 'scott-vontobel',
-        name: ['Scott', 'Vontobel'],
+        name: 'Scott Vontobel',
         ratingLabel: 'Оценка: 5 из 5',
         text: "After over 15 calls this morning I found this Office to help fix an emergency situation, spoke to the owner. He asked me if I can come in right away. I was in and out of the door in less than an hour with a great solution and a lot less money than I expected. Really couldn't be happier.",
       },
       {
         id: 'sea-loakz',
-        name: ['sea. Loakz'],
+        name: 'sea. Loakz',
         ratingLabel: 'Оценка: 5 из 5',
         text: 'Fantastisch, ik ben zeer tevreden over deze praktijk Ariadent. Ik kwam met veel spanning in mijn lijf, maar die behandelaar straalde zoveel rust uit dat ik mij meteen op mijn gemak voelde. Hij is zeer vakkundig en hij heeft mijn mond weer mooi gemaakt. Ik hoef mij niet meer te schamen voor het lelijke gebit wat ik had. Ik durf weer lekker stralend te lachen. Ik zeg: dubt u over uw slechte gebit, ga naar deze praktijk. Doen!!!!',
       },
       {
         id: 'harry-arts',
-        name: ['Harry Arts'],
+        name: 'Harry Arts',
         ratingLabel: 'Оценка: 5 из 5',
         text: 'Ik had best angst voor de behandeling maar dat is heel erg meegevallen. Dankzij de behandelaar was ik snel over de angst heen. Ik heb een mooie prothese die onmiddellijk goed zat. Ook cosmetisch is het perfect. Ik kan dit iedereen aanraden.',
       },
       {
         id: 'gerda-kleerkoper',
-        name: ['Gerda', 'Kleerkoper'],
+        name: 'Gerda Kleerkoper',
         ratingLabel: 'Оценка: 5 из 5',
         text: 'Wat een kunstenaar, heb een moeilijke kaak maar ziet er prachtig uit, zeer aan te bevelen en vriendelijke adorabele man.',
       },
@@ -480,12 +454,20 @@ export default {
           'ARIADENT состоит в Organisatie van Nederlandse Tandprothetici (ONT), а специалисты клиники зарегистрированы в KwaliteitsRegister TandProthetici (KRTP).',
           'Поддерживаем квалификацию и регулярно обновляем профессиональные знания в области зубного протезирования.',
         ],
-        image: {
-          src: '/images/about/certifications.png',
-          alt: 'Профессиональные реестры клиники Ariadent',
-          width: 341,
-          height: 372,
-        },
+        logos: [
+          {
+            src: '/images/about/krtp-logo.png',
+            alt: 'KwaliteitsRegister TandProthetici',
+            width: 254,
+            height: 74,
+          },
+          {
+            src: '/images/about/ont-logo.png',
+            alt: 'Organisatie van Nederlandse Tandprothetici',
+            width: 254,
+            height: 109,
+          },
+        ],
       },
     ],
   },
@@ -524,7 +506,7 @@ export default {
   },
   faq: {
     type: 'faq',
-    title: ['ЧАСТО ЗАДАВАЕМЫЕ', 'ВОПРОСЫ'],
+    title: 'ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ',
     description: 'Отвечаем на самые популярные вопросы о протезах, имплантатах, стоимости и записи.',
     images: {
       arrowDown: '/images/faq/arrow-down.svg',

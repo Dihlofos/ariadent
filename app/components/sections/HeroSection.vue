@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
   title: { type: Object, required: true },
-  subtitle: { type: Array, default: () => [] },
+  subtitle: { type: String, default: '' },
   button: { type: Object, default: () => ({}) },
   secondaryButton: { type: Object, default: () => ({}) },
   images: { type: Object, required: true },
@@ -28,18 +28,22 @@ defineProps({
               <span class="hero__title-bold">{{ title.bold }}</span>
             </h1>
 
-            <p class="hero__subtitle">
-              <span v-for="line in subtitle" :key="line" class="hero__subtitle-line">{{ line }}</span>
-            </p>
+            <p class="hero__subtitle">{{ subtitle }}</p>
 
             <div class="hero__actions">
-              <a v-if="button?.text" :href="button.link" class="hero__button hero__button--primary">
+              <a
+                v-if="button?.text"
+                :href="button.link"
+                class="hero__button hero__button--primary"
+                v-anchor
+              >
                 {{ button.text }}
               </a>
               <a
                 v-if="secondaryButton?.text"
                 :href="secondaryButton.link"
                 class="hero__button hero__button--secondary"
+                v-anchor
               >
                 <span>{{ secondaryButton.text }}</span>
                 <Image :src="images.arrow" alt="" width="17" height="17" />
@@ -261,6 +265,7 @@ defineProps({
   }
 
   &__subtitle {
+    max-width: 46rem;
     margin: 0 0 3.09rem;
     color: $blue;
     font-family: $monserrat;
@@ -276,13 +281,10 @@ defineProps({
     }
 
     @media (max-width: $mobile) {
+      max-width: 100%;
       margin-bottom: 2rem;
       font-size: 1.5rem;
     }
-  }
-
-  &__subtitle-line {
-    display: block;
   }
 
   &__actions {
