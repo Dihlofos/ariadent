@@ -291,7 +291,10 @@ defineEmits(['update-value', 'submit', 'reset-status'])
     z-index: 2;
     display: grid;
     width: 100%;
-    align-self: start;
+    height: 100%;
+    max-height: 31rem;
+    align-self: end;
+    align-content: space-between;
     grid-template-columns: 19.5rem 30.3rem;
     column-gap: 2.1rem;
     row-gap: 1.14rem;
@@ -303,6 +306,10 @@ defineEmits(['update-value', 'submit', 'reset-status'])
     }
 
     @media (max-width: $mobile) {
+      height: auto;
+      max-height: none;
+      align-self: start;
+      align-content: normal;
       grid-template-columns: minmax(0, 1fr);
       row-gap: 0.8rem;
     }

@@ -518,7 +518,7 @@ export default {
     images: {
       marker: '/images/marker.svg',
       markerSmall: '/images/marker-small.svg',
-      time: '/images/time.svg',
+      time: '/images/time-alt.svg',
       phone: '/images/phone.svg',
     },
   },
