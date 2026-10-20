@@ -1,6 +1,7 @@
 <script setup>
 import { computed, reactive, ref, watch } from 'vue'
 import { useLocaleData } from '~/composables/useLocale'
+import { usePageMeta } from '~/composables/usePageMeta'
 
 const localeData = useLocaleData()
 const pageData = computed(() => localeData.value.pages.index)
@@ -98,9 +99,7 @@ const resetAppointmentStatus = () => {
   appointmentStatus.value = 'idle'
 }
 
-useHead({
-  title: '',
-})
+usePageMeta(pageData)
 </script>
 
 <template>

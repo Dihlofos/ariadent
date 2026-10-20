@@ -4,7 +4,9 @@ defineProps({
   description: { type: String, required: true },
   items: { type: Array, required: true },
   moreButton: { type: Object, required: true },
+  reviewButton: { type: Object, default: null },
   video: { type: Object, required: true },
+  showVideo: { type: Boolean, default: true },
   images: { type: Object, required: true },
 })
 </script>
@@ -41,17 +43,29 @@ defineProps({
         </article>
       </div>
 
-      <a
-        :href="moreButton.link"
-        class="reviews__more"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span>{{ moreButton.text }}</span>
-        <Image :src="images.arrow" alt="" width="17" height="17" />
-      </a>
+      <div :class="['reviews__actions', { 'reviews__actions--multiple': reviewButton }]">
+        <a
+          :href="moreButton.link"
+          class="reviews__more"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>{{ moreButton.text }}</span>
+          <Image :src="images.arrow" alt="" width="17" height="17" />
+        </a>
 
-      <div class="reviews__video">
+        <a
+          v-if="reviewButton"
+          :href="reviewButton.link"
+          class="reviews__review-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ reviewButton.text }}
+        </a>
+      </div>
+
+      <div v-if="showVideo" class="reviews__video">
         <iframe
           width="560"
           height="315"
@@ -222,14 +236,40 @@ defineProps({
     }
   }
 
-  &__more {
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4.6rem auto 0;
+
+    @media (max-width: $tablet) {
+      margin-top: 4rem;
+    }
+
+    @media (max-width: $mobile) {
+      width: 100%;
+      max-width: 35rem;
+      margin-top: 3rem;
+    }
+  }
+
+  &__actions--multiple {
+    gap: 1.3rem;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  &__more,
+  &__review-button {
     display: flex;
     width: 39.5rem;
     height: 4.4rem;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin: 4.6rem auto 0;
     border-radius: 20px;
     background: $blue;
     color: $white;
@@ -246,14 +286,12 @@ defineProps({
 
     @media (max-width: $tablet) {
       width: 39.5rem;
-      margin-top: 4rem;
     }
 
     @media (max-width: $mobile) {
       width: 100%;
       max-width: 35rem;
       gap: 0.8rem;
-      margin-top: 3rem;
       font-size: 1.5rem;
     }
 
@@ -274,6 +312,27 @@ defineProps({
 
   &__more:hover img {
     filter: brightness(0) invert(1);
+  }
+
+  &__actions--multiple .reviews__more {
+    width: 30rem;
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &__review-button {
+    width: 21.6rem;
+    background: $orange;
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &__review-button:hover {
+    background: $blue;
   }
 
   &__video {

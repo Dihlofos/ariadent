@@ -1,19 +1,19 @@
 export default {
   site: {
-    title: 'My Website',
-    description: 'A modern static website built with Nuxt 3',
-    keywords: ['nuxt', 'vue', 'ssg', 'template'],
+    title: 'Ariadent',
+    description: 'Dental prosthetics, removable dentures, implant-supported crowns and bridges in Amsterdam.',
+    keywords: ['Ariadent', 'dentures', 'dental implants', 'Amsterdam'],
     url: 'https://example.com',
     ogImage: '/images/favicons/favicon.svg',
   },
   navigation: {
     brand: {
       alt: 'Ariadent',
-      link: '#hero',
+      link: '/#hero',
     },
     location: {
       label: 'Amsterdam',
-      link: '#contacts',
+      link: '/address',
     },
     schedule: [
       'Monday–Friday: 08:00–20:00',
@@ -25,18 +25,18 @@ export default {
     ],
     appointment: {
       label: 'Book an appointment',
-      link: '#appointment',
+      link: '/#appointment',
     },
     call: {
       label: 'Call us',
       href: 'tel:+31657558576',
     },
     navItems: [
-      { label: 'Services', link: '#services' },
-      { label: 'Insurance and payment', link: '#benefits' },
-      { label: 'For patients', link: '#treatment-process' },
-      { label: 'About the clinic', link: '#about' },
-      { label: 'Contacts and address', link: '#contacts' },
+      { label: 'Services', link: '/#services' },
+      { label: 'Insurance and payment', link: '/insurance' },
+      { label: 'For patients', link: '/patients' },
+      { label: 'About the clinic', link: '/#about' },
+      { label: 'Contacts and address', link: '/address' },
     ],
     images: {
       logo: '/images/text-logo.svg',
@@ -50,7 +50,7 @@ export default {
     type: 'footer',
     brand: {
       alt: 'Ariadent',
-      link: '#hero',
+      link: '/#hero',
     },
     privacy: {
       text: 'Privacy policy',

@@ -1,30 +1,46 @@
 <script setup>
 defineProps({
-  title: { type: String, required: true },
-  description: { type: String, required: true },
+  title: { type: String, default: '' },
+  description: { type: String, default: '' },
   labels: { type: Object, required: true },
   items: { type: Array, required: true },
   images: { type: Object, required: true },
+  withCaptions: { type: Boolean, default: false },
 })
 </script>
 
 <template>
-  <section id="results" class="results">
+  <section
+    id="results"
+    :class="[
+      'results',
+      {
+        'results--with-captions': withCaptions,
+        'results--without-intro': !title && !description,
+      },
+    ]"
+  >
     <Container>
-      <SectionTitle :title="title" class="results__title" />
-      <p class="results__description">{{ description }}</p>
+      <SectionTitle v-if="title" :title="title" class="results__title" />
+      <p v-if="description" class="results__description">{{ description }}</p>
 
       <div class="results__grid">
-        <BeforeAfterSlider
-          v-for="item in items"
-          :key="item.id"
-          :before="item.before"
-          :after="item.after"
-          :before-label="labels.before"
-          :after-label="labels.after"
-          :slider-label="item.sliderLabel"
-          :arrow="images.arrow"
-        />
+        <div v-for="item in items" :key="item.id" class="results__item">
+          <BeforeAfterSlider
+            :before="item.before"
+            :after="item.after"
+            :before-label="labels.before"
+            :after-label="labels.after"
+            :slider-label="item.sliderLabel"
+            :arrow="images.arrow"
+            :label-position="withCaptions ? 'bottom' : 'top'"
+          />
+
+          <div v-if="withCaptions" class="results__captions">
+            <p class="results__caption results__caption--before">{{ item.before.caption }}</p>
+            <p class="results__caption results__caption--after">{{ item.after.caption }}</p>
+          </div>
+        </div>
       </div>
     </Container>
   </section>
@@ -32,7 +48,7 @@ defineProps({
 
 <style lang="scss">
 .results {
-  padding: 8.1rem 0 7.25rem;
+  padding: 13rem 0 7.25rem;
 
   @media (max-width: $tablet) {
     padding: 7rem 2rem 6rem;
@@ -99,6 +115,54 @@ defineProps({
       grid-template-columns: minmax(0, 1fr);
       row-gap: 3rem;
     }
+  }
+
+  &__captions {
+    display: grid;
+    margin-top: 1.8rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &__caption {
+    margin: 0;
+    color: $blue;
+    font-family: $monserrat;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @media (max-width: $tablet) {
+      font-size: 1.7rem;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__caption--before {
+    max-width: 24rem;
+  }
+
+  &__caption--after {
+    font-weight: 700;
+  }
+}
+
+.results--without-intro .results__grid {
+  margin-top: 0;
+}
+
+.results--with-captions .results__grid {
+  row-gap: 7rem;
+
+  @media (max-width: $tablet) {
+    row-gap: 5rem;
+  }
+
+  @media (max-width: $mobile) {
+    row-gap: 4rem;
   }
 }
 </style>

@@ -1,4 +1,8 @@
 export default {
+  meta: {
+    title: 'Ariadent: Dentures and Dental Implants in Amsterdam',
+    description: 'Dental prosthetics, removable dentures, implant-supported crowns and bridges, same-day denture repairs, and help with insurance coverage in Amsterdam.',
+  },
   hero: {
     type: 'hero',
     title: {
@@ -9,7 +13,7 @@ export default {
     button: { text: 'Book an appointment', link: '#appointment' },
     secondaryButton: { text: 'View our work', link: '#results' },
     images: {
-      portrait: '/images/hero/hero.png',
+      portrait: '/images/hero/hero.webp',
       logo: '/images/logo.svg',
       arrow: '/images/arrow-circle.svg',
     },
@@ -22,7 +26,7 @@ export default {
         title: 'Implant-supported tooth restoration',
         description: 'We use proven materials with a high implant success rate.',
         image: {
-          src: '/images/benefits/check.png',
+          src: '/images/benefits/check.webp',
           alt: '',
           variant: 'check',
           width: 308,
@@ -34,7 +38,7 @@ export default {
         title: 'Urgent denture repair',
         description: 'We repair your denture while you wait at the clinic.',
         image: {
-          src: '/images/benefits/tooth.png',
+          src: '/images/benefits/tooth.webp',
           alt: '',
           variant: 'tooth',
           width: 308,
@@ -46,7 +50,7 @@ export default {
         title: 'Up to 90% covered by basic insurance',
         description: 'We offer treatment options based on your insurance coverage.',
         image: {
-          src: '/images/benefits/coins.png',
+          src: '/images/benefits/coins.webp',
           alt: '',
           variant: 'coins',
           width: 342,
@@ -58,7 +62,7 @@ export default {
         title: 'Help outside working hours',
         description: 'We help in emergencies and accept patients outside working hours.',
         image: {
-          src: '/images/benefits/clock.png',
+          src: '/images/benefits/clock.webp',
           alt: '',
           variant: 'clock',
           width: 308,
@@ -80,7 +84,7 @@ export default {
             title: 'Full removable denture',
             description: 'A removable denture that replaces all teeth in the upper or lower jaw.',
             image: {
-              src: '/images/services/full-denture.png',
+              src: '/images/services/full-denture.webp',
               alt: 'Full removable dental prosthesis',
               width: 551,
               height: 418,
@@ -91,7 +95,7 @@ export default {
             title: 'Partial denture',
             description: 'A denture that replaces several missing teeth when some natural teeth remain.',
             image: {
-              src: '/images/services/partial-denture.png',
+              src: '/images/services/partial-denture.webp',
               alt: 'Partial removable dental prosthesis',
               width: 551,
               height: 418,
@@ -102,7 +106,7 @@ export default {
             title: 'Clasp denture',
             description: 'A partial denture with a metal framework attached to the remaining teeth.',
             image: {
-              src: '/images/services/clasp-denture.png',
+              src: '/images/services/clasp-denture.webp',
               alt: 'Clasp dental prosthesis',
               width: 551,
               height: 424,
@@ -113,7 +117,7 @@ export default {
             title: 'Denture relining',
             description: 'Restores the denture fit when it becomes loose or starts causing irritation.',
             image: {
-              src: '/images/services/relining.png',
+              src: '/images/services/relining.webp',
               alt: 'Relining a dental prosthesis',
               width: 551,
               height: 418,
@@ -124,7 +128,7 @@ export default {
             title: 'Denture repair',
             description: 'Restores a denture after cracks, breakage, or damage to individual parts.',
             image: {
-              src: '/images/services/repair.png',
+              src: '/images/services/repair.webp',
               alt: 'Dental prosthesis repair',
               width: 551,
               height: 418,
@@ -141,7 +145,7 @@ export default {
             title: 'Implant with a crown',
             description: 'An implant and crown replace a missing tooth. The implant replaces its root and the crown its visible part.',
             image: {
-              src: '/images/services/implant-crown.png',
+              src: '/images/services/implant-crown.webp',
               alt: 'Dental implant with a crown',
               width: 551,
               height: 420,
@@ -152,7 +156,7 @@ export default {
             title: 'Implant-supported bridge',
             description: 'A restoration for several adjacent missing teeth supported by dental implants.',
             image: {
-              src: '/images/services/implant-bridge.png',
+              src: '/images/services/implant-bridge.webp',
               alt: 'Dental bridge supported by implants',
               width: 551,
               height: 418,
@@ -163,7 +167,7 @@ export default {
             title: 'Implant-supported denture',
             description: 'A removable denture secured by implants when a conventional denture does not stay in place.',
             image: {
-              src: '/images/services/implant-denture.png',
+              src: '/images/services/implant-denture.webp',
               alt: 'Dental prosthesis supported by implants',
               width: 551,
               height: 418,
@@ -174,7 +178,7 @@ export default {
             title: 'Full implant-supported denture',
             description: 'A full-arch restoration for one jaw supported by several dental implants.',
             image: {
-              src: '/images/services/full-implant.png',
+              src: '/images/services/full-implant.webp',
               alt: 'Full dental prosthesis supported by implants',
               width: 551,
               height: 418,
@@ -241,13 +245,13 @@ export default {
         id: 'case-1',
         sliderLabel: 'Before and after treatment comparison, clinical case 1',
         before: {
-          src: '/images/results/case-1-before.png',
+          src: '/images/results/case-1-before.webp',
           alt: 'Patient teeth before treatment, clinical case 1',
           width: 1120,
           height: 648,
         },
         after: {
-          src: '/images/results/case-1-after.png',
+          src: '/images/results/case-1-after.webp',
           alt: 'Patient teeth after treatment, clinical case 1',
           width: 1114,
           height: 648,
@@ -257,13 +261,13 @@ export default {
         id: 'case-2',
         sliderLabel: 'Before and after treatment comparison, clinical case 2',
         before: {
-          src: '/images/results/case-2-before.png',
+          src: '/images/results/case-2-before.webp',
           alt: 'Patient teeth before treatment, clinical case 2',
           width: 1120,
           height: 766,
         },
         after: {
-          src: '/images/results/case-2-after.png',
+          src: '/images/results/case-2-after.webp',
           alt: 'Patient teeth after treatment, clinical case 2',
           width: 1120,
           height: 648,
@@ -273,13 +277,13 @@ export default {
         id: 'case-3',
         sliderLabel: 'Before and after treatment comparison, clinical case 3',
         before: {
-          src: '/images/results/case-3-before.png',
+          src: '/images/results/case-3-before.webp',
           alt: 'Patient teeth before treatment, clinical case 3',
           width: 1120,
           height: 648,
         },
         after: {
-          src: '/images/results/case-3-after.png',
+          src: '/images/results/case-3-after.webp',
           alt: 'Patient teeth after treatment, clinical case 3',
           width: 1120,
           height: 648,
@@ -289,13 +293,13 @@ export default {
         id: 'case-4',
         sliderLabel: 'Before and after treatment comparison, clinical case 4',
         before: {
-          src: '/images/results/case-4-before.png',
+          src: '/images/results/case-4-before.webp',
           alt: 'Patient teeth before treatment, clinical case 4',
           width: 1120,
           height: 648,
         },
         after: {
-          src: '/images/results/case-4-after.png',
+          src: '/images/results/case-4-after.webp',
           alt: 'Patient teeth after treatment, clinical case 4',
           width: 1120,
           height: 648,
@@ -353,7 +357,7 @@ export default {
         description: 'Please try again. If it still does not work, try again later.',
         buttonText: 'Back',
         image: {
-          src: '/images/appointment/error-question.png',
+          src: '/images/appointment/error-question.webp',
           alt: '',
           width: 268,
           height: 272,
@@ -363,7 +367,7 @@ export default {
         title: 'Request received',
         description: 'We will contact you shortly.',
         image: {
-          src: '/images/appointment/success-check.png',
+          src: '/images/appointment/success-check.webp',
           alt: '',
           width: 408,
           height: 412,
@@ -371,7 +375,7 @@ export default {
       },
     },
     image: {
-      src: '/images/appointment/dentures.png',
+      src: '/images/appointment/dentures.webp',
       alt: 'Example of a dental prosthesis',
       width: 588,
       height: 477,
@@ -432,7 +436,7 @@ export default {
           'For more than 30 years, we have helped patients restore their teeth with dentures. We were among the first in the Netherlands to offer removable prosthetics.',
         ],
         image: {
-          src: '/images/about/clinic.png',
+          src: '/images/about/clinic.webp',
           alt: 'Ariadent clinic reception area',
           width: 392,
           height: 273,
@@ -445,7 +449,7 @@ export default {
           'When necessary, we see patients outside working hours. We can repair a denture during your visit and produce a new one within a week.',
         ],
         image: {
-          src: '/images/about/emergency.png',
+          src: '/images/about/emergency.webp',
           alt: 'A dental prosthesis held by a specialist',
           width: 341,
           height: 273,
@@ -459,7 +463,7 @@ export default {
           'Because our team is small, we maintain personal contact with every patient and give each situation careful attention.',
         ],
         image: {
-          src: '/images/about/team.png',
+          src: '/images/about/team.webp',
           alt: 'The Ariadent clinic team',
           width: 392,
           height: 372,
@@ -474,13 +478,13 @@ export default {
         ],
         logos: [
           {
-            src: '/images/about/krtp-logo.png',
+            src: '/images/about/krtp-logo.webp',
             alt: 'KwaliteitsRegister TandProthetici',
             width: 254,
             height: 74,
           },
           {
-            src: '/images/about/ont-logo.png',
+            src: '/images/about/ont-logo.webp',
             alt: 'Organisatie van Nederlandse Tandprothetici',
             width: 254,
             height: 109,
@@ -505,7 +509,7 @@ export default {
     ],
     appointmentButton: {
       text: 'Book an appointment',
-      link: '#appointment',
+      link: '/#appointment',
     },
     routeButton: {
       text: 'Get directions',
@@ -518,7 +522,7 @@ export default {
     images: {
       marker: '/images/marker.svg',
       markerSmall: '/images/marker-small.svg',
-      time: '/images/time-alt.svg',
+      time: '/images/time.svg',
       phone: '/images/phone.svg',
     },
   },

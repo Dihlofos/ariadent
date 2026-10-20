@@ -8,6 +8,8 @@ const errors = []
 const localePairs = [
   { name: 'common', ru: join(projectRoot, 'data/common/ru.ts'), en: join(projectRoot, 'data/common/en.ts') },
   { name: 'pages.index', ru: join(projectRoot, 'data/pages/index/ru.ts'), en: join(projectRoot, 'data/pages/index/en.ts') },
+  { name: 'pages.insurance', ru: join(projectRoot, 'data/pages/insurance/ru.ts'), en: join(projectRoot, 'data/pages/insurance/en.ts') },
+  { name: 'pages.address', ru: join(projectRoot, 'data/pages/address/ru.ts'), en: join(projectRoot, 'data/pages/address/en.ts') },
 ]
 
 function propertyName(property) {

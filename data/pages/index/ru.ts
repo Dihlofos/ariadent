@@ -1,4 +1,8 @@
 export default {
+  meta: {
+    title: 'Ariadent: клиника протезирования и имплантации в Амстердаме',
+    description: 'Протезирование зубов, съемные протезы, коронки и мосты на имплантах. Ремонт протезов во время визита, помощь со страховкой.',
+  },
   hero: {
     type: 'hero',
     title: {
@@ -9,7 +13,7 @@ export default {
     button: { text: 'Записаться на прием', link: '#appointment' },
     secondaryButton: { text: 'Посмотреть примеры работ', link: '#results' },
     images: {
-      portrait: '/images/hero/hero.png',
+      portrait: '/images/hero/hero.webp',
       logo: '/images/logo.svg',
       arrow: '/images/arrow-circle.svg',
     },
@@ -22,7 +26,7 @@ export default {
         title: 'Восстановление зубов на имплантах',
         description: 'Используем проверенные материалы с высокой приживаемостью.',
         image: {
-          src: '/images/benefits/check.png',
+          src: '/images/benefits/check.webp',
           alt: '',
           variant: 'check',
           width: 308,
@@ -34,7 +38,7 @@ export default {
         title: 'Срочный ремонт протезов',
         description: 'Ремонтируем протез, пока вы ожидаете в клинике.',
         image: {
-          src: '/images/benefits/tooth.png',
+          src: '/images/benefits/tooth.webp',
           alt: '',
           variant: 'tooth',
           width: 308,
@@ -46,7 +50,7 @@ export default {
         title: 'До 90% оплаты по базовой страховке',
         description: 'Предлагаем варианты протезирования с учетом страхового покрытия.',
         image: {
-          src: '/images/benefits/coins.png',
+          src: '/images/benefits/coins.webp',
           alt: '',
           variant: 'coins',
           width: 342,
@@ -58,7 +62,7 @@ export default {
         title: 'Помощь в нерабочее время',
         description: 'Идем навстречу в экстренных ситуациях и принимаем в нерабочее время.',
         image: {
-          src: '/images/benefits/clock.png',
+          src: '/images/benefits/clock.webp',
           alt: '',
           variant: 'clock',
           width: 308,
@@ -80,7 +84,7 @@ export default {
             title: 'Полный съемный протез',
             description: 'Съемный протез, который заменяет все зубы на верхней или нижней челюсти.',
             image: {
-              src: '/images/services/full-denture.png',
+              src: '/images/services/full-denture.webp',
               alt: 'Полный съемный зубной протез',
               width: 551,
               height: 418,
@@ -91,7 +95,7 @@ export default {
             title: 'Частичный протез',
             description: 'Протез для восстановления нескольких отсутствующих зубов, если часть своих зубов сохранилась.',
             image: {
-              src: '/images/services/partial-denture.png',
+              src: '/images/services/partial-denture.webp',
               alt: 'Частичный съемный зубной протез',
               width: 551,
               height: 418,
@@ -102,7 +106,7 @@ export default {
             title: 'Бюгельный протез',
             description: 'Частичный протез с металлическим каркасом, который крепится к оставшимся зубам.',
             image: {
-              src: '/images/services/clasp-denture.png',
+              src: '/images/services/clasp-denture.webp',
               alt: 'Бюгельный зубной протез',
               width: 551,
               height: 424,
@@ -113,7 +117,7 @@ export default {
             title: 'Перебазировка протеза',
             description: 'Восстановление прилегания протеза, если со временем он стал хуже держаться или натирать.',
             image: {
-              src: '/images/services/relining.png',
+              src: '/images/services/relining.webp',
               alt: 'Перебазировка зубного протеза',
               width: 551,
               height: 418,
@@ -124,7 +128,7 @@ export default {
             title: 'Ремонт протеза',
             description: 'Восстановление протеза после трещины, поломки или повреждения отдельных частей.',
             image: {
-              src: '/images/services/repair.png',
+              src: '/images/services/repair.webp',
               alt: 'Ремонт зубного протеза',
               width: 551,
               height: 418,
@@ -141,7 +145,7 @@ export default {
             title: 'Имплант с коронкой',
             description: 'Имплант с коронкой для восстановления отсутствующего зуба. Имплант заменяет корень зуба, а коронка — его видимую часть.',
             image: {
-              src: '/images/services/implant-crown.png',
+              src: '/images/services/implant-crown.webp',
               alt: 'Имплант с зубной коронкой',
               width: 551,
               height: 420,
@@ -152,7 +156,7 @@ export default {
             title: 'Мост на имплантах',
             description: 'Конструкция для восстановления нескольких отсутствующих зубов подряд с опорой на импланты.',
             image: {
-              src: '/images/services/implant-bridge.png',
+              src: '/images/services/implant-bridge.webp',
               alt: 'Зубной мост на имплантах',
               width: 551,
               height: 418,
@@ -163,7 +167,7 @@ export default {
             title: 'Протез на имплантах',
             description: 'Съемный протез, который фиксируется на имплантах, если обычный протез плохо держится.',
             image: {
-              src: '/images/services/implant-denture.png',
+              src: '/images/services/implant-denture.webp',
               alt: 'Зубной протез на имплантах',
               width: 551,
               height: 418,
@@ -174,7 +178,7 @@ export default {
             title: 'Полный протез на имплантах',
             description: 'Протез для восстановления всех зубов на одной челюсти с опорой на несколько имплантов.',
             image: {
-              src: '/images/services/full-implant.png',
+              src: '/images/services/full-implant.webp',
               alt: 'Полный зубной протез на имплантах',
               width: 551,
               height: 418,
@@ -241,13 +245,13 @@ export default {
         id: 'case-1',
         sliderLabel: 'Сравнение результата до и после лечения, клинический случай 1',
         before: {
-          src: '/images/results/case-1-before.png',
+          src: '/images/results/case-1-before.webp',
           alt: 'Зубы пациента до лечения, клинический случай 1',
           width: 1120,
           height: 648,
         },
         after: {
-          src: '/images/results/case-1-after.png',
+          src: '/images/results/case-1-after.webp',
           alt: 'Зубы пациента после лечения, клинический случай 1',
           width: 1114,
           height: 648,
@@ -257,13 +261,13 @@ export default {
         id: 'case-2',
         sliderLabel: 'Сравнение результата до и после лечения, клинический случай 2',
         before: {
-          src: '/images/results/case-2-before.png',
+          src: '/images/results/case-2-before.webp',
           alt: 'Зубы пациента до лечения, клинический случай 2',
           width: 1120,
           height: 766,
         },
         after: {
-          src: '/images/results/case-2-after.png',
+          src: '/images/results/case-2-after.webp',
           alt: 'Зубы пациента после лечения, клинический случай 2',
           width: 1120,
           height: 648,
@@ -273,13 +277,13 @@ export default {
         id: 'case-3',
         sliderLabel: 'Сравнение результата до и после лечения, клинический случай 3',
         before: {
-          src: '/images/results/case-3-before.png',
+          src: '/images/results/case-3-before.webp',
           alt: 'Зубы пациента до лечения, клинический случай 3',
           width: 1120,
           height: 648,
         },
         after: {
-          src: '/images/results/case-3-after.png',
+          src: '/images/results/case-3-after.webp',
           alt: 'Зубы пациента после лечения, клинический случай 3',
           width: 1120,
           height: 648,
@@ -289,13 +293,13 @@ export default {
         id: 'case-4',
         sliderLabel: 'Сравнение результата до и после лечения, клинический случай 4',
         before: {
-          src: '/images/results/case-4-before.png',
+          src: '/images/results/case-4-before.webp',
           alt: 'Зубы пациента до лечения, клинический случай 4',
           width: 1120,
           height: 648,
         },
         after: {
-          src: '/images/results/case-4-after.png',
+          src: '/images/results/case-4-after.webp',
           alt: 'Зубы пациента после лечения, клинический случай 4',
           width: 1120,
           height: 648,
@@ -353,7 +357,7 @@ export default {
         description: 'Повторите попытку — если не поможет, попробуйте чуть позже.',
         buttonText: 'Назад',
         image: {
-          src: '/images/appointment/error-question.png',
+          src: '/images/appointment/error-question.webp',
           alt: '',
           width: 268,
           height: 272,
@@ -363,7 +367,7 @@ export default {
         title: 'Заявка принята',
         description: 'Свяжемся с вами в ближайшее время.',
         image: {
-          src: '/images/appointment/success-check.png',
+          src: '/images/appointment/success-check.webp',
           alt: '',
           width: 408,
           height: 412,
@@ -371,7 +375,7 @@ export default {
       },
     },
     image: {
-      src: '/images/appointment/dentures.png',
+      src: '/images/appointment/dentures.webp',
       alt: 'Пример зубного протеза',
       width: 588,
       height: 477,
@@ -432,7 +436,7 @@ export default {
           'Больше 30 лет помогаем пациентам восстанавливать зубы с помощью протезов. Были одними из первых в Нидерландах, кто начал заниматься съемным протезированием.',
         ],
         image: {
-          src: '/images/about/clinic.png',
+          src: '/images/about/clinic.webp',
           alt: 'Приёмная клиники Ariadent',
           width: 392,
           height: 273,
@@ -445,7 +449,7 @@ export default {
           'При необходимости принимаем в нерабочее время. Срочный ремонт протеза можем выполнить во время визита, а изготовить новый протез в течение недели.',
         ],
         image: {
-          src: '/images/about/emergency.png',
+          src: '/images/about/emergency.webp',
           alt: 'Зубной протез в руках специалиста',
           width: 341,
           height: 273,
@@ -459,7 +463,7 @@ export default {
           'А благодаря небольшой команде мы сохраняем личный контакт с пациентами и внимательно разбираемся в каждой ситуации.',
         ],
         image: {
-          src: '/images/about/team.png',
+          src: '/images/about/team.webp',
           alt: 'Команда клиники Ariadent',
           width: 392,
           height: 372,
@@ -474,13 +478,13 @@ export default {
         ],
         logos: [
           {
-            src: '/images/about/krtp-logo.png',
+            src: '/images/about/krtp-logo.webp',
             alt: 'KwaliteitsRegister TandProthetici',
             width: 254,
             height: 74,
           },
           {
-            src: '/images/about/ont-logo.png',
+            src: '/images/about/ont-logo.webp',
             alt: 'Organisatie van Nederlandse Tandprothetici',
             width: 254,
             height: 109,
@@ -505,7 +509,7 @@ export default {
     ],
     appointmentButton: {
       text: 'Записаться на прием',
-      link: '#appointment',
+      link: '/#appointment',
     },
     routeButton: {
       text: 'Построить маршрут',
@@ -518,7 +522,7 @@ export default {
     images: {
       marker: '/images/marker.svg',
       markerSmall: '/images/marker-small.svg',
-      time: '/images/time-alt.svg',
+      time: '/images/time.svg',
       phone: '/images/phone.svg',
     },
   },

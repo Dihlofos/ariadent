@@ -1,19 +1,19 @@
 export default {
   site: {
-    title: 'Мой сайт',
-    description: 'Современный статический сайт на Nuxt 3',
-    keywords: ['nuxt', 'vue', 'ssg', 'template'],
+    title: 'Ariadent',
+    description: 'Протезирование зубов, съемные протезы, коронки и мосты на имплантах.',
+    keywords: ['Ariadent', 'зубные протезы', 'имплантация', 'Амстердам'],
     url: 'https://example.com',
     ogImage: '/images/favicons/favicon.svg',
   },
   navigation: {
     brand: {
       alt: 'Ariadent',
-      link: '#hero',
+      link: '/#hero',
     },
     location: {
       label: 'Амстердам',
-      link: '#contacts',
+      link: '/address',
     },
     schedule: [
       'Понедельник–пятница: 08:00–20:00',
@@ -25,18 +25,18 @@ export default {
     ],
     appointment: {
       label: 'Записаться на прием',
-      link: '#appointment',
+      link: '/#appointment',
     },
     call: {
       label: 'Позвонить',
       href: 'tel:+31657558576',
     },
     navItems: [
-      { label: 'Услуги', link: '#services' },
-      { label: 'Страховка и оплата', link: '#benefits' },
-      { label: 'Пациентам', link: '#treatment-process' },
-      { label: 'О клинике', link: '#about' },
-      { label: 'Контакты и адрес', link: '#contacts' },
+      { label: 'Услуги', link: '/#services' },
+      { label: 'Страховка и оплата', link: '/insurance' },
+      { label: 'Пациентам', link: '/patients' },
+      { label: 'О клинике', link: '/#about' },
+      { label: 'Контакты и адрес', link: '/address' },
     ],
     images: {
       logo: '/images/text-logo.svg',
@@ -50,7 +50,7 @@ export default {
     type: 'footer',
     brand: {
       alt: 'Ariadent',
-      link: '#hero',
+      link: '/#hero',
     },
     privacy: {
       text: 'Политика конфиденциальности',

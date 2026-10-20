@@ -8,6 +8,7 @@ const props = defineProps({
   afterLabel: { type: String, required: true },
   sliderLabel: { type: String, required: true },
   arrow: { type: String, required: true },
+  labelPosition: { type: String, default: 'top' },
 })
 
 const frame = ref(null)
@@ -103,8 +104,11 @@ function onKeydown(event) {
 <template>
   <div
     ref="frame"
-    class="before-after"
-    :class="{ 'before-after--dragging': isDragging }"
+    :class="[
+      'before-after',
+      `before-after--labels-${labelPosition}`,
+      { 'before-after--dragging': isDragging },
+    ]"
     :style="splitStyle"
     role="slider"
     tabindex="0"
@@ -295,6 +299,15 @@ function onKeydown(event) {
 
   &__arrow--right {
     transform: rotate(180deg);
+  }
+}
+
+.before-after--labels-bottom .before-after__label {
+  top: auto;
+  bottom: 2.1rem;
+
+  @media (max-width: $mobile) {
+    bottom: 1rem;
   }
 }
 </style>

@@ -1,6 +1,8 @@
 <script setup>
 defineProps({
   title: { type: String, required: true },
+  titleTag: { type: String, default: 'h2' },
+  compactTop: { type: Boolean, default: false },
   address: { type: Object, required: true },
   schedule: { type: Array, required: true },
   phones: { type: Array, required: true },
@@ -12,9 +14,13 @@ defineProps({
 </script>
 
 <template>
-  <section id="contacts" class="contacts">
+  <section
+    id="contacts"
+    class="contacts"
+    :class="{ 'contacts--compact-top': compactTop }"
+  >
     <Container>
-      <SectionTitle :title="title" class="contacts__title" />
+      <SectionTitle :title="title" :tag="titleTag" class="contacts__title" />
 
       <div class="contacts__card">
         <div class="contacts__info">
@@ -119,6 +125,10 @@ defineProps({
 
   @media (max-width: $mobile) {
     padding: 4.5rem 1rem 5rem;
+  }
+
+  &--compact-top {
+    padding-top: 4rem;
   }
 
   &__title {

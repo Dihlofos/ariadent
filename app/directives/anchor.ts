@@ -22,13 +22,20 @@ function createClickHandler(options: AnchorOptions) {
     const link = mouseEvent.currentTarget as HTMLAnchorElement
     const href = link.getAttribute('href')
 
-    if (!href?.startsWith('#')) return
+    if (!href) return
     if (mouseEvent.ctrlKey || mouseEvent.metaKey || mouseEvent.shiftKey) return
 
-    const target = document.querySelector(href)
+    const url = new URL(href, window.location.href)
+    const isSamePage = url.origin === window.location.origin
+      && url.pathname === window.location.pathname
+      && url.search === window.location.search
+
+    if (!isSamePage || !url.hash) return
+
+    const target = document.querySelector(url.hash)
     if (!target) {
       if (import.meta.env.DEV) {
-        console.warn(`[v-anchor] Target "${href}" not found`)
+        console.warn(`[v-anchor] Target "${url.hash}" not found`)
       }
       return
     }

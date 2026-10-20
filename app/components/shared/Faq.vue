@@ -3,85 +3,118 @@ import { computed, ref } from 'vue'
 
 const props = defineProps({
   title: { type: String, required: true },
-  description: { type: String, required: true },
-  items: { type: Array, required: true },
+  description: { type: String, default: '' },
+  items: { type: Array, default: () => [] },
+  groups: { type: Array, default: () => [] },
   images: { type: Object, required: true },
 })
 
-const openState = ref({ 0: true })
+const hasGroups = computed(() => props.groups.length > 0)
 
-const columns = computed(() => {
-  const splitIndex = Math.ceil(props.items.length / 2)
+function createColumns(items, groupId) {
+  const splitIndex = Math.ceil(items.length / 2)
+  const entries = items.map(item => ({
+    item,
+    key: `${groupId}-${item.id}`,
+  }))
 
   return [
-    props.items.slice(0, splitIndex).map((item, index) => ({ item, index })),
-    props.items.slice(splitIndex).map((item, index) => ({
-      item,
-      index: splitIndex + index,
-    })),
+    entries.slice(0, splitIndex),
+    entries.slice(splitIndex),
   ]
-})
-
-function toggle(index) {
-  openState.value = { ...openState.value, [index]: !openState.value[index] }
 }
 
-function isOpen(index) {
-  return !!openState.value[index]
+const sections = computed(() => {
+  if (hasGroups.value) {
+    return props.groups.map(group => ({
+      ...group,
+      columns: createColumns(group.items, group.id),
+    }))
+  }
+
+  return [{
+    id: 'default',
+    title: '',
+    columns: createColumns(props.items, 'default'),
+  }]
+})
+
+const initiallyOpenKeys = hasGroups.value
+  ? props.groups.flatMap(group => group.items[0] ? [`${group.id}-${group.items[0].id}`] : [])
+  : props.items[0] ? [`default-${props.items[0].id}`] : []
+
+const openState = ref(Object.fromEntries(initiallyOpenKeys.map(key => [key, true])))
+
+function toggle(key) {
+  openState.value = { ...openState.value, [key]: !openState.value[key] }
+}
+
+function isOpen(key) {
+  return !!openState.value[key]
 }
 </script>
 
 <template>
-  <section id="faq" class="faq">
+  <section id="faq" :class="['faq', { 'faq--extended': hasGroups }]">
     <Container>
-      <SectionTitle :title="title" class="faq__title" />
-      <p class="faq__description">{{ description }}</p>
+      <SectionTitle
+        :title="title"
+        :tone="hasGroups ? 'light' : 'brand'"
+        class="faq__title"
+      />
+      <p v-if="description" class="faq__description">{{ description }}</p>
 
-      <div class="faq__grid">
-        <div v-for="(column, columnIndex) in columns" :key="columnIndex" class="faq__column">
-          <article
-            v-for="entry in column"
-            :key="entry.item.id"
-            class="faq__item"
-            :class="{ 'faq__item--open': isOpen(entry.index) }"
-          >
-            <button
-              class="faq__hitbox"
-              type="button"
-              :aria-label="entry.item.question"
-              :aria-expanded="isOpen(entry.index)"
-              :aria-controls="`faq-content-${entry.index}`"
-              @click="toggle(entry.index)"
-            />
+      <div class="faq__groups">
+        <div v-for="section in sections" :key="section.id" class="faq__group">
+          <h3 v-if="section.title" class="faq__group-title">{{ section.title }}</h3>
 
-            <div
-              class="faq__toggler"
-              :class="{ 'faq__toggler--open': isOpen(entry.index) }"
-              aria-hidden="true"
-            >
-              <span>{{ entry.item.question }}</span>
-              <span class="faq__icon" aria-hidden="true">
-                <Image
-                  :src="isOpen(entry.index) ? images.arrowUp : images.arrowDown"
-                  alt=""
-                  width="36"
-                  height="37"
+          <div class="faq__grid">
+            <div v-for="(column, columnIndex) in section.columns" :key="columnIndex" class="faq__column">
+              <article
+                v-for="entry in column"
+                :key="entry.key"
+                class="faq__item"
+                :class="{ 'faq__item--open': isOpen(entry.key) }"
+              >
+                <button
+                  class="faq__hitbox"
+                  type="button"
+                  :aria-label="entry.item.question"
+                  :aria-expanded="isOpen(entry.key)"
+                  :aria-controls="`faq-content-${entry.key}`"
+                  @click="toggle(entry.key)"
                 />
-              </span>
-            </div>
 
-            <div
-              :id="`faq-content-${entry.index}`"
-              class="faq__content"
-              :class="{ 'faq__content--open': isOpen(entry.index) }"
-              :aria-hidden="!isOpen(entry.index)"
-              role="region"
-            >
-              <div class="faq__content-inner">
-                <p>{{ entry.item.answer }}</p>
-              </div>
+                <div
+                  class="faq__toggler"
+                  :class="{ 'faq__toggler--open': isOpen(entry.key) }"
+                  aria-hidden="true"
+                >
+                  <span>{{ entry.item.question }}</span>
+                  <span class="faq__icon" aria-hidden="true">
+                    <Image
+                      :src="isOpen(entry.key) ? images.arrowUp : images.arrowDown"
+                      alt=""
+                      width="36"
+                      height="37"
+                    />
+                  </span>
+                </div>
+
+                <div
+                  :id="`faq-content-${entry.key}`"
+                  class="faq__content"
+                  :class="{ 'faq__content--open': isOpen(entry.key) }"
+                  :aria-hidden="!isOpen(entry.key)"
+                  role="region"
+                >
+                  <div class="faq__content-inner">
+                    <p>{{ entry.item.answer }}</p>
+                  </div>
+                </div>
+              </article>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </Container>
@@ -134,6 +167,25 @@ function isOpen(index) {
     @media (max-width: $mobile) {
       margin-top: 1.5rem;
       font-size: 1.4rem;
+    }
+  }
+
+  &__group-title {
+    margin: 0;
+    color: $white;
+    font-family: $monserrat;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    text-align: center;
+
+    @media (max-width: $tablet) {
+      font-size: 3.2rem;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 2.6rem;
     }
   }
 
@@ -325,5 +377,39 @@ function isOpen(index) {
     min-height: 0;
     overflow: hidden;
   }
+}
+
+.faq--extended {
+  padding-top: 6.8rem;
+  background: $blue;
+
+  @media (max-width: $tablet) {
+    padding-top: 5rem;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 4.5rem;
+  }
+}
+
+.faq--extended .faq__groups {
+  display: flex;
+  margin-top: 5.9rem;
+  flex-direction: column;
+  gap: 6.3rem;
+
+  @media (max-width: $tablet) {
+    margin-top: 5rem;
+    gap: 5rem;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 4rem;
+    gap: 4rem;
+  }
+}
+
+.faq--extended .faq__grid {
+  margin-top: 4.3rem;
 }
 </style>

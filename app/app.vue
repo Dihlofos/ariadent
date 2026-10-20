@@ -11,7 +11,7 @@ useHead(() => {
 
   return {
     htmlAttrs: { lang: locale.value },
-    titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} — ${site.title}` : site.title,
+    titleTemplate: (titleChunk) => titleChunk || site.title,
     meta: [
       { name: 'title', content: site.title },
       { name: 'description', content: site.description },
