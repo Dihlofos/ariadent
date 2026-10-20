@@ -83,9 +83,9 @@ defineProps({
           </div>
 
           <div class="contacts__actions">
-            <a :href="appointmentButton.link" class="contacts__appointment" v-anchor>
+            <NuxtLink :to="appointmentButton.link" class="contacts__appointment" v-anchor>
               {{ appointmentButton.text }}
-            </a>
+            </NuxtLink>
             <a
               :href="routeButton.link"
               class="contacts__route"

@@ -8,9 +8,9 @@ defineProps({
   <nav class="nav">
     <ul class="nav__list">
       <li v-for="item in items" :key="item.link" class="nav__item">
-        <a :href="item.link" class="nav__link" v-anchor>
+        <NuxtLink :to="item.link" class="nav__link" v-anchor>
           {{ item.label }}
-        </a>
+        </NuxtLink>
       </li>
     </ul>
   </nav>

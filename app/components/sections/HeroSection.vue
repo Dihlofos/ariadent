@@ -31,23 +31,23 @@ defineProps({
             <p class="hero__subtitle">{{ subtitle }}</p>
 
             <div class="hero__actions">
-              <a
+              <NuxtLink
                 v-if="button?.text"
-                :href="button.link"
+                :to="button.link"
                 class="hero__button hero__button--primary"
                 v-anchor
               >
                 {{ button.text }}
-              </a>
-              <a
+              </NuxtLink>
+              <NuxtLink
                 v-if="secondaryButton?.text"
-                :href="secondaryButton.link"
+                :to="secondaryButton.link"
                 class="hero__button hero__button--secondary"
                 v-anchor
               >
                 <span>{{ secondaryButton.text }}</span>
                 <Image :src="images.arrow" alt="" width="17" height="17" />
-              </a>
+              </NuxtLink>
             </div>
           </div>
 
