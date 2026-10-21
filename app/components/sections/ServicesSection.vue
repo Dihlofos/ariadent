@@ -62,10 +62,10 @@ const activeTab = computed(() => (
           </article>
         </div>
 
-        <a :href="moreButton.link" class="services__more" v-anchor>
+        <NuxtLink :to="moreButton.link" class="services__more" v-anchor>
           <span>{{ moreButton.text }}</span>
           <Image :src="images.arrow" alt="" width="17" height="17" />
-        </a>
+        </NuxtLink>
       </div>
     </Container>
   </section>

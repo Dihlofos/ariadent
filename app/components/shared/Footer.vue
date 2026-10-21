@@ -9,7 +9,7 @@ defineProps({
     <Container>
       <div class="footer__grid">
         <div class="footer__brand">
-          <a :href="footerData.brand.link" class="footer__logo-link" v-anchor>
+          <NuxtLink :to="footerData.brand.link" class="footer__logo-link" v-anchor>
             <Image
               :src="footerData.images.logo"
               :alt="footerData.brand.alt"
@@ -17,7 +17,7 @@ defineProps({
               height="34"
               class="footer__logo"
             />
-          </a>
+          </NuxtLink>
           <a :href="footerData.privacy.link" class="footer__privacy">
             {{ footerData.privacy.text }}
           </a>

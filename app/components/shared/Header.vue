@@ -50,7 +50,7 @@ onBeforeUnmount(() => {
   <header class="header" @keydown.esc="closeMenu">
     <Container>
       <div class="header__top">
-        <a :href="navigation.brand.link" class="header__logo" :aria-label="navigation.brand.alt" v-anchor>
+        <NuxtLink :to="navigation.brand.link" class="header__logo" :aria-label="navigation.brand.alt" v-anchor>
           <Image
             :src="navigation.images.logo"
             :alt="navigation.brand.alt"
@@ -58,12 +58,12 @@ onBeforeUnmount(() => {
             height="34"
             loading="eager"
           />
-        </a>
+        </NuxtLink>
 
-        <a :href="navigation.location.link" class="header__info header__location" v-anchor>
+        <NuxtLink :to="navigation.location.link" class="header__info header__location" v-anchor>
           <Image :src="navigation.images.marker" alt="" width="14" height="20" />
           <span>{{ navigation.location.label }}</span>
-        </a>
+        </NuxtLink>
 
         <div class="header__info header__schedule">
           <Image :src="navigation.images.time" alt="" width="20" height="20" />
@@ -81,9 +81,9 @@ onBeforeUnmount(() => {
           </span>
         </div>
 
-        <a :href="navigation.appointment.link" class="header__appointment" v-anchor>
+        <NuxtLink :to="navigation.appointment.link" class="header__appointment" v-anchor>
           {{ navigation.appointment.label }}
-        </a>
+        </NuxtLink>
 
         <a
           v-if="navigation.phones[0]"

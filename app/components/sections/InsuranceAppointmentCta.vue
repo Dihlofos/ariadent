@@ -22,9 +22,9 @@ defineProps({
         <div class="insurance-cta__content">
           <h2 class="insurance-cta__title">{{ title }}</h2>
           <p class="insurance-cta__description">{{ description }}</p>
-          <a :href="button.link" class="insurance-cta__button" v-anchor>
+          <NuxtLink :to="button.link" class="insurance-cta__button" v-anchor>
             {{ button.text }}
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </Container>

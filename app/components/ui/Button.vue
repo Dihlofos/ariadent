@@ -9,14 +9,14 @@ const props = defineProps({
 </script>
 
 <template>
-  <a
+  <NuxtLink
     v-if="to"
-    :href="to"
+    :to="to"
     :class="['button', `button--${variant}`, `button--${size}`]"
     v-anchor
   >
     <slot />
-  </a>
+  </NuxtLink>
   <button
     v-else
     :class="['button', `button--${variant}`, `button--${size}`]"
