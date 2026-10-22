@@ -35,6 +35,11 @@ const NON_TEXT_KEYS = new Set([
   'variant',
 ])
 
+const NON_TYPOGRAPHY_BRANCHES = new Set([
+  'meta',
+  'site',
+])
+
 const SPACES_BEFORE_TEXT = /[ \t]+(?=\S)/g
 const WORD_AT_END = /\p{L}+$/u
 const NON_BREAKING_SPACE = '\u00A0'
@@ -52,6 +57,8 @@ export function preventHangingWords(text: string, locale: Locale) {
 }
 
 export function applyTypography<T>(value: T, locale: Locale, key = ''): T {
+  if (NON_TYPOGRAPHY_BRANCHES.has(key)) return value
+
   if (typeof value === 'string') {
     return (NON_TEXT_KEYS.has(key) ? value : preventHangingWords(value, locale)) as T
   }
