@@ -131,16 +131,6 @@ defineProps({
     padding-top: 4rem;
   }
 
-  &__title {
-    @media (max-width: $tablet) {
-      font-size: 5.5rem;
-    }
-
-    @media (max-width: $mobile) {
-      font-size: 3.6rem;
-    }
-  }
-
   &__card {
     display: grid;
     height: 45.2rem;

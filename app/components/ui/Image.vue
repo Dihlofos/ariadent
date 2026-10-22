@@ -31,6 +31,7 @@ const props = defineProps({
 })
 
 const RASTER_EXTS = new Set(['.png', '.jpg', '.jpeg'])
+const withBasePath = useBasePath()
 
 /**
  * Получает «чистую» часть src: без query-параметров и hash-фрагментов.
@@ -74,7 +75,10 @@ const ext = computed(() => {
 })
 
 const isRaster = computed(() => ext.value && RASTER_EXTS.has(`.${ext.value}`))
-const webpSrc = computed(() => (isRaster.value ? getWebpSrc(props.src) : null))
+const resolvedSrc = computed(() => withBasePath(props.src))
+const webpSrc = computed(() => (
+  isRaster.value ? withBasePath(getWebpSrc(props.src)) : null
+))
 
 /**
  * Обрабатывает пользовательские источники:
@@ -85,7 +89,9 @@ const webpSrc = computed(() => (isRaster.value ? getWebpSrc(props.src) : null))
 const processedSources = computed(() => {
   return props.sources.flatMap((source) => {
     // Если type задан явно — доверяем пользователю
-    if (source.type) return [source]
+    if (source.type) {
+      return [{ ...source, srcset: withBasePath(source.srcset) }]
+    }
 
     const srcExt = getExtension(source.srcset)
     const isRasterExt = srcExt && RASTER_EXTS.has(`.${srcExt}`)
@@ -93,12 +99,12 @@ const processedSources = computed(() => {
     if (!isExternalUrl(source.srcset) && isRasterExt) {
       const webpSrcset = getWebpSrc(source.srcset)
       return [
-        { media: source.media, srcset: webpSrcset, type: 'image/webp' },
-        { media: source.media, srcset: source.srcset },
+        { media: source.media, srcset: withBasePath(webpSrcset), type: 'image/webp' },
+        { media: source.media, srcset: withBasePath(source.srcset) },
       ]
     }
 
-    return [source]
+    return [{ ...source, srcset: withBasePath(source.srcset) }]
   })
 })
 
@@ -116,7 +122,7 @@ const usePicture = computed(() =>
  */
 const imgBindings = computed(() => {
   const bindings = {
-    src: props.src,
+    src: resolvedSrc.value,
     alt: props.alt,
     loading: props.loading,
     decoding: props.decoding,

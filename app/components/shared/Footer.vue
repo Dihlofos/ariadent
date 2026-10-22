@@ -2,6 +2,8 @@
 defineProps({
   footerData: { type: Object, required: true },
 })
+
+const withBasePath = useBasePath()
 </script>
 
 <template>
@@ -18,7 +20,7 @@ defineProps({
               class="footer__logo"
             />
           </NuxtLink>
-          <a :href="footerData.privacy.link" class="footer__privacy">
+          <a :href="withBasePath(footerData.privacy.link)" class="footer__privacy">
             {{ footerData.privacy.text }}
           </a>
         </div>

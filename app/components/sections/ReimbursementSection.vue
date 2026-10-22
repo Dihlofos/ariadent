@@ -88,16 +88,6 @@ defineProps({
     padding: 4.5rem 1rem 5rem;
   }
 
-  &__title {
-    @media (max-width: $tablet) {
-      font-size: 5.5rem;
-    }
-
-    @media (max-width: $mobile) {
-      font-size: 3.6rem;
-    }
-  }
-
   &__description {
     max-width: 87rem;
     margin: 4.5rem auto 0;

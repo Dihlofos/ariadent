@@ -8,7 +8,7 @@ defineProps({
 <template>
   <section class="directions">
     <Container>
-      <SectionTitle :title="title" tone="light" class="directions__title" />
+      <h2 class="directions__title">{{ title }}</h2>
 
       <div class="directions__list">
         <article v-for="item in items" :key="item.id" class="directions__card">
@@ -49,31 +49,37 @@ defineProps({
   }
 
   &__title {
-    margin-bottom: 4.9rem;
+    margin: 0;
+    color: $white;
+    font-family: $monserrat;
     font-size: 3.6rem;
+    font-style: normal;
+    font-weight: 400;
     line-height: normal;
+    text-align: center;
 
     @media (max-width: $tablet) {
-      margin-bottom: 4rem;
       font-size: 3.2rem;
     }
 
     @media (max-width: $mobile) {
-      margin-bottom: 3rem;
       font-size: 3rem;
     }
   }
 
   &__list {
     display: grid;
+    margin-top: 4.9rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4rem;
 
     @media (max-width: $tablet) {
+      margin-top: 4rem;
       gap: 2rem;
     }
 
     @media (max-width: $mobile) {
+      margin-top: 3rem;
       grid-template-columns: minmax(0, 1fr);
     }
   }

@@ -53,16 +53,6 @@ function formatStepNumber(index) {
     padding: 5rem 1rem 6rem;
   }
 
-  &__heading {
-    @media (max-width: $tablet) {
-      font-size: 5.5rem;
-    }
-
-    @media (max-width: $mobile) {
-      font-size: 4rem;
-    }
-  }
-
   &__list {
     display: flex;
     margin: 7.9rem 0 0;

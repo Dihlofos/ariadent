@@ -140,12 +140,10 @@ function isOpen(key) {
 
     @media (max-width: $tablet) {
       max-width: 70rem;
-      font-size: 5.5rem;
     }
 
     @media (max-width: $mobile) {
       max-width: 100%;
-      font-size: 3.6rem;
     }
   }
 

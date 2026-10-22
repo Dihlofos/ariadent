@@ -27,8 +27,16 @@ defineProps({
   line-height: 100%;
   text-align: center;
 
-  &--light {
-    color: $white;
+  @media (max-width: $tablet) {
+    font-size: 5.5rem;
   }
+
+  @media (max-width: $mobile) {
+    font-size: 4rem;
+  }
+}
+
+.section-title--light {
+  color: $white;
 }
 </style>
