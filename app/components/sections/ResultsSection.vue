@@ -60,8 +60,6 @@ defineProps({
 
   &__title {
     max-width: 70rem;
-    margin-right: auto;
-    margin-left: auto;
 
     @media (max-width: $tablet) {
       max-width: 60rem;

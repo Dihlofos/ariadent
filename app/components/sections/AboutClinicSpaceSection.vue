@@ -114,8 +114,6 @@ const breakpoints = {
 
 .clinic-space__heading {
   max-width: 70rem;
-  margin-right: auto;
-  margin-left: auto;
   line-height: 120%;
   transform: translateY(-0.7rem);
 

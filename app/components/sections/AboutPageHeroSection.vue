@@ -51,13 +51,14 @@ defineProps({
 
   &__card {
     position: relative;
-    height: 48rem;
+    min-height: 48rem;
     overflow: hidden;
     border-radius: 22px;
     background: lightgray;
 
     @media (max-width: $tablet) {
       display: flex;
+      min-height: 0;
       height: auto;
       background: #8CD9F4;
       flex-direction: column;
@@ -86,9 +87,11 @@ defineProps({
     position: absolute;
     z-index: 1;
     top: -0.1rem;
+    right: 0;
+    bottom: -0.1rem;
     left: 29.8rem;
-    width: 86.25rem;
-    height: 48rem;
+    width: auto;
+    height: auto;
 
     @media (max-width: $tablet) {
       position: relative;
@@ -116,7 +119,8 @@ defineProps({
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
+    object-position: right center;
 
     @media (max-width: $tablet) {
       height: auto;
@@ -129,7 +133,7 @@ defineProps({
     position: relative;
     z-index: 3;
     width: 54rem;
-    padding: 4rem 0 0 5rem;
+    padding: 4rem 0 4rem 5rem;
 
     @media (max-width: $tablet) {
       width: 100%;

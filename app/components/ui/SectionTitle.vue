@@ -18,7 +18,7 @@ defineProps({
 
 <style lang="scss">
 .section-title {
-  margin: 0;
+  margin: 0 auto;
   color: $blue;
   font-family: $monserrat;
   font-size: 7rem;

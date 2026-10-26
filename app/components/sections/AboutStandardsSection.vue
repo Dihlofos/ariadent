@@ -46,8 +46,6 @@ defineProps({
 
 .about-standards__heading {
   max-width: 90rem;
-  margin-right: auto;
-  margin-left: auto;
   line-height: 120%;
   transform: translateY(-0.7rem);
 

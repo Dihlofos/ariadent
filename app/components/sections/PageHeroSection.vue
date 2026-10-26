@@ -72,7 +72,7 @@ const titleParts = computed(() => {
 
   &__card {
     position: relative;
-    height: 47.6rem;
+    min-height: 47.6rem;
     border-radius: 22px;
     background:
       radial-gradient(75% 150% at 61% 55%, rgba(56, 157, 184, 0.62) 0%, rgba(56, 157, 184, 0) 64%),
@@ -80,6 +80,7 @@ const titleParts = computed(() => {
 
     @media (max-width: $tablet) {
       display: flex;
+      min-height: 0;
       height: auto;
       overflow: hidden;
       flex-direction: column;
@@ -107,16 +108,12 @@ const titleParts = computed(() => {
   }
 
   &__content {
-    position: absolute;
+    position: relative;
     z-index: 3;
-    top: 4rem;
-    left: 5rem;
     width: 80rem;
+    padding: 4rem 0 4rem 5rem;
 
     @media (max-width: $tablet) {
-      position: relative;
-      top: auto;
-      left: auto;
       width: auto;
       padding: 3.5rem 3.5rem 0;
     }
@@ -210,14 +207,16 @@ const titleParts = computed(() => {
   &__portrait {
     position: absolute;
     z-index: 2;
+    top: -3rem;
     right: -0.1rem;
-    bottom: 0;
-    width: 52.2rem;
-    height: 50.6rem;
+    width: auto;
+    height: calc(100% + 3rem);
+    aspect-ratio: 873 / 848;
     pointer-events: none;
 
     @media (max-width: $tablet) {
       position: relative;
+      top: auto;
       right: auto;
       bottom: auto;
       left: 50%;
@@ -251,9 +250,10 @@ const titleParts = computed(() => {
 }
 
 .page-hero--patients .page-hero__card {
-  height: 40.3rem;
+  min-height: 40.3rem;
 
   @media (max-width: $tablet) {
+    min-height: 0;
     height: auto;
   }
 }
@@ -275,7 +275,9 @@ const titleParts = computed(() => {
 }
 
 .page-hero--patients .page-hero__portrait {
+  top: auto;
   right: 0;
+  bottom: 0;
   width: 116rem;
   height: 44.2rem;
 

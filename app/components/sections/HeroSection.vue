@@ -91,26 +91,27 @@ defineProps({
 
   &__stage {
     position: relative;
-    height: 52.8rem;
+    min-height: 52.8rem;
+    padding-top: 4.1rem;
 
     @media (max-width: $tablet) {
-      height: 50rem;
+      min-height: 50rem;
+      padding: 2rem 0;
       overflow: hidden;
       border-radius: 22px;
     }
 
     @media (max-width: $mobile) {
-      height: 76rem;
+      min-height: 76rem;
+      padding: 1rem 0;
       border-radius: 18px;
     }
   }
 
   &__card {
-    position: absolute;
-    top: 4.1rem;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 48.7rem;
+    min-height: 48.7rem;
     overflow: hidden;
     border-radius: 22px;
     background:
@@ -120,13 +121,11 @@ defineProps({
       #204F61;
 
     @media (max-width: $tablet) {
-      top: 2rem;
-      height: 46rem;
+      min-height: 46rem;
     }
 
     @media (max-width: $mobile) {
-      top: 1rem;
-      height: 74rem;
+      min-height: 74rem;
       border-radius: 18px;
       background:
         linear-gradient(180deg, #8CD9F4 0%, #8CD9F4 48%, rgba(140, 217, 244, 0.76) 64%, rgba(140, 217, 244, 0) 82%),
@@ -139,16 +138,19 @@ defineProps({
     position: absolute;
     z-index: 1;
     top: 0.6rem;
+    bottom: 0;
     left: 1.4rem;
-    width: 78.5rem;
-    height: 52.2rem;
+    width: auto;
+    height: auto;
+    aspect-ratio: 3 / 2;
     pointer-events: none;
 
     @media (max-width: $tablet) {
       top: 4rem;
+      bottom: 0;
       left: clamp(-8rem, calc((100vw - 102.4rem) * 0.28), 0rem);
-      width: 66rem;
-      height: 44rem;
+      width: auto;
+      height: auto;
     }
 
     @media (max-width: $mobile) {
@@ -157,6 +159,7 @@ defineProps({
       left: 50%;
       width: 57rem;
       height: 38rem;
+      aspect-ratio: auto;
       transform: translateX(-50%);
     }
   }
@@ -192,27 +195,26 @@ defineProps({
   }
 
   &__content {
-    position: absolute;
+    position: relative;
     z-index: 3;
-    top: 5.1rem;
-    right: 4.2rem;
     display: flex;
     width: 58.6rem;
+    margin-right: 4.2rem;
+    margin-left: auto;
+    padding: 5.1rem 0 6.9rem;
     flex-direction: column;
     align-items: center;
 
     @media (max-width: $tablet) {
-      top: 4rem;
-      right: 2rem;
       width: clamp(38rem, 48vw, 48rem);
+      margin-right: 2rem;
+      padding: 4rem 0;
     }
 
     @media (max-width: $mobile) {
-      top: 3rem;
-      right: auto;
-      left: 50%;
       width: calc(100% - 3.2rem);
-      transform: translateX(-50%);
+      margin: 0 auto;
+      padding: 3rem 0 40rem;
     }
   }
 

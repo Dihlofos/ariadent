@@ -135,8 +135,6 @@ function isOpen(key) {
 
   &__title {
     max-width: 90rem;
-    margin-right: auto;
-    margin-left: auto;
 
     @media (max-width: $tablet) {
       max-width: 70rem;
