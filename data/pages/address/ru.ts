@@ -17,7 +17,7 @@ export default {
           'Ближайшая железнодорожная станция — Amsterdam Muiderpoort, примерно в 15 минутах пешком.',
         ],
         icon: {
-          src: '/images/bus.svg',
+          src: '/images/address/bus.svg',
           alt: '',
         },
       },
@@ -28,7 +28,7 @@ export default {
           'На Hugo de Vrieslaan и соседних улицах есть платная городская парковка.',
         ],
         icon: {
-          src: '/images/auto.svg',
+          src: '/images/address/auto.svg',
           alt: '',
         },
       },

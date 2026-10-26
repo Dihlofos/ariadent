@@ -6,16 +6,16 @@ export default {
   hero: {
     type: 'hero',
     title: {
-      regular: 'DENTAL CLINIC',
-      bold: 'ARIADENT',
+      regular: 'ARIADENT',
+      bold: 'CLINIC',
     },
-    subtitle: 'Dental prosthetics and implants with care for your comfort and a natural appearance.',
+    subtitle: 'Dental prosthetics and implants, with a focus on comfort and a natural appearance.',
     button: { text: 'Book an appointment', link: '#appointment' },
-    secondaryButton: { text: 'View our work', link: '#results' },
+    secondaryButton: { text: 'View examples of our work', link: '#results' },
     images: {
-      portrait: '/images/hero/hero.webp',
-      logo: '/images/logo.svg',
-      arrow: '/images/arrow-circle.svg',
+      portrait: '/images/home/hero.webp',
+      logo: '/images/home/logo.svg',
+      arrow: '/images/home/arrow-circle.svg',
     },
   },
   benefits: {
@@ -23,10 +23,10 @@ export default {
     items: [
       {
         id: 'direct-appointment',
-        title: 'Implant-supported tooth restoration',
-        description: 'We use proven materials with a high implant success rate.',
+        title: 'Tooth replacement with implants',
+        description: 'We use proven materials with high rates of successful integration.',
         image: {
-          src: '/images/benefits/check.webp',
+          src: '/images/home/benefit-check.webp',
           alt: '',
           variant: 'check',
           width: 308,
@@ -38,7 +38,7 @@ export default {
         title: 'Urgent denture repair',
         description: 'We repair your denture while you wait at the clinic.',
         image: {
-          src: '/images/benefits/tooth.webp',
+          src: '/images/home/benefit-tooth.webp',
           alt: '',
           variant: 'tooth',
           width: 308,
@@ -47,10 +47,10 @@ export default {
       },
       {
         id: 'insurance',
-        title: 'Up to 90% covered by basic insurance',
-        description: 'We offer treatment options based on your insurance coverage.',
+        title: 'Up to 90% of the cost covered by basic insurance',
+        description: 'We offer prosthetic options that take your insurance coverage into account.',
         image: {
-          src: '/images/benefits/coins.webp',
+          src: '/images/home/benefit-coins.webp',
           alt: '',
           variant: 'coins',
           width: 342,
@@ -59,10 +59,10 @@ export default {
       },
       {
         id: 'after-hours',
-        title: 'Help outside working hours',
-        description: 'We help in emergencies and accept patients outside working hours.',
+        title: 'Assistance outside of regular hours',
+        description: 'We are happy to help in urgent situations and can see you outside of our standard business hours.',
         image: {
-          src: '/images/benefits/clock.webp',
+          src: '/images/home/benefit-clock.webp',
           alt: '',
           variant: 'clock',
           width: 308,
@@ -81,10 +81,10 @@ export default {
         items: [
           {
             id: 'full-denture',
-            title: 'Full removable denture',
+            title: 'Complete removable denture',
             description: 'A removable denture that replaces all teeth in the upper or lower jaw.',
             image: {
-              src: '/images/services/full-denture.webp',
+              src: '/images/home/service-full-denture.webp',
               alt: 'Full removable dental prosthesis',
               width: 551,
               height: 418,
@@ -95,7 +95,7 @@ export default {
             title: 'Partial denture',
             description: 'A denture that replaces several missing teeth when some natural teeth remain.',
             image: {
-              src: '/images/services/partial-denture.webp',
+              src: '/images/home/service-partial-denture.webp',
               alt: 'Partial removable dental prosthesis',
               width: 551,
               height: 418,
@@ -103,10 +103,10 @@ export default {
           },
           {
             id: 'clasp-denture',
-            title: 'Clasp denture',
-            description: 'A partial denture with a metal framework attached to the remaining teeth.',
+            title: 'Cast partial denture',
+            description: 'A partial denture with a metal framework that attaches to the remaining teeth.',
             image: {
-              src: '/images/services/clasp-denture.webp',
+              src: '/images/home/service-clasp-denture.webp',
               alt: 'Clasp dental prosthesis',
               width: 551,
               height: 424,
@@ -115,9 +115,9 @@ export default {
           {
             id: 'denture-relining',
             title: 'Denture relining',
-            description: 'Restores the denture fit when it becomes loose or starts causing irritation.',
+            description: 'Adjusting the fit of a denture if it has become loose or causes rubbing over time.',
             image: {
-              src: '/images/services/relining.webp',
+              src: '/images/home/service-relining.webp',
               alt: 'Relining a dental prosthesis',
               width: 551,
               height: 418,
@@ -126,9 +126,9 @@ export default {
           {
             id: 'denture-repair',
             title: 'Denture repair',
-            description: 'Restores a denture after cracks, breakage, or damage to individual parts.',
+            description: 'Repairing a denture after a crack, break, or damage to individual parts.',
             image: {
-              src: '/images/services/repair.webp',
+              src: '/images/home/service-repair.webp',
               alt: 'Dental prosthesis repair',
               width: 551,
               height: 418,
@@ -143,9 +143,9 @@ export default {
           {
             id: 'implant-crown',
             title: 'Implant with a crown',
-            description: 'An implant and crown replace a missing tooth. The implant replaces its root and the crown its visible part.',
+            description: 'An implant with a crown is used to replace a missing tooth. The implant replaces the tooth root, while the crown replaces the visible part of the tooth.',
             image: {
-              src: '/images/services/implant-crown.webp',
+              src: '/images/home/service-implant-crown.webp',
               alt: 'Dental implant with a crown',
               width: 551,
               height: 420,
@@ -154,9 +154,9 @@ export default {
           {
             id: 'implant-bridge',
             title: 'Implant-supported bridge',
-            description: 'A restoration for several adjacent missing teeth supported by dental implants.',
+            description: 'A restoration supported by implants that replaces several consecutive missing teeth.',
             image: {
-              src: '/images/services/implant-bridge.webp',
+              src: '/images/home/service-implant-bridge.webp',
               alt: 'Dental bridge supported by implants',
               width: 551,
               height: 418,
@@ -165,9 +165,9 @@ export default {
           {
             id: 'implant-prosthesis',
             title: 'Implant-supported denture',
-            description: 'A removable denture secured by implants when a conventional denture does not stay in place.',
+            description: 'A removable denture secured to implants when a conventional denture does not stay in place well.',
             image: {
-              src: '/images/services/implant-denture.webp',
+              src: '/images/home/service-implant-denture.webp',
               alt: 'Dental prosthesis supported by implants',
               width: 551,
               height: 418,
@@ -175,10 +175,10 @@ export default {
           },
           {
             id: 'full-implant-denture',
-            title: 'Full implant-supported denture',
-            description: 'A full-arch restoration for one jaw supported by several dental implants.',
+            title: 'Full-arch implant-supported denture',
+            description: 'A denture used to replace all teeth in one jaw, supported by several dental implants.',
             image: {
-              src: '/images/services/full-implant.webp',
+              src: '/images/home/service-full-implant.webp',
               alt: 'Full dental prosthesis supported by implants',
               width: 551,
               height: 418,
@@ -192,66 +192,66 @@ export default {
       link: '#appointment',
     },
     images: {
-      arrow: '/images/arrow-circle.svg',
+      arrow: '/images/home/arrow-circle.svg',
     },
   },
   treatmentProcess: {
     type: 'treatment-process',
     title: 'HOW TREATMENT WORKS',
     images: {
-      check: '/images/treatment-process/check.svg',
+      check: '/images/home/treatment-check.svg',
     },
     items: [
       {
         id: 'consultation',
         title: 'Examination and consultation',
-        description: 'We discuss your concerns and assess your teeth, gums, jaw, and current denture. Together, we review your wishes and possible treatment options.',
+        description: 'We discuss your concerns and assess your teeth, gums, jaw, and any existing denture. We talk through your wishes and possible treatment options.',
       },
       {
         id: 'treatment-plan',
         title: 'Treatment plan',
-        description: 'We suggest suitable options and explain their features, timing, and cost. If treatment by another specialist or implant placement is needed first, we explain the next steps.',
+        description: 'We suggest suitable options and explain their features, timelines, and costs. If you first need treatment from another specialist or implant placement, we explain what is required.',
       },
       {
         id: 'impressions',
-        title: 'Impressions and bite',
-        description: 'We take impressions of your jaws and evaluate how your teeth meet. We discuss the shape, colour, and position of your future teeth.',
+        title: 'Impressions and bite assessment',
+        description: 'We take impressions of the jaws and assess how the teeth meet. We discuss the shape, colour, and position of the replacement teeth.',
       },
       {
         id: 'fitting',
-        title: 'Fitting and fabrication',
-        description: 'We first try in the restoration to check its fit, bite, appearance, speech, and chewing. We make any necessary adjustments before producing the final denture.',
+        title: 'Trial fitting and fabrication',
+        description: 'We first try in the restoration to check its fit, bite, appearance, speech, and chewing. We make any necessary adjustments before fabricating the final denture.',
       },
       {
         id: 'installation',
-        title: 'Installation and follow-up',
-        description: 'We fit your denture, check its position, and explain how to wear and care for it. After placement, we perform a follow-up examination and adjust it if needed.',
+        title: 'Fitting and follow-up',
+        description: 'We fit your denture, check its fit, and explain how to wear and care for it. After fitting, we carry out a follow-up examination and adjust the denture if needed.',
       },
     ],
   },
   results: {
     type: 'results',
-    title: 'WHAT THE RESULT LOOKS LIKE',
-    description: 'Prosthetic and implant treatment results from our patients.',
+    title: 'WHAT THE RESULTS LOOK LIKE',
+    description: 'Results of prosthetic and implant treatment for our patients.',
     labels: {
       before: 'Before',
       after: 'After',
     },
     images: {
-      arrow: '/images/results/slider-arrow.svg',
+      arrow: '/images/shared/result-slider-arrow.svg',
     },
     items: [
       {
         id: 'case-1',
         sliderLabel: 'Before and after treatment comparison, clinical case 1',
         before: {
-          src: '/images/results/case-1-before.webp',
+          src: '/images/shared/result-case-1-before.webp',
           alt: 'Patient teeth before treatment, clinical case 1',
           width: 1120,
           height: 648,
         },
         after: {
-          src: '/images/results/case-1-after.webp',
+          src: '/images/shared/result-case-1-after.webp',
           alt: 'Patient teeth after treatment, clinical case 1',
           width: 1114,
           height: 648,
@@ -261,13 +261,13 @@ export default {
         id: 'case-2',
         sliderLabel: 'Before and after treatment comparison, clinical case 2',
         before: {
-          src: '/images/results/case-2-before.webp',
+          src: '/images/shared/result-case-2-before.webp',
           alt: 'Patient teeth before treatment, clinical case 2',
           width: 1120,
           height: 766,
         },
         after: {
-          src: '/images/results/case-2-after.webp',
+          src: '/images/shared/result-case-2-after.webp',
           alt: 'Patient teeth after treatment, clinical case 2',
           width: 1120,
           height: 648,
@@ -277,13 +277,13 @@ export default {
         id: 'case-3',
         sliderLabel: 'Before and after treatment comparison, clinical case 3',
         before: {
-          src: '/images/results/case-3-before.webp',
+          src: '/images/shared/result-case-3-before.webp',
           alt: 'Patient teeth before treatment, clinical case 3',
           width: 1120,
           height: 648,
         },
         after: {
-          src: '/images/results/case-3-after.webp',
+          src: '/images/shared/result-case-3-after.webp',
           alt: 'Patient teeth after treatment, clinical case 3',
           width: 1120,
           height: 648,
@@ -293,13 +293,13 @@ export default {
         id: 'case-4',
         sliderLabel: 'Before and after treatment comparison, clinical case 4',
         before: {
-          src: '/images/results/case-4-before.webp',
+          src: '/images/shared/result-case-4-before.webp',
           alt: 'Patient teeth before treatment, clinical case 4',
           width: 1120,
           height: 648,
         },
         after: {
-          src: '/images/results/case-4-after.webp',
+          src: '/images/shared/result-case-4-after.webp',
           alt: 'Patient teeth after treatment, clinical case 4',
           width: 1120,
           height: 648,
@@ -309,8 +309,8 @@ export default {
   },
   appointment: {
     type: 'appointment',
-    title: 'Need an urgent repair or want to find a solution?',
-    description: 'Leave a request — we will contact you, book your appointment, and explain what treatment options are available.',
+    title: 'NEED AN URGENT REPAIR OR HELP CHOOSING A SOLUTION?',
+    description: 'Send us a request and we will contact you, arrange an appointment, and explain the available options.',
     fields: [
       {
         id: 'appointment-name',
@@ -337,7 +337,7 @@ export default {
         name: 'email',
         type: 'email',
         label: 'Email address',
-        placeholder: 'For example: name@example.com',
+        placeholder: 'For example: naam@example.com',
         autocomplete: 'email',
         inputmode: 'email',
         required: true,
@@ -347,7 +347,7 @@ export default {
       id: 'appointment-message',
       name: 'message',
       label: 'Message',
-      placeholder: 'Briefly tell us what is bothering you',
+      placeholder: 'Briefly describe your concern',
       required: false,
     },
     submitText: 'Send',
@@ -357,7 +357,7 @@ export default {
         description: 'Please try again. If it still does not work, try again later.',
         buttonText: 'Back',
         image: {
-          src: '/images/appointment/error-question.webp',
+          src: '/images/home/appointment-error-question.webp',
           alt: '',
           width: 268,
           height: 272,
@@ -367,7 +367,7 @@ export default {
         title: 'Request received',
         description: 'We will contact you shortly.',
         image: {
-          src: '/images/appointment/success-check.webp',
+          src: '/images/home/appointment-success-check.webp',
           alt: '',
           width: 408,
           height: 412,
@@ -375,7 +375,7 @@ export default {
       },
     },
     image: {
-      src: '/images/appointment/dentures.webp',
+      src: '/images/home/appointment-dentures.webp',
       alt: 'Example of a dental prosthesis',
       width: 588,
       height: 477,
@@ -386,9 +386,9 @@ export default {
     title: 'PATIENT REVIEWS',
     description: 'What our patients write and say about us.',
     images: {
-      avatar: '/images/reviews/avatar.svg',
-      stars: '/images/reviews/stars.svg',
-      arrow: '/images/arrow-circle.svg',
+      avatar: '/images/shared/review-avatar.svg',
+      stars: '/images/shared/review-stars.svg',
+      arrow: '/images/home/arrow-circle.svg',
     },
     items: [
       {
@@ -431,12 +431,12 @@ export default {
     items: [
       {
         id: 'experience',
-        title: 'Working since 1996',
+        title: 'Established in 1996',
         description: [
-          'For more than 30 years, we have helped patients restore their teeth with dentures. We were among the first in the Netherlands to offer removable prosthetics.',
+          'For over 30 years, we have been helping patients restore their teeth using dentures. We were among the first in the Netherlands to specialize in removable prosthetics.',
         ],
         image: {
-          src: '/images/about/clinic.webp',
+          src: '/images/home/about-clinic.webp',
           alt: 'Ariadent clinic reception area',
           width: 392,
           height: 273,
@@ -444,12 +444,12 @@ export default {
       },
       {
         id: 'emergency-care',
-        title: 'Emergency care',
+        title: 'Emergency assistance',
         description: [
-          'When necessary, we see patients outside working hours. We can repair a denture during your visit and produce a new one within a week.',
+          'When necessary, we see patients outside regular hours. We can carry out urgent denture repairs during your visit and make a new denture within a week.',
         ],
         image: {
-          src: '/images/about/emergency.webp',
+          src: '/images/home/about-emergency.webp',
           alt: 'A dental prosthesis held by a specialist',
           width: 341,
           height: 273,
@@ -459,11 +459,11 @@ export default {
         id: 'team',
         title: 'An experienced team',
         description: [
-          'ARIADENT’s team comprises specialists with many years of experience in dental prosthetics and implantology.',
-          'Because our team is small, we maintain personal contact with every patient and give each situation careful attention.',
+          'The ARIADENT team includes specialists with many years of experience in dental prosthetics and implant treatment.',
+          'Our small team allows us to maintain personal contact with patients and carefully consider each individual situation.',
         ],
         image: {
-          src: '/images/about/team.webp',
+          src: '/images/home/about-team.webp',
           alt: 'The Ariadent clinic team',
           width: 392,
           height: 372,
@@ -473,18 +473,18 @@ export default {
         id: 'standards',
         title: 'Professional standards',
         description: [
-          'ARIADENT is a member of the Organisatie van Nederlandse Tandprothetici (ONT), and our clinicians are registered with the KwaliteitsRegister TandProthetici (KRTP).',
+          'ARIADENT is a member of Organisatie van Nederlandse Tandprothetici (ONT), and the clinic’s specialists are registered with the KwaliteitsRegister TandProthetici (KRTP).',
           'We maintain our qualifications and regularly update our professional knowledge in dental prosthetics.',
         ],
         logos: [
           {
-            src: '/images/about/krtp-logo.webp',
+            src: '/images/home/about-krtp-logo.webp',
             alt: 'KwaliteitsRegister TandProthetici',
             width: 254,
             height: 74,
           },
           {
-            src: '/images/about/ont-logo.webp',
+            src: '/images/home/about-ont-logo.webp',
             alt: 'Organisatie van Nederlandse Tandprothetici',
             width: 254,
             height: 109,
@@ -520,50 +520,50 @@ export default {
       title: 'Map showing directions to the Ariadent clinic',
     },
     images: {
-      marker: '/images/marker.svg',
-      markerSmall: '/images/marker-small.svg',
-      time: '/images/time.svg',
-      phone: '/images/phone.svg',
+      marker: '/images/shared/marker.svg',
+      markerSmall: '/images/shared/marker-small.svg',
+      time: '/images/shared/time.svg',
+      phone: '/images/shared/phone.svg',
     },
   },
   faq: {
     type: 'faq',
     title: 'FREQUENTLY ASKED QUESTIONS',
-    description: 'Answers to the most common questions about dentures, implants, costs, and appointments.',
+    description: 'Answers to common questions about dentures, implants, costs, and appointments.',
     images: {
-      arrowDown: '/images/faq/arrow-down.svg',
-      arrowUp: '/images/faq/arrow-up.svg',
+      arrowDown: '/images/shared/faq-arrow-down.svg',
+      arrowUp: '/images/shared/faq-arrow-up.svg',
     },
     items: [
       {
         id: 'replace-denture',
-        question: 'How do I know when my denture needs replacing?',
-        answer: 'If your denture becomes loose, causes irritation, or makes it difficult to chew or speak, it should be checked by a specialist. Sometimes relining or repair is enough, but in other cases replacement is the better option.',
+        question: 'How do I know when it is time to replace my denture?',
+        answer: 'If your denture has become loose, rubs, or makes chewing or speaking difficult, you should have it checked by a specialist. Sometimes relining or repair is enough, but in some cases it needs to be replaced.',
       },
       {
         id: 'insurance',
         question: 'What does insurance cover?',
-        answer: 'Coverage depends on your insurance policy and the treatment you choose. Before treatment begins, we can help clarify the terms and estimate possible reimbursement.',
+        answer: 'The amount of compensation depends on the terms of your policy. We can help you understand what your insurance company covers. You can find more details on the "Insurance and Payment" page.',
       },
       {
         id: 'production-time',
         question: 'How long does it take to make a denture?',
-        answer: 'The timeframe depends on the type of denture and the amount of work required. Production usually takes several weeks, while urgent repairs can often be completed during one visit.',
+        answer: 'Typically, the fabrication process takes about 5 weeks. In urgent cases, we can produce a prosthesis in one week.',
       },
       {
         id: 'denture-lifespan',
-        question: 'How long does a dental prosthesis last?',
-        answer: 'Its lifespan depends on the type of prosthesis, your oral health, and daily care. Regular check-ups help adjust the fit in time and extend its useful life.',
+        question: 'How long does a denture last?',
+        answer: 'A denture usually lasts several years. The jaw changes over time, so the denture may fit less closely and become loose. Regular check-ups and timely relining can help extend its service life.',
       },
       {
         id: 'implant-pain',
         question: 'Is implant placement painful?',
-        answer: 'Implants are placed under local anaesthesia, so the procedure itself is normally painless. After treatment, the clinician will explain how to manage any temporary discomfort.',
+        answer: 'We place implants under local anaesthesia, so you should not feel anything during the procedure. Soreness, swelling, or discomfort may occur afterwards; these symptoms usually subside within a week.',
       },
       {
         id: 'first-appointment',
         question: 'What should I bring to my first appointment?',
-        answer: 'Bring identification, your insurance details, and any previous examination results you may have. It is also helpful to bring a list of medicines you currently take.',
+        answer: 'Bring identification, your insurance card, a list of medications, and any health information relevant to your treatment. If you already have a denture, bring it with you.',
       },
     ],
   },

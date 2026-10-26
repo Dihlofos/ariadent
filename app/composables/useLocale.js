@@ -1,7 +1,8 @@
 import { computed, inject, onMounted, provide, ref } from 'vue'
 import { DEFAULT_LOCALE, localeData, SUPPORTED_LOCALES } from '~/../data/locales'
 
-const localeKey = Symbol('app-locale')
+// Keep the injection key stable when Vite reloads this module during development.
+const localeKey = Symbol.for('ariadent.app-locale')
 const localeStorageKey = 'ariadent-locale'
 
 function readStoredLocale() {

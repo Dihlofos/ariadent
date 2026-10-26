@@ -133,7 +133,7 @@ defineProps({
 
   &__card {
     display: grid;
-    height: 45.2rem;
+    min-height: 45.2rem;
     margin-top: 3.4rem;
     padding: 4.2rem 3.5rem 4.2rem 3.3rem;
     grid-template-columns: 42.7rem 1fr;
@@ -143,6 +143,7 @@ defineProps({
 
     @media (max-width: $tablet) {
       height: auto;
+      min-height: 0;
       margin-top: 3rem;
       padding: 3rem;
       grid-template-columns: minmax(0, 1fr);

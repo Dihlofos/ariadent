@@ -7,9 +7,9 @@ export default {
     keepLeadWithFirstWord: true,
     title: {
       lead: 'HOW',
-      text: 'TREATMENT IS COVERED BY INSURANCE',
+      text: 'MEDICAL TREATMENT IS COVERED BY INSURANCE',
     },
-    description: 'We explain which part of the treatment is covered by basic insurance and which costs may remain your responsibility.',
+    description: 'We explain what part of your treatment is covered by basic insurance and which costs you might still have to pay yourself.',
     image: {
       src: '/images/insurance/hero-bg.webp',
       alt: 'Smiling patient of the Ariadent clinic',
@@ -18,12 +18,12 @@ export default {
     },
   },
   reimbursement: {
-    title: 'REIMBURSEMENT OF COSTS',
-    description: 'In the overview below, we explain the reimbursements that apply this year. Terms vary considerably between insurers, so we recommend contacting your insurance company with your treatment estimate at hand.',
+    title: 'REIMBURSEMENT',
+    description: 'The overview below explains the reimbursement arrangements for the current year. Insurance terms vary considerably, so we recommend contacting your insurer with your treatment estimate.',
     items: [
       {
         id: 'dental-denture',
-        title: 'Dental denture',
+        title: 'Denture',
         details: [
           { label: 'Basic insurance', value: '75%' },
           { label: 'Personal contribution', value: '25%' },
@@ -32,8 +32,8 @@ export default {
           {
             type: 'paragraph',
             segments: [
-              { text: 'A standard denture or first type denture is reimbursed at 75% under basic insurance. The remaining 25% is the ' },
-              { text: 'personal contribution.', accent: true },
+              { text: 'A regular (standard) denture, or a type 1 denture, is reimbursed at 75% under basic insurance. The remaining 25% is the ' },
+              { text: 'patient contribution.', accent: true },
               { text: ' Depending on your policy, this amount may be partly or fully covered by supplementary insurance.' },
             ],
           },
@@ -43,7 +43,7 @@ export default {
         id: 'implant-denture',
         title: 'Implant-supported denture',
         details: [
-          { label: 'Basic insurance', value: 'with prior authorization' },
+          { label: 'Basic insurance', value: 'subject to authorization' },
           { label: 'Deductible', value: '€385' },
           { label: 'Personal contribution', value: '8–17%' },
         ],
@@ -51,21 +51,21 @@ export default {
           {
             type: 'paragraph',
             segments: [
-              { text: 'Implant placement by an implantologist or oral and maxillofacial surgeon is fully reimbursed by basic insurance when prior authorization has been obtained from the insurance company.' },
+              { text: 'The placement of implants by an implantologist or an oral and maxillofacial surgeon is fully covered by basic health insurance, provided that prior authorization is obtained from the insurance company.' },
             ],
           },
           {
             type: 'paragraph',
             segments: [
-              { text: 'Because the treatment is covered by basic insurance, the ' },
+              { text: 'Since the treatment is covered by basic insurance, a ' },
               { text: 'deductible', accent: true },
-              { text: ' (€385) applies. See the note about the deductible.' },
+              { text: ' (€385) applies. Please refer to the note regarding the deductible.' },
             ],
           },
           {
             type: 'paragraph',
             segments: [
-              { text: 'In most cases, implant-supported dentures are paid for under basic insurance. You must also pay the statutory personal contribution, which is a set percentage structured as follows:' },
+              { text: 'In most cases, implant-supported prosthetics are covered by basic health insurance. You are also required to pay a statutory personal contribution, which is calculated as a specific percentage and structured as follows:' },
             ],
           },
           {
@@ -74,25 +74,25 @@ export default {
               {
                 segments: [
                   { text: '10%', accent: true },
-                  { text: ' — a full lower implant-supported denture,' },
+                  { text: ' — complete lower denture supported by implants,' },
                 ],
               },
               {
                 segments: [
                   { text: '8%', accent: true },
-                  { text: ' — a full upper implant-supported denture,' },
+                  { text: ' — complete upper denture supported by implants,' },
                 ],
               },
               {
                 segments: [
                   { text: '17%', accent: true },
-                  { text: ' — simultaneous fabrication of a conventional upper denture combined with a lower implant-supported denture.' },
+                  { text: ' — a combination of a conventional upper denture and an implant-supported lower denture (fabricated simultaneously),' },
                 ],
               },
               {
                 segments: [
                   { text: '17%', accent: true },
-                  { text: ' — simultaneous fabrication of a conventional lower denture combined with an upper implant-supported denture.' },
+                  { text: ' — a combination of a conventional lower denture and an implant-supported upper denture (fabricated simultaneously).' },
                 ],
               },
             ],
@@ -103,20 +103,20 @@ export default {
         id: 'partial-denture',
         title: 'Partial denture',
         details: [
-          { label: 'Basic insurance', value: 'not covered' },
-          { label: 'Supplementary insurance', value: 'depends on the policy' },
+          { label: 'Basic insurance', value: 'does not cover' },
+          { label: 'Additional insurance', value: 'depends on the policy' },
         ],
         content: [
           {
             type: 'paragraph',
             segments: [
-              { text: 'The cost of a partial or framework denture is not covered by basic health insurance and may therefore only be reimbursed partly or fully through supplementary dental insurance.' },
+              { text: 'The cost of a partial or framework denture is not covered by basic health insurance. It may therefore be reimbursed partly or fully through supplementary dental insurance, depending on your policy.' },
             ],
           },
           {
             type: 'paragraph',
             segments: [
-              { text: 'Coverage depends on your policy. We will be happy to discuss the options with you and prepare an estimate that you can submit to your insurance company.' },
+              { text: 'We will be happy to discuss the options and prepare an estimate for you to submit to your insurer.' },
             ],
           },
         ],
@@ -132,8 +132,8 @@ export default {
           {
             type: 'paragraph',
             segments: [
-              { text: 'Under basic insurance, 90% of the cost of relining a full denture without implants is reimbursed. Your ' },
-              { text: 'personal contribution', accent: true },
+              { text: 'Basic insurance reimburses 90% of the cost of relining a complete denture without implants. Your ' },
+              { text: 'patient contribution', accent: true },
               { text: ' is therefore 10%.' },
             ],
           },
@@ -150,9 +150,9 @@ export default {
           {
             type: 'paragraph',
             segments: [
-              { text: '90% of the costs are reimbursed under basic insurance, while the ' },
-              { text: 'deductible is', accent: true },
-              { text: ' 10%.' },
+              { text: '90% of the costs are reimbursed under basic insurance, with a ' },
+              { text: '10% patient contribution', accent: true },
+              { text: '.' },
             ],
           },
         ],
@@ -168,9 +168,9 @@ export default {
           {
             type: 'paragraph',
             segments: [
-              { text: '90% of the costs are reimbursed under basic insurance, while the ' },
-              { text: 'deductible is', accent: true },
-              { text: ' 10%.' },
+              { text: '90% of the costs are reimbursed under basic insurance, with a ' },
+              { text: '10% patient contribution', accent: true },
+              { text: '.' },
             ],
           },
         ],
@@ -178,8 +178,8 @@ export default {
     ],
   },
   appointmentCta: {
-    title: 'WOULD YOU LIKE TO KNOW HOW YOUR INSURANCE COVERS TREATMENT?',
-    description: 'Book an appointment — we will clarify the terms and help you prepare the necessary documents.',
+    title: 'WANT TO KNOW HOW YOUR INSURANCE COVERS TREATMENT?',
+    description: 'Book an appointment and we will clarify the terms and help prepare the necessary documents.',
     button: {
       text: 'Book an appointment',
       link: '/#appointment',

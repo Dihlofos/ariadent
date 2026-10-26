@@ -8,6 +8,8 @@ import patientsRu from './pages/patients/ru'
 import patientsEn from './pages/patients/en'
 import addressRu from './pages/address/ru'
 import addressEn from './pages/address/en'
+import aboutRu from './pages/about/ru'
+import aboutEn from './pages/about/en'
 import { applyTypography } from './typography'
 
 export const SUPPORTED_LOCALES = ['ru', 'en'] as const
@@ -21,6 +23,7 @@ export const localeData = {
       insurance: insuranceRu,
       patients: patientsRu,
       address: addressRu,
+      about: aboutRu,
     },
   }, 'ru'),
   en: applyTypography({
@@ -30,6 +33,7 @@ export const localeData = {
       insurance: insuranceEn,
       patients: patientsEn,
       address: addressEn,
+      about: aboutEn,
     },
   }, 'en'),
 }

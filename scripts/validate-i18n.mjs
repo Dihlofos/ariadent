@@ -10,6 +10,7 @@ const localePairs = [
   { name: 'pages.index', ru: join(projectRoot, 'data/pages/index/ru.ts'), en: join(projectRoot, 'data/pages/index/en.ts') },
   { name: 'pages.insurance', ru: join(projectRoot, 'data/pages/insurance/ru.ts'), en: join(projectRoot, 'data/pages/insurance/en.ts') },
   { name: 'pages.address', ru: join(projectRoot, 'data/pages/address/ru.ts'), en: join(projectRoot, 'data/pages/address/en.ts') },
+  { name: 'pages.about', ru: join(projectRoot, 'data/pages/about/ru.ts'), en: join(projectRoot, 'data/pages/about/en.ts') },
 ]
 
 function propertyName(property) {

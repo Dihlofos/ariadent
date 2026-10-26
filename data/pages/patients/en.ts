@@ -8,10 +8,10 @@ export default {
   hero: {
     variant: 'patients',
     title: {
-      lead: 'RESULTS',
-      text: 'OF OUR PATIENTS',
+      lead: 'OUR PATIENTS’',
+      text: 'RESULTS',
     },
-    description: 'Real treatment results from our clinic. See how smiles change after prosthetic treatment and implant placement.',
+    description: 'Real treatment results from our clinic. See how smiles change after prosthetic and implant treatment.',
     image: {
       src: '/images/patients/hero-patients.webp',
       alt: 'Smiling patient of the Ariadent clinic',
@@ -26,23 +26,23 @@ export default {
       after: 'After',
     },
     images: {
-      arrow: '/images/results/slider-arrow.svg',
+      arrow: '/images/shared/result-slider-arrow.svg',
     },
     items: [
       {
         id: 'case-1',
         sliderLabel: 'Before and after treatment comparison, clinical case 1',
         before: {
-          src: '/images/results/case-1-before.webp',
+          src: '/images/shared/result-case-1-before.webp',
           alt: 'Patient teeth before treatment, clinical case 1',
-          caption: 'Damaged and worn-down teeth with an unattractive appearance',
+          caption: 'Damaged and worn-down teeth, unappealing appearance',
           width: 1120,
           height: 648,
         },
         after: {
-          src: '/images/results/case-1-after.webp',
+          src: '/images/shared/result-case-1-after.webp',
           alt: 'Patient teeth after treatment, clinical case 1',
-          caption: 'New zirconia implant crowns with a natural appearance',
+          caption: 'New zirconia crowns on implants and a natural appearance',
           width: 1114,
           height: 648,
         },
@@ -51,16 +51,16 @@ export default {
         id: 'case-2',
         sliderLabel: 'Before and after treatment comparison, clinical case 2',
         before: {
-          src: '/images/results/case-2-before.webp',
+          src: '/images/shared/result-case-2-before.webp',
           alt: 'Patient teeth before treatment, clinical case 2',
-          caption: 'An outdated removable denture and several missing teeth',
+          caption: 'Outdated removable denture and missing several teeth',
           width: 1120,
           height: 766,
         },
         after: {
-          src: '/images/results/case-2-after.webp',
+          src: '/images/shared/result-case-2-after.webp',
           alt: 'Patient teeth after treatment, clinical case 2',
-          caption: 'Implant-supported restoration in the upper and lower jaw',
+          caption: 'Implant-supported prosthetics for the upper and lower jaw',
           width: 1120,
           height: 648,
         },
@@ -69,16 +69,16 @@ export default {
         id: 'case-3',
         sliderLabel: 'Before and after treatment comparison, clinical case 3',
         before: {
-          src: '/images/results/case-3-before.webp',
+          src: '/images/shared/result-case-3-before.webp',
           alt: 'Patient teeth before treatment, clinical case 3',
-          caption: 'An aesthetic defect in the partial denture and discomfort while eating',
+          caption: 'Aesthetic defect associated with a partial denture and discomfort while eating',
           width: 1120,
           height: 648,
         },
         after: {
-          src: '/images/results/case-3-after.webp',
+          src: '/images/shared/result-case-3-after.webp',
           alt: 'Patient teeth after treatment, clinical case 3',
-          caption: 'A new upper implant-supported denture and renewal of the lower partial denture',
+          caption: 'New implant-supported denture for the upper jaw and refurbishment of a partial denture for the lower jaw',
           width: 1120,
           height: 648,
         },
@@ -87,16 +87,16 @@ export default {
         id: 'case-4',
         sliderLabel: 'Before and after treatment comparison, clinical case 4',
         before: {
-          src: '/images/results/case-4-before.webp',
+          src: '/images/shared/result-case-4-before.webp',
           alt: 'Patient teeth before treatment, clinical case 4',
-          caption: 'A removable denture that caused discomfort and looked unattractive',
+          caption: 'A removable denture that caused discomfort and looked bad',
           width: 1120,
           height: 648,
         },
         after: {
-          src: '/images/results/case-4-after.webp',
+          src: '/images/shared/result-case-4-after.webp',
           alt: 'Patient teeth after treatment, clinical case 4',
-          caption: 'A new aesthetic implant-supported denture — the patient no longer feels discomfort while eating',
+          caption: 'A new, aesthetically pleasing implant-supported prosthesis — the patient feels no discomfort while eating',
           width: 1120,
           height: 648,
         },
@@ -106,7 +106,7 @@ export default {
   reviews: {
     ...indexPage.reviews,
     showVideo: false,
-    description: 'What patients say about the treatment, the team’s care, and the results.',
+    description: 'What patients say about their treatment, the team’s approach, and the results.',
     moreButton: {
       text: 'View all reviews',
       link: 'https://www.google.com/maps/search/?api=1&query=Ariadent%20Amsterdam',
@@ -118,7 +118,7 @@ export default {
   },
   faq: {
     type: 'faq',
-    title: 'IMPORTANT TO KNOW',
+    title: 'WHAT YOU SHOULD KNOW',
     images: indexPage.faq.images,
     groups: [
       {
@@ -127,23 +127,23 @@ export default {
         items: [
           {
             id: 'replace-denture',
-            question: 'How do I know when my denture needs replacing?',
-            answer: 'If your denture becomes loose, causes irritation, or makes it difficult to chew or speak, it should be checked by a specialist. Sometimes relining or repair is enough, but in other cases replacement is the better option.',
+            question: 'How do I know when it is time to replace my denture?',
+            answer: 'If your denture has become loose, rubs, or makes chewing or speaking difficult, you should have it checked by a specialist. Sometimes relining or repair is enough, but in some cases it needs to be replaced.',
           },
           {
             id: 'production-time',
             question: 'How long does it take to make a denture?',
-            answer: 'The timeframe depends on the type of denture and the amount of work required. Production usually takes several weeks, while urgent repairs can often be completed during one visit.',
+            answer: 'Usually we craft a prosthesis within 5 weeks. In urgent cases, we can expedite the process and complete it in one week.',
           },
           {
             id: 'denture-lifespan',
-            question: 'How long does a dental prosthesis last?',
-            answer: 'Its lifespan depends on the type of prosthesis, your oral health, and daily care. Regular check-ups help adjust the fit in time and extend its useful life.',
+            question: 'How long does a denture last?',
+            answer: 'Usually a denture lasts for several years. Over time, the jaw changes, which can cause the denture to fit less securely. Regular check-ups and timely relining help extend its lifespan.',
           },
           {
             id: 'denture-irritation',
-            question: 'What should I do if my denture causes irritation?',
-            answer: 'Do not put up with the discomfort or try to adjust the denture yourself. Book an examination so the specialist can identify the cause and adjust it safely.',
+            question: 'What should you do if your denture causes chafing?',
+            answer: 'If your denture rubs or causes discomfort, do not attempt to adjust it yourself. Schedule an appointment — the dentist will check how it fits and resolve the issue.',
           },
         ],
       },
@@ -153,23 +153,23 @@ export default {
         items: [
           {
             id: 'implant-denture',
-            question: 'What is an implant-supported denture?',
-            answer: 'Titanium supports are placed in the jaw and the denture is then attached to them. This allows the denture to remain secure without relying on the neighbouring teeth.',
+            question: 'What is an implant-supported prosthesis?',
+            answer: 'Titanium supports are placed into the jaw, and a prosthesis with teeth is then attached to them. As a result, the prosthesis is held in the mouth without relying on adjacent teeth for support.',
           },
           {
             id: 'implant-candidates',
-            question: 'Who is suitable for implants?',
-            answer: 'Suitability depends on your oral health, available bone, and general health. The specialist will determine the appropriate option after an examination and diagnostic assessment.',
+            question: 'Who are implants suitable for?',
+            answer: 'Implants are suitable for most patients, provided that the condition of the bone tissue and the state of oral health allow for the procedure. Before treatment, the dentist performs a diagnostic assessment and evaluates any potential limitations.',
           },
           {
             id: 'implant-pain',
             question: 'Is implant placement painful?',
-            answer: 'Implants are placed under local anaesthesia, so the procedure itself is normally painless. After treatment, the clinician will explain how to manage any temporary discomfort.',
+            answer: 'We place implants under local anaesthesia, so you should not feel anything during the procedure. Soreness, swelling, or discomfort may occur afterwards; these symptoms usually subside within a week.',
           },
           {
             id: 'implant-count',
-            question: 'How many implants are needed for a denture?',
-            answer: 'The number depends on the type of restoration, the condition of the jaw, and your clinical situation. The specialist will determine the exact number after an examination.',
+            question: 'How many implants are needed for a prosthesis?',
+            answer: 'The number of implants depends on the type of prosthesis. For a single missing tooth, one implant is placed. If teeth need to be restored in an entire jaw, a fixed prosthesis is typically anchored to 4–6 implants, while a removable prosthesis requires only 2–4 implants.',
           },
         ],
       },
@@ -180,17 +180,17 @@ export default {
           {
             id: 'insurance',
             question: 'What does insurance cover?',
-            answer: 'The reimbursement depends on the terms of your policy. We help clarify what your insurer covers. More information is available on the Insurance and payment page.',
+            answer: 'The amount of compensation depends on the terms of your policy. We can help you understand what your insurance company covers. You can find more details on the "Payment and Insurance" page.',
           },
           {
             id: 'insurance-approval',
-            question: 'Is prior approval from the insurer required?',
-            answer: 'Some treatments require prior authorization from your insurance company. We will explain which documents are needed and help you prepare the request.',
+            question: 'Is approval from the insurance company required?',
+            answer: 'For certain types of treatment—such as implant-supported prosthetics—the insurance company must provide prior approval. We prepare the necessary documentation, submit a request, and then schedule your treatment.',
           },
           {
             id: 'copayment',
-            question: 'Is there a personal contribution?',
-            answer: 'The amount you pay depends on the treatment and your policy. Before treatment begins, we will prepare an estimate and explain which costs may remain your responsibility.',
+            question: 'Is there an additional payment?',
+            answer: 'Yes—even with insurance coverage, some costs may still fall to the patient. For example, an insurance policy might cover 75% of the cost of a standard prosthesis, leaving the remaining 25% as an out-of-pocket expense. We will calculate the exact amount you need to pay, based on your specific policy, before treatment begins.',
           },
         ],
       },
@@ -201,22 +201,22 @@ export default {
           {
             id: 'what-to-bring',
             question: 'What should I bring to my appointment?',
-            answer: 'Bring identification, your insurance card, a list of medicines, and any health information that may be important for your treatment.',
+            answer: 'Bring your ID, insurance card, a list of your medications, and any health information that might be relevant to your treatment.',
           },
           {
             id: 'old-denture',
-            question: 'Should I bring my old denture?',
-            answer: 'Yes, bring your old denture even if you no longer use it. It helps the specialist assess the fit, bite, and features of the previous restoration.',
+            question: 'Should I bring my old prosthesis?',
+            answer: 'Yes, of course bring it with you. The doctor will be able to assess its condition and determine whether it can be adjusted or repaired, or if it would be better to replace it.',
           },
           {
             id: 'first-visit-duration',
-            question: 'How long does the first visit take?',
-            answer: 'The duration depends on your situation, but an introduction, examination, and discussion of treatment options usually take between 30 and 60 minutes.',
+            question: 'How long does the first visit last?',
+            answer: 'Usually the first appointment takes about 45–60 minutes. The doctor performs an examination, discusses your concerns, develops a plan of action, and, if necessary, prescribes further treatment or diagnostic tests.',
           },
           {
             id: 'same-day-repair',
-            question: 'Can my denture be repaired during the first appointment?',
-            answer: 'In many cases, an urgent repair can be completed during the first visit. The specialist will confirm the timeframe after examining the denture.',
+            question: 'Is it possible to repair a denture during the first appointment?',
+            answer: 'If you are experiencing an issue with your denture, please mention it when scheduling your appointment. We will assess the situation and do our best to carry out the repair during your visit to the clinic.',
           },
         ],
       },

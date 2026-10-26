@@ -7,17 +7,17 @@ export default {
   },
   contacts: indexPage.contacts,
   directions: {
-    title: 'HOW TO GET TO THE CLINIC',
+    title: 'HOW TO FIND THE CLINIC',
     items: [
       {
         id: 'public-transport',
         title: 'By public transport',
         description: [
-          'The clinic is located near the Hugo de Vrieslaan stop.',
-          'The nearest railway station is Amsterdam Muiderpoort, approximately a 15-minute walk away.',
+          'The clinic is located next to the Hugo de Vrieslaan stop.',
+          'The nearest railway station is Amsterdam Muiderpoort, about a 15-minute walk away.',
         ],
         icon: {
-          src: '/images/bus.svg',
+          src: '/images/address/bus.svg',
           alt: '',
         },
       },
@@ -25,10 +25,10 @@ export default {
         id: 'car',
         title: 'By car',
         description: [
-          'Paid municipal parking is available on Hugo de Vrieslaan and the surrounding streets.',
+          'There is paid municipal parking on Hugo de Vrieslaan and the surrounding streets.',
         ],
         icon: {
-          src: '/images/auto.svg',
+          src: '/images/address/auto.svg',
           alt: '',
         },
       },
