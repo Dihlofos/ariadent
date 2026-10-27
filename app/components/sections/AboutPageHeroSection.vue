@@ -1,13 +1,25 @@
 <script setup>
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   title: { type: String, required: true },
   facts: { type: Array, required: true },
   image: { type: Object, required: true },
+  compactTitle: { type: Boolean, default: false },
 })
+
+const titleDisplay = computed(() => props.compactTitle
+  ? props.title.replace(/\u00A0/g, ' ')
+  : props.title,
+)
 </script>
 
 <template>
-  <section id="hero" class="about-page-hero">
+  <section
+    id="hero"
+    class="about-page-hero"
+    :class="{ 'about-page-hero--compact': compactTitle }"
+  >
     <Container>
       <div class="about-page-hero__card">
         <div class="about-page-hero__media">
@@ -23,7 +35,12 @@ defineProps({
         </div>
 
         <div class="about-page-hero__content">
-          <h1 class="about-page-hero__title">{{ title }}</h1>
+          <h1
+            class="about-page-hero__title"
+            :class="{ 'about-page-hero__title--compact': compactTitle }"
+          >
+            {{ titleDisplay }}
+          </h1>
 
           <div class="about-page-hero__facts">
             <div v-for="fact in facts" :key="fact.id" class="about-page-hero__fact">
@@ -170,6 +187,21 @@ defineProps({
     }
   }
 
+  &__title--compact {
+    max-width: 48rem;
+    font-size: 5rem;
+
+    @media (max-width: $tablet) {
+      max-width: 100%;
+      font-size: 4rem;
+    }
+
+    @media (max-width: $mobile) {
+      max-width: 30rem;
+      font-size: 3rem;
+    }
+  }
+
   &__facts {
     display: grid;
     max-width: 43rem;
@@ -238,6 +270,14 @@ defineProps({
       margin-top: 1rem;
       font-size: 1.5rem;
     }
+  }
+}
+
+.about-page-hero--compact .about-page-hero__image {
+  object-position: right top;
+
+  @media (max-width: $tablet) {
+    object-position: center;
   }
 }
 </style>

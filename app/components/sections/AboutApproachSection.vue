@@ -83,13 +83,13 @@ defineProps({
   &__card {
     position: relative;
     min-height: 26rem;
-    padding: 1.8rem 2.2rem 2.2rem;
+    padding: 1.8rem 2.2rem 14rem;
     border-radius: 22px;
     background: $white;
 
     @media (max-width: $tablet) {
       min-height: 24rem;
-      padding: 2rem;
+      padding: 2rem 2rem 12rem;
     }
 
     @media (max-width: $mobile) {

@@ -256,7 +256,7 @@ defineProps({
   &__review-button {
     display: flex;
     width: 39.5rem;
-    height: 4.4rem;
+    min-height: 4.4rem;
     align-items: center;
     justify-content: center;
     gap: 1rem;
@@ -313,11 +313,18 @@ defineProps({
   }
 
   &__review-button {
-    width: 21.6rem;
+    width: auto;
+    min-width: 21.6rem;
+    flex-shrink: 0;
+    padding-inline: 2.4rem;
     background: $orange;
+    text-align: center;
+    white-space: nowrap;
 
     @media (max-width: $mobile) {
       width: 100%;
+      min-width: 0;
+      white-space: normal;
     }
   }
 

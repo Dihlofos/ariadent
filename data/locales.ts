@@ -1,31 +1,31 @@
-import commonRu from './common/ru'
+import commonNl from './common/nl'
 import commonEn from './common/en'
-import indexRu from './pages/index/ru'
+import indexNl from './pages/index/nl'
 import indexEn from './pages/index/en'
-import insuranceRu from './pages/insurance/ru'
+import insuranceNl from './pages/insurance/nl'
 import insuranceEn from './pages/insurance/en'
-import patientsRu from './pages/patients/ru'
+import patientsNl from './pages/patients/nl'
 import patientsEn from './pages/patients/en'
-import addressRu from './pages/address/ru'
+import addressNl from './pages/address/nl'
 import addressEn from './pages/address/en'
-import aboutRu from './pages/about/ru'
+import aboutNl from './pages/about/nl'
 import aboutEn from './pages/about/en'
 import { applyTypography } from './typography'
 
-export const SUPPORTED_LOCALES = ['ru', 'en'] as const
-export const DEFAULT_LOCALE = 'ru'
+export const SUPPORTED_LOCALES = ['nl', 'en'] as const
+export const DEFAULT_LOCALE = 'nl'
 
 export const localeData = {
-  ru: applyTypography({
-    common: commonRu,
+  nl: applyTypography({
+    common: commonNl,
     pages: {
-      index: indexRu,
-      insurance: insuranceRu,
-      patients: patientsRu,
-      address: addressRu,
-      about: aboutRu,
+      index: indexNl,
+      insurance: insuranceNl,
+      patients: patientsNl,
+      address: addressNl,
+      about: aboutNl,
     },
-  }, 'ru'),
+  }, 'nl'),
   en: applyTypography({
     common: commonEn,
     pages: {

@@ -8,7 +8,11 @@ defineProps({
   <section id="benefits" class="benefits">
     <Container>
       <div class="benefits__grid">
-        <article v-for="item in items" :key="item.id" class="benefits__card">
+        <article
+          v-for="item in items"
+          :key="item.id"
+          :class="['benefits__card', `benefits__card--${item.image.variant}`]"
+        >
           <div class="benefits__content">
             <h3 class="benefits__title">{{ item.title }}</h3>
 
@@ -216,6 +220,14 @@ defineProps({
       height: 12.35rem;
       transform: translateY(-50%);
     }
+  }
+}
+
+.benefits__card--clock .benefits__title {
+  padding-right: 3rem;
+
+  @media (max-width: $tablet) {
+    padding-right: 0;
   }
 }
 </style>

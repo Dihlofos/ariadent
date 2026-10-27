@@ -37,13 +37,13 @@ npm run clean    # Clean Nuxt cache
 │   └── nuxt.config.js   # Nuxt configuration
 ├── data/
 │   ├── common/          # Shared localized data
-│   │   ├── navigation/{ru,en}.ts
-│   │   ├── site/{ru,en}.ts
-│   │   └── ui/{ru,en}.ts
+│   │   ├── navigation/{nl,en}.ts
+│   │   ├── site/{nl,en}.ts
+│   │   └── ui/{nl,en}.ts
 │   ├── sections/        # One folder per section, with a module per locale
-│   │   ├── hero/{ru,en}.ts
-│   │   ├── faq/{ru,en}.ts
-│   │   └── footer/{ru,en}.ts
+│   │   ├── hero/{nl,en}.ts
+│   │   ├── faq/{nl,en}.ts
+│   │   └── footer/{nl,en}.ts
 │   └── pages/           # Shared page composition (index.json; not localized)
 ├── scripts/             # Build scripts
 │   └── format-html.js   # HTML beautifier run after `npm run generate`
@@ -58,15 +58,15 @@ npm run clean    # Clean Nuxt cache
 
 ## How It Works
 
-1. **Localized content** lives in one set per page and locale, such as `data/pages/index/{ru,en}.ts`. Shared localized data for site metadata, navigation, footer, and UI strings lives in `data/common/{ru,en}.ts`.
+1. **Localized content** lives in one set per page and locale, such as `data/pages/index/{nl,en}.ts`. Shared localized data for site metadata, navigation, footer, and UI strings lives in `data/common/{nl,en}.ts`.
 2. **Locale registry** in `data/locales.ts` statically imports every supported language set and is the single source for `SUPPORTED_LOCALES` and `DEFAULT_LOCALE`. Both language bundles are part of the app's static import graph; locale switching does not fetch files at runtime.
-3. **Locale state** is created in `app/app.vue` with `provide/inject`; `useLocale()` exposes the reactive current locale and `setLocale()` to descendants. `useLocaleData()` selects the registered data for the active locale. Russian (`ru`) is the default; changing language is not persisted across reloads.
+3. **Locale state** is created in `app/app.vue` with `provide/inject`; `useLocale()` exposes the reactive current locale and `setLocale()` to descendants. `useLocaleData()` selects the registered data for the active locale. Dutch (`nl`) is the default, and the selected language is persisted across reloads.
 4. **Data consumers** are the page and layout boundaries. They pass the selected page/common data to display components as props; display components do not import locale files or select a language. `data/pages/index.json` is shared and does not control the current `HeroSection` → `Faq` render order.
 5. **Build** (`npm run generate`) produces a fully static site, then `scripts/format-html.js` beautifies the output HTML.
 
 ## Adding a New Section
 
-1. **Add data for both locales** — add a `gallery` object with the same shape to `data/pages/index/ru.ts` and `data/pages/index/en.ts`. Translate text values and keep IDs, links, and shared asset paths consistent.
+1. **Add data for both locales** — add a `gallery` object with the same shape to `data/pages/index/nl.ts` and `data/pages/index/en.ts`. Translate text values and keep IDs, links, and shared asset paths consistent.
 2. **Create a section component** — `app/components/sections/GallerySection.vue`, with props matching the data object.
 3. **Add images** — place files in `app/public/images/gallery/`; store their public-root paths (for example, `/images/gallery/photo.jpg`) in the page data.
 4. **Connect the section to the page** — get the active page set with `useLocaleData()` in `app/pages/index.vue` and pass the selected `gallery` object to `<GallerySection />`.

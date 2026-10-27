@@ -225,19 +225,44 @@ function onKeydown(event) {
     line-height: normal;
     pointer-events: none;
 
+    @media (max-width: $laptop) {
+      max-width: calc(50% - 2.4rem);
+      height: auto;
+      min-height: 3.2rem;
+      padding: 0.4rem 1rem;
+      font-size: 1.6rem;
+      line-height: 1.1;
+      text-align: center;
+    }
+
+    @media (max-width: $tablet) {
+      padding-inline: 0.8rem;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 800px) {
+      font-size: 1.4rem;
+    }
+
     @media (max-width: $mobile) {
       top: 1rem;
+      max-width: calc(50% - 1.8rem);
       height: 2.8rem;
-      padding: 0 1rem;
-      font-size: 1.4rem;
+      min-height: 0;
+      padding: 0 0.6rem;
+      font-size: clamp(1.2rem, 3.35vw, 1.3rem);
     }
   }
 
   &__label--before {
     left: 2.1rem;
 
+    @media (max-width: $laptop) {
+      left: 1.2rem;
+    }
+
     @media (max-width: $mobile) {
-      left: 1rem;
+      left: 0.8rem;
     }
   }
 
@@ -245,8 +270,12 @@ function onKeydown(event) {
     right: 1.9rem;
     background: $orange;
 
+    @media (max-width: $laptop) {
+      right: 1.2rem;
+    }
+
     @media (max-width: $mobile) {
-      right: 1rem;
+      right: 0.8rem;
     }
   }
 

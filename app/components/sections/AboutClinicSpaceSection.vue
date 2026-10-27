@@ -26,11 +26,13 @@ const breakpoints = {
     slidesPerView: 1.25,
     spaceBetween: 20,
     slidesOffsetBefore: 20,
+    slidesOffsetAfter: 20,
   },
   1025: {
     slidesPerView: 2,
     spaceBetween: 40,
     slidesOffsetBefore: 0,
+    slidesOffsetAfter: 0,
   },
 }
 </script>
@@ -46,6 +48,7 @@ const breakpoints = {
         slides-per-view="auto"
         :space-between="20"
         :slides-offset-before="10"
+        :slides-offset-after="10"
         :slides-per-group="1"
         :navigation="{ prevEl: previousButton, nextEl: nextButton }"
         :breakpoints="breakpoints"

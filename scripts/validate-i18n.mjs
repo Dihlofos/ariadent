@@ -6,11 +6,12 @@ import ts from 'typescript'
 const projectRoot = dirname(dirname(fileURLToPath(import.meta.url)))
 const errors = []
 const localePairs = [
-  { name: 'common', ru: join(projectRoot, 'data/common/ru.ts'), en: join(projectRoot, 'data/common/en.ts') },
-  { name: 'pages.index', ru: join(projectRoot, 'data/pages/index/ru.ts'), en: join(projectRoot, 'data/pages/index/en.ts') },
-  { name: 'pages.insurance', ru: join(projectRoot, 'data/pages/insurance/ru.ts'), en: join(projectRoot, 'data/pages/insurance/en.ts') },
-  { name: 'pages.address', ru: join(projectRoot, 'data/pages/address/ru.ts'), en: join(projectRoot, 'data/pages/address/en.ts') },
-  { name: 'pages.about', ru: join(projectRoot, 'data/pages/about/ru.ts'), en: join(projectRoot, 'data/pages/about/en.ts') },
+  { name: 'common', nl: join(projectRoot, 'data/common/nl.ts'), en: join(projectRoot, 'data/common/en.ts') },
+  { name: 'pages.index', nl: join(projectRoot, 'data/pages/index/nl.ts'), en: join(projectRoot, 'data/pages/index/en.ts') },
+  { name: 'pages.insurance', nl: join(projectRoot, 'data/pages/insurance/nl.ts'), en: join(projectRoot, 'data/pages/insurance/en.ts') },
+  { name: 'pages.patients', nl: join(projectRoot, 'data/pages/patients/nl.ts'), en: join(projectRoot, 'data/pages/patients/en.ts') },
+  { name: 'pages.address', nl: join(projectRoot, 'data/pages/address/nl.ts'), en: join(projectRoot, 'data/pages/address/en.ts') },
+  { name: 'pages.about', nl: join(projectRoot, 'data/pages/about/nl.ts'), en: join(projectRoot, 'data/pages/about/en.ts') },
 ]
 
 function propertyName(property) {
@@ -68,6 +69,10 @@ async function readLocaleFile(filePath, setName, locale) {
 function collectProperties(node, setName, locale, keyPath) {
   const properties = new Map()
   for (const property of node.properties) {
+    if (ts.isSpreadAssignment(property)) {
+      continue
+    }
+
     if (!ts.isPropertyAssignment(property)) {
       errors.push(`${setName}.${locale}.${keyPath || '<root>'}: unsupported object member`)
       continue
@@ -88,21 +93,21 @@ function compareNodes(referenceNode, localeNode, setName, keyPath) {
   const localeShape = describeNode(localeNode)
 
   if (referenceShape.kind !== localeShape.kind) {
-    errors.push(`${setName}.${keyPath || '<root>'}: incompatible structure (ru: ${referenceShape.kind}, en: ${localeShape.kind})`)
+    errors.push(`${setName}.${keyPath || '<root>'}: incompatible structure (nl: ${referenceShape.kind}, en: ${localeShape.kind})`)
     return
   }
 
   if (referenceShape.kind === 'object') {
-    const referenceProperties = collectProperties(referenceShape.node, setName, 'ru', keyPath)
+    const referenceProperties = collectProperties(referenceShape.node, setName, 'nl', keyPath)
     const localeProperties = collectProperties(localeShape.node, setName, 'en', keyPath)
     const keys = [...new Set([...referenceProperties.keys(), ...localeProperties.keys()])].sort()
 
     for (const key of keys) {
       const nestedPath = keyPath ? `${keyPath}.${key}` : key
       if (!referenceProperties.has(key)) {
-        errors.push(`${setName}.${nestedPath}: missing in en`)
+        errors.push(`${setName}.${nestedPath}: missing in nl`)
       } else if (!localeProperties.has(key)) {
-        errors.push(`${setName}.${nestedPath}: missing in ru`)
+        errors.push(`${setName}.${nestedPath}: missing in en`)
       } else {
         compareNodes(referenceProperties.get(key), localeProperties.get(key), setName, nestedPath)
       }
@@ -114,7 +119,7 @@ function compareNodes(referenceNode, localeNode, setName, keyPath) {
     const referenceElements = referenceShape.node.elements
     const localeElements = localeShape.node.elements
     if (referenceElements.length !== localeElements.length) {
-      errors.push(`${setName}.${keyPath || '<root>'}: different array lengths (ru: ${referenceElements.length}, en: ${localeElements.length})`)
+      errors.push(`${setName}.${keyPath || '<root>'}: different array lengths (nl: ${referenceElements.length}, en: ${localeElements.length})`)
     }
     for (let index = 0; index < Math.min(referenceElements.length, localeElements.length); index++) {
       compareNodes(referenceElements[index], localeElements[index], setName, `${keyPath}[${index}]`)
@@ -122,12 +127,12 @@ function compareNodes(referenceNode, localeNode, setName, keyPath) {
   }
 }
 
-for (const { name, ru: ruPath, en: enPath } of localePairs) {
-  const [ruObject, enObject] = await Promise.all([
-    readLocaleFile(ruPath, name, 'ru'),
+for (const { name, nl: nlPath, en: enPath } of localePairs) {
+  const [nlObject, enObject] = await Promise.all([
+    readLocaleFile(nlPath, name, 'nl'),
     readLocaleFile(enPath, name, 'en'),
   ])
-  if (ruObject && enObject) compareNodes(ruObject, enObject, name, '')
+  if (nlObject && enObject) compareNodes(nlObject, enObject, name, '')
 }
 
 if (errors.length > 0) {

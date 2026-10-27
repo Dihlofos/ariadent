@@ -23,7 +23,10 @@ defineProps({
               loading="eager"
             />
 
-            <h1 class="hero__title">
+            <h1
+              class="hero__title"
+              :class="{ 'hero__title--long': title.regular.length > 16 || title.bold.length > 16 }"
+            >
               <span class="hero__title-regular">{{ title.regular }}</span>
               <span class="hero__title-bold">{{ title.bold }}</span>
             </h1>
@@ -253,6 +256,18 @@ defineProps({
     @media (max-width: $mobile) {
       margin-bottom: 1.4rem;
       font-size: clamp(3.2rem, 10vw, 4.4rem);
+    }
+  }
+
+  &__title--long {
+    font-size: clamp(4.8rem, 3.4vw, 5.5rem);
+
+    @media (max-width: $tablet) {
+      font-size: 4rem;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: clamp(2.8rem, 8.4vw, 3.4rem);
     }
   }
 

@@ -12,7 +12,7 @@ const menu = ref(null)
 const menuToggle = ref(null)
 const { locale, setLocale } = useLocale()
 const languages = [
-  { code: 'ru', label: 'RU' },
+  { code: 'nl', label: 'NL' },
   { code: 'en', label: 'ENG' },
 ]
 

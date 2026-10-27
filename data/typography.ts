@@ -1,15 +1,15 @@
-type Locale = 'ru' | 'en'
+type Locale = 'nl' | 'en'
 
 const NO_BREAK_WORDS: Record<Locale, ReadonlySet<string>> = {
-  ru: new Set([
-    // Предлоги
-    'без', 'в', 'во', 'для', 'до', 'за', 'из', 'к', 'ко', 'на', 'над', 'о', 'об', 'обо',
-    'от', 'по', 'под', 'при', 'про', 'с', 'со', 'у',
-    // Союзы
-    'а', 'да', 'если', 'и', 'или', 'как', 'когда', 'либо', 'но', 'пока', 'чем', 'что',
-    'чтобы', 'хотя',
-    // Частицы, которые также не должны оставаться в конце строки
-    'бы', 'же', 'ли', 'не', 'ни',
+  nl: new Set([
+    // Voorzetsels
+    'aan', 'achter', 'bij', 'binnen', 'boven', 'door', 'in', 'met', 'na', 'naar', 'naast',
+    'om', 'onder', 'op', 'over', 'per', 'rond', 'tegen', 'tot', 'tussen', 'uit', 'van',
+    'voor', 'zonder',
+    // Voegwoorden
+    'als', 'dat', 'en', 'maar', 'of', 'omdat', 'terwijl', 'wanneer', 'want', 'zoals',
+    // Lidwoorden
+    'de', 'een', 'het',
   ]),
   en: new Set([
     // Prepositions

@@ -5,6 +5,7 @@ export default {
   },
   hero: {
     keepLeadWithFirstWord: true,
+    compactTitle: false,
     title: {
       lead: 'HOW',
       text: 'MEDICAL TREATMENT IS COVERED BY INSURANCE',

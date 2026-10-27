@@ -4,6 +4,7 @@ export default {
     description: 'Ariadent dental clinic in Amsterdam has operated since 1996, with an experienced team, digital prosthetic and implant technologies, and ONT and KRTP standards.',
   },
   hero: {
+    compactTitle: false,
     title: 'SERVING PATIENTS SINCE 1996',
     facts: [
       {

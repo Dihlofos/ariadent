@@ -7,10 +7,22 @@ const props = defineProps({
   image: { type: Object, required: true },
   variant: { type: String, default: 'default' },
   keepLeadWithFirstWord: { type: Boolean, default: false },
+  compactTitle: { type: Boolean, default: false },
+})
+
+const titleDisplay = computed(() => {
+  const normalizeSpaces = value => props.compactTitle
+    ? value.replace(/\u00A0/g, ' ')
+    : value
+
+  return {
+    lead: normalizeSpaces(props.title.lead),
+    text: normalizeSpaces(props.title.text),
+  }
 })
 
 const titleParts = computed(() => {
-  const [firstWord = '', ...rest] = props.title.text.trim().split(/\s+/)
+  const [firstWord = '', ...rest] = titleDisplay.value.text.trim().split(/\s+/)
 
   return {
     firstWord,
@@ -24,18 +36,21 @@ const titleParts = computed(() => {
     <Container>
       <div class="page-hero__card">
         <div class="page-hero__content">
-          <h1 class="page-hero__title">
+          <h1
+            class="page-hero__title"
+            :class="{ 'page-hero__title--compact': compactTitle }"
+          >
             <span class="page-hero__title-desktop">
-              <span class="page-hero__title-lead">{{ title.lead }}</span>
-              <span class="page-hero__title-text">{{ title.text }}</span>
+              <span class="page-hero__title-lead">{{ titleDisplay.lead }}</span>
+              <span class="page-hero__title-text">{{ titleDisplay.text }}</span>
             </span>
             <span class="page-hero__title-adaptive">
               <template v-if="keepLeadWithFirstWord">
                 <span class="page-hero__title-prefix">
-                  {{ title.lead }} {{ titleParts.firstWord }}
+                  {{ titleDisplay.lead }} {{ titleParts.firstWord }}
                 </span>{{ ' ' }}<span>{{ titleParts.rest }}</span>
               </template>
-              <template v-else>{{ title.lead }} {{ title.text }}</template>
+              <template v-else>{{ titleDisplay.lead }} {{ titleDisplay.text }}</template>
             </span>
           </h1>
 
@@ -155,6 +170,27 @@ const titleParts = computed(() => {
     }
   }
 
+  &__title--compact {
+    max-width: 58rem;
+    font-size: 5rem;
+
+    @media (max-width: $tablet) {
+      font-size: 3.8rem;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 2.8rem;
+    }
+
+    @media (max-width: 37.4rem) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 34rem) {
+      font-size: 2.3rem;
+    }
+  }
+
   &__title-desktop {
     display: block;
 
@@ -179,6 +215,10 @@ const titleParts = computed(() => {
   &__title-prefix {
     display: inline-block;
     white-space: nowrap;
+  }
+
+  &__title--compact &__title-prefix {
+    white-space: normal;
   }
 
   &__description {
