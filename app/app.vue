@@ -1,9 +1,7 @@
 <script setup>
 import { localeData } from '~/../data/locales'
 import { provideLocale } from '~/composables/useLocale'
-import { getYM } from '~/utils/getYM'
 
-const YM_ID = '999999999' // ⚠️ ЗДЕСЬ МЕНЯТЬ ID ЯНДЕКС.МЕТРИКИ
 const { locale } = provideLocale()
 const withBasePath = useBasePath()
 
@@ -34,13 +32,10 @@ useHead(() => {
       { rel: 'canonical', href: site.url },
     ],
     script: [
-      getYM(YM_ID),
+      //GTM and GA here
     ],
     noscript: [
-      {
-        innerHTML: `<div><img src="https://mc.yandex.ru/watch/${YM_ID}" style="position:absolute;left:-9999px;" alt=""></div>`,
-        tagPosition: 'bodyOpen',
-      },
+       //GTM and GA here
     ],
   }
 })
