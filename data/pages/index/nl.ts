@@ -215,7 +215,7 @@ export default {
       {
         id: 'impressions',
         title: 'Afdrukken en beet bepalen',
-        description: 'We maken afdrukken van uw kaken en bekijken hoe uw tanden en kiezen op elkaar aansluiten. Samen bespreken we de gewenste vorm, kleur en stand van uw nieuwe tanden, zodat het resultaat goed aansluit bij uw wensen en er natuurlijk uitziet.',
+        description: 'We maken afdrukken van uw kaak en bekijken hoe uw tanden en kiezen op elkaar aansluiten. Samen bespreken we de gewenste vorm, kleur en stand van uw nieuwe tanden, zodat het resultaat goed aansluit bij uw wensen en er natuurlijk uitziet.',
       },
       {
         id: 'fitting',
