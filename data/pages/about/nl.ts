@@ -144,7 +144,7 @@ export default {
       {
         id: 'waiting-area',
         title: 'Wachtruimte',
-        description: 'Een comfortabele en prettige wachtruimte voor u en uw begeleider.',
+        description: 'Een comfortabele en prettige wachtruimte voor u en uw naasten.',
         image: {
           src: '/images/about/clinic-waiting-area.webp',
           alt: 'Wachtruimte van de Ariadent-kliniek',
