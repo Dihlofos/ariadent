@@ -13,7 +13,7 @@ export default {
         id: 'public-transport',
         title: 'Met het openbaar vervoer',
         description: [
-          'Onze kliniek ligt vlak bij de halte Hugo de Vrieslaan.',
+          'Onze kliniek ligt vlak bij de halte Middenweg.',
           'Het dichtstbijzijnde treinstation is Amsterdam Amstel, op ongeveer 15 minuten loopafstand.',
         ],
         icon: {

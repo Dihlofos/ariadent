@@ -47,7 +47,8 @@ defineProps({
 .about-team__grid {
   display: grid;
   margin-top: 5.1rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 26rem);
+  justify-content: center;
   gap: 4rem;
 
   @media (max-width: $tablet) {

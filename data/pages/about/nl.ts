@@ -72,7 +72,7 @@ export default {
       {
         id: 'hose-sabouri',
         name: 'Hose Sabouri',
-        role: 'Kliniekdirecteur, gespecialiseerd in implantologie en gebitsprotheses',
+        role: 'Kliniekdirecteur, gespecialiseerd in implantologie en gebitsprothesen',
         image: {
           src: '/images/about/team-hose-sabouri.webp',
           alt: 'Hose Sabouri, kliniekdirecteur van Ariadent',
@@ -98,17 +98,6 @@ export default {
         image: {
           src: '/images/about/team-amy-molenaar.webp',
           alt: 'Amy Molenaar, assistent bij Ariadent',
-          width: 520,
-          height: 760,
-        },
-      },
-      {
-        id: 'jennifer-bijl',
-        name: 'Jennifer Bijl',
-        role: 'Assistent',
-        image: {
-          src: '/images/about/team-jennifer-bijl.webp',
-          alt: 'Jennifer Bijl, assistent bij Ariadent',
           width: 520,
           height: 760,
         },

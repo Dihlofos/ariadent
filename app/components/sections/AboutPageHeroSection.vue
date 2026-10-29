@@ -90,7 +90,7 @@ const titleDisplay = computed(() => props.compactTitle
     position: absolute;
     z-index: 2;
     border-radius: inherit;
-    background: linear-gradient(90deg, #8CD9F4 34.22%, rgba(140, 217, 244, 0) 61.77%);
+    background: linear-gradient(90deg, #8CD9F4 30%, rgba(140, 217, 244, 0) 57.5%);
     content: '';
     inset: 0;
     pointer-events: none;

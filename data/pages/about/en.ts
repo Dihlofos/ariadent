@@ -102,17 +102,6 @@ export default {
           height: 760,
         },
       },
-      {
-        id: 'jennifer-bijl',
-        name: 'Jennifer Bijl',
-        role: 'Assistant',
-        image: {
-          src: '/images/about/team-jennifer-bijl.webp',
-          alt: 'Jennifer Bijl, assistant at Ariadent clinic',
-          width: 520,
-          height: 760,
-        },
-      },
     ],
   },
   clinicSpace: {
