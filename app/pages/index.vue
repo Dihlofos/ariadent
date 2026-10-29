@@ -73,18 +73,33 @@ const submitAppointmentRequest = async (payload) => {
   await Promise.resolve(payload)
 }
 
-const submitAppointment = async () => {
-  const invalidControls = appointmentControls.value
-    .filter(control => !isAppointmentControlValid(control, appointmentValues[control.name] ?? ''))
-    .map(control => control.name)
+const createSanitizedAppointmentPayload = async () => {
+  const entries = await Promise.all(
+    appointmentControls.value.map(async (control) => {
+      const value = appointmentValues[control.name] ?? ''
+      return [control.name, (await sanitizeText(value)).trim()]
+    }),
+  )
 
-  appointmentErrors.value = invalidControls
-  if (invalidControls.length) return
+  return Object.fromEntries(entries)
+}
+
+const submitAppointment = async () => {
+  if (isAppointmentSubmitting.value) return
 
   isAppointmentSubmitting.value = true
 
   try {
-    await submitAppointmentRequest({ ...appointmentValues })
+    const payload = await createSanitizedAppointmentPayload()
+    const invalidControls = appointmentControls.value
+      .filter(control => !isAppointmentControlValid(control, payload[control.name] ?? ''))
+      .map(control => control.name)
+
+    appointmentErrors.value = invalidControls
+    if (invalidControls.length) return
+
+    console.log('[appointment] Sanitized payload:', JSON.stringify(payload, null, 2))
+    await submitAppointmentRequest(payload)
     appointmentStatus.value = 'success'
   }
   catch {

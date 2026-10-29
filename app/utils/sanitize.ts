@@ -1,34 +1,34 @@
-/**
- * Безопасно очищает текст от HTML-тегов, сохраняя HTML-сущности (&nbsp;, &mdash; и т.д.).
- *
- * На сервере (prerender) и до загрузки DOMPurify — удаляет теги через regex.
- * На клиенте после загрузки DOMPurify — использует библиотеку для строгой
- * проверки: пропускает только сущности, все теги и атрибуты удаляются.
- */
+let purifierPromise = null
 
-let purify = null
+const getPurifier = () => {
+  if (!import.meta.client) {
+    throw new Error('sanitizeText can only be used in the browser')
+  }
 
-// На клиенте асинхронно подгружаем DOMPurify (на сервере эта ветка tree-shake'ится)
-if (import.meta.client) {
-  import('dompurify').then((m) => {
-    purify = m.default
-  }).catch(() => {})
+  if (!purifierPromise) {
+    purifierPromise = import('dompurify').then(module => module.default)
+  }
+
+  return purifierPromise
 }
 
 /**
- * @param {string} text — сырой текст из JSON (может содержать &nbsp; и т.д.)
- * @returns {string} — текст без HTML-тегов, сущности сохранены
+ * Очищает введённое пользователем значение от HTML-тегов и атрибутов.
+ * DOMPurify загружается лениво, но функция всегда дожидается его загрузки.
  *
- * Настройка строгая: ALLOWED_TAGS: [], ALLOWED_ATTR: [] — не пропускает
- * вообще ничего, кроме текста и HTML-сущностей.
+ * @param {string} text
+ * @returns {Promise<string>}
  */
-export function sanitizeText(text) {
+export async function sanitizeText(text) {
   if (!text || typeof text !== 'string') return ''
 
-  if (purify) {
-    return purify.sanitize(text, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })
-  }
+  const purifier = await getPurifier()
 
-  // Сервер / до загрузки DOMPurify — удаляем все теги, сущности остаются
-  return text.replace(/<[^>]+>/g, '')
+  const sanitizedContent = purifier.sanitize(text, {
+    ALLOWED_TAGS: [],
+    ALLOWED_ATTR: [],
+    RETURN_DOM_FRAGMENT: true,
+  })
+
+  return sanitizedContent.textContent ?? ''
 }
