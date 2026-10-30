@@ -65,15 +65,18 @@ defineProps({
 
 .about-team__card {
   position: relative;
-  height: 38rem;
+  min-height: 38rem;
   overflow: hidden;
   border-radius: 20px 20px 0 0;
-  background: transparent;
+  background: $blue;
 
   &::after {
     position: absolute;
     z-index: 1;
-    inset: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 38rem;
     background: linear-gradient(
       180deg,
       rgba(6, 60, 173, 0) 55%,
@@ -86,9 +89,21 @@ defineProps({
 }
 
 .about-team__card picture {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
   display: block;
   width: 100%;
-  height: 100%;
+  height: 38rem;
+}
+
+.about-team__card > .about-team__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 38rem;
 }
 
 .about-team__image {
@@ -99,16 +114,16 @@ defineProps({
 }
 
 .about-team__content {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  top: 28.5rem;
-  right: 2rem;
-  left: 2rem;
+  min-width: 0;
+  padding: 28.5rem 2rem 2.4rem;
   text-align: center;
 }
 
 .about-team__name {
   display: inline-flex;
+  max-width: 100%;
   min-height: 3.2rem;
   align-items: center;
   justify-content: center;
@@ -122,6 +137,8 @@ defineProps({
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
 }
 
 .about-team__role {
@@ -132,5 +149,6 @@ defineProps({
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  overflow-wrap: anywhere;
 }
 </style>
