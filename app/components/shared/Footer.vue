@@ -1,9 +1,13 @@
 <script setup>
+import { useCookieConsent } from '~/composables/useCookieConsent'
+
 defineProps({
   footerData: { type: Object, required: true },
+  cookieSettingsLabel: { type: String, required: true },
 })
 
 const withBasePath = useBasePath()
+const { openCookieSettings } = useCookieConsent()
 </script>
 
 <template>
@@ -20,9 +24,17 @@ const withBasePath = useBasePath()
               class="footer__logo"
             />
           </NuxtLink>
-          <a :href="withBasePath(footerData.privacy.link)" class="footer__privacy">
+          <a
+            :href="withBasePath(footerData.privacy.link)"
+            class="footer__privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {{ footerData.privacy.text }}
           </a>
+          <button type="button" class="footer__cookie-settings" @click="openCookieSettings">
+            {{ cookieSettingsLabel }}
+          </button>
         </div>
 
         <div class="footer__column footer__column--contacts">
@@ -192,7 +204,33 @@ const withBasePath = useBasePath()
     }
   }
 
-  &__privacy:hover {
+  &__cookie-settings {
+    position: relative;
+    top: -0.4rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: $blue;
+    font-family: $monserrat;
+    opacity: 0.4;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    @media (max-width: $mobile) {
+      display: flex;
+      min-height: 3rem;
+      align-items: center;
+      top: 0;
+    }
+  }
+
+  &__privacy:hover,
+  &__cookie-settings:hover {
     color: $orange;
   }
 

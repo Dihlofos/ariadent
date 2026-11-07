@@ -1,10 +1,14 @@
 <script setup>
+import { onMounted } from 'vue'
 import { localeData } from '~/../data/locales'
+import { useCookieConsent } from '~/composables/useCookieConsent'
 import { provideLocale } from '~/composables/useLocale'
-import { getGoogleTags } from '~/utils/getGoogleTags'
 
 const { locale } = provideLocale()
+const { initializeConsent } = useCookieConsent()
 const withBasePath = useBasePath()
+
+onMounted(initializeConsent)
 
 useHead(() => {
   const site = localeData[locale.value].common.site
@@ -32,7 +36,6 @@ useHead(() => {
       { rel: 'manifest', href: withBasePath('/images/favicons/site.webmanifest') },
       { rel: 'canonical', href: site.url },
     ],
-    ...getGoogleTags(),
   }
 })
 </script>
