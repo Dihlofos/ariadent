@@ -33,6 +33,20 @@ export default {
           {
             type: 'paragraph',
             segments: [
+              { text: 'Did you know? You may be entitled to a fully reimbursed new denture' },
+              { text: ' every 5 years!', accent: true },
+              { text:'' }
+            ],
+          },
+          {
+            type: 'paragraph',
+            segments: [
+              { text: 'Depending on your health insurance policy and applicable reimbursement conditions, you may be eligible for a new denture every five years, with the costs fully covered by your insurance.' },
+            ],
+          },
+          {
+            type: 'paragraph',
+            segments: [
               { text: 'A regular (standard) denture, or a type 1 denture, is reimbursed at 75% under basic insurance. The remaining 25% is the ' },
               { text: 'patient contribution.', accent: true },
               { text: ' Depending on your policy, this amount may be partly or fully covered by supplementary insurance.' },

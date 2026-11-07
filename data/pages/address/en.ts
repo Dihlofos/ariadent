@@ -13,8 +13,8 @@ export default {
         id: 'public-transport',
         title: 'By public transport',
         description: [
-          'The clinic is located next to the Hugo de Vrieslaan stop.',
-          'The nearest railway station is Amsterdam Muiderpoort, about a 15-minute walk away.',
+          'The clinic is located next to the Middenweg stop.',
+          'The nearest railway station is Amsterdam Amstel, about a 15-minute walk away.',
         ],
         icon: {
           src: '/images/address/bus.svg',

@@ -33,6 +33,20 @@ export default {
           {
             type: 'paragraph',
             segments: [
+              { text: 'Een nieuwe gebitsprothese' },
+              { text: ' iedere 5 jaar', accent: true },
+              { text: ' — 100% vergoed door uw zorgverzekering!' },
+            ],
+          },
+          {
+            type: 'paragraph',
+            segments: [
+              { text: 'Wist u dat u iedere vijf jaar recht heeft op een nieuwe gebitsprothese? Informeer bij ons naar uw persoonlijke vergoedingsmogelijkheden.' },
+            ],
+          },
+          {
+            type: 'paragraph',
+            segments: [
               { text: 'Een reguliere gebitsprothese (standaardprothese of type 1) wordt voor 75% vergoed vanuit de basisverzekering. De overige 25% is uw ' },
               { text: 'eigen bijdrage.', accent: true },
               { text: ' Afhankelijk van uw zorgverzekering kan deze bijdrage gedeeltelijk of volledig worden vergoed vanuit een aanvullende verzekering.' },
