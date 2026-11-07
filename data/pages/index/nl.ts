@@ -421,7 +421,7 @@ export default {
       link: 'https://www.google.com/maps/search/?api=1&query=Ariadent%20Amsterdam',
     },
     video: {
-      src: 'https://www.youtube.com/embed/7_QwBaGnZj0?si=Fu4Icq0Nclf-WAuR',
+      src: 'https://www.youtube-nocookie.com/embed/7_QwBaGnZj0',
       title: 'Videobeoordeling van een Ariadent-patiënt',
     },
   },

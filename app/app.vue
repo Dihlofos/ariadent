@@ -1,6 +1,7 @@
 <script setup>
 import { localeData } from '~/../data/locales'
 import { provideLocale } from '~/composables/useLocale'
+import { getGoogleTags } from '~/utils/getGoogleTags'
 
 const { locale } = provideLocale()
 const withBasePath = useBasePath()
@@ -31,12 +32,7 @@ useHead(() => {
       { rel: 'manifest', href: withBasePath('/images/favicons/site.webmanifest') },
       { rel: 'canonical', href: site.url },
     ],
-    script: [
-      //GTM and GA here
-    ],
-    noscript: [
-       //GTM and GA here
-    ],
+    ...getGoogleTags(),
   }
 })
 </script>
