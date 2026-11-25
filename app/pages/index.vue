@@ -4,6 +4,7 @@ import { useLocaleData } from '~/composables/useLocale'
 import { usePageMeta } from '~/composables/usePageMeta'
 
 const localeData = useLocaleData()
+const withBasePath = useBasePath()
 const pageData = computed(() => localeData.value.pages.index)
 const heroData = computed(() => pageData.value.hero)
 const benefitsData = computed(() => pageData.value.benefits)
@@ -26,6 +27,7 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const appointmentControls = computed(() => [
   ...appointmentData.value.fields,
   appointmentData.value.message,
+  appointmentData.value.privacyConsent,
 ])
 
 watch(
@@ -47,6 +49,8 @@ watch(
 )
 
 const isAppointmentControlValid = (control, value) => {
+  if (control.type === 'checkbox') return !control.required || value === '1'
+
   const normalizedValue = value.trim()
 
   if (control.required && !normalizedValue) return false
@@ -67,10 +71,13 @@ const updateAppointmentValue = ({ name, value }) => {
 }
 
 const submitAppointmentRequest = async (payload) => {
-  if (!navigator.onLine) throw new Error('Network connection is unavailable')
-
-  // Replace the mock with the agreed API request when the submission endpoint is available.
-  await Promise.resolve(payload)
+  const response = await fetch(withBasePath('/appointment.php'), {
+    method: 'POST',
+    body: new URLSearchParams(payload),
+  })
+  if (!response.ok || (await response.json()).ok !== true) {
+    throw new Error('Appointment request failed')
+  }
 }
 
 const createSanitizedAppointmentPayload = async () => {
@@ -84,7 +91,7 @@ const createSanitizedAppointmentPayload = async () => {
   return Object.fromEntries(entries)
 }
 
-const submitAppointment = async () => {
+const submitAppointment = async (website) => {
   if (isAppointmentSubmitting.value) return
 
   isAppointmentSubmitting.value = true
@@ -98,8 +105,7 @@ const submitAppointment = async () => {
     appointmentErrors.value = invalidControls
     if (invalidControls.length) return
 
-    console.log('[appointment] Sanitized payload:', JSON.stringify(payload, null, 2))
-    await submitAppointmentRequest(payload)
+    await submitAppointmentRequest({ ...payload, website })
     appointmentStatus.value = 'success'
   }
   catch {
@@ -126,6 +132,7 @@ usePageMeta(pageData)
     <ResultsSection v-bind="resultsData" />
     <AppointmentSection
       v-bind="appointmentData"
+      :privacy-link="withBasePath(localeData.common.footer.privacy.link)"
       :values="appointmentValues"
       :errors="appointmentErrors"
       :status="appointmentStatus"

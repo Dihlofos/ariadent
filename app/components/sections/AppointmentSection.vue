@@ -4,6 +4,9 @@ defineProps({
   description: { type: String, required: true },
   fields: { type: Array, required: true },
   message: { type: Object, required: true },
+  privacyConsent: { type: Object, required: true },
+  privacyLink: { type: String, required: true },
+  validationError: { type: String, required: true },
   submitText: { type: String, required: true },
   feedback: { type: Object, required: true },
   image: { type: Object, required: true },
@@ -17,7 +20,11 @@ defineProps({
   isSubmitting: { type: Boolean, default: false },
 })
 
-defineEmits(['update-value', 'submit', 'reset-status'])
+const emit = defineEmits(['update-value', 'submit', 'reset-status'])
+
+const submitForm = (event) => {
+  emit('submit', new FormData(event.currentTarget).get('website') ?? '')
+}
 </script>
 
 <template>
@@ -45,8 +52,9 @@ defineEmits(['update-value', 'submit', 'reset-status'])
           class="appointment__form"
           novalidate
           :aria-busy="isSubmitting"
-          @submit.prevent="$emit('submit')"
+          @submit.prevent="submitForm"
         >
+          <input type="text" name="website" hidden tabindex="-1" autocomplete="off">
           <template v-for="field in fields" :key="field.id">
             <label class="appointment__label" :for="field.id">{{ field.label }}</label>
             <input
@@ -79,6 +87,29 @@ defineEmits(['update-value', 'submit', 'reset-status'])
             :aria-invalid="errors.includes(message.name)"
             @input="$emit('update-value', { name: message.name, value: $event.target.value })"
           />
+
+          <div class="appointment__consent">
+            <input
+              :id="privacyConsent.id"
+              class="appointment__checkbox"
+              :name="privacyConsent.name"
+              type="checkbox"
+              value="1"
+              :checked="values[privacyConsent.name] === '1'"
+              :required="privacyConsent.required"
+              :aria-invalid="errors.includes(privacyConsent.name)"
+              @change="$emit('update-value', { name: privacyConsent.name, value: $event.target.checked ? $event.target.value : '' })"
+            >
+            <label :for="privacyConsent.id">
+              {{ privacyConsent.label }}
+              <a :href="privacyLink" target="_blank" rel="noopener noreferrer">{{ privacyConsent.linkText }}</a>
+              <span aria-hidden="true">&nbsp;*</span>
+            </label>
+          </div>
+
+          <p v-if="errors.length" class="appointment__validation-error" role="alert">
+            {{ validationError }}
+          </p>
 
           <button class="appointment__submit" type="submit" :disabled="isSubmitting">
             {{ submitText }}
@@ -291,10 +322,7 @@ defineEmits(['update-value', 'submit', 'reset-status'])
     z-index: 2;
     display: grid;
     width: 100%;
-    height: 100%;
-    max-height: 31rem;
     align-self: end;
-    align-content: space-between;
     grid-template-columns: 19.5rem 30.3rem;
     column-gap: 2.1rem;
     row-gap: 1.14rem;
@@ -306,10 +334,7 @@ defineEmits(['update-value', 'submit', 'reset-status'])
     }
 
     @media (max-width: $mobile) {
-      height: auto;
-      max-height: none;
       align-self: start;
-      align-content: normal;
       grid-template-columns: minmax(0, 1fr);
       row-gap: 0.8rem;
     }
@@ -395,6 +420,44 @@ defineEmits(['update-value', 'submit', 'reset-status'])
     @media (max-width: $mobile) {
       height: 10rem;
     }
+  }
+
+  &__consent {
+    display: flex;
+    grid-column: 1 / -1;
+    align-items: baseline;
+    gap: 0.8rem;
+    color: $white;
+    font-family: $monserrat;
+    font-size: 1.4rem;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  &__checkbox {
+    flex: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0;
+    accent-color: $orange;
+  }
+
+  &__checkbox[aria-invalid='true'] {
+    border-radius: 3px;
+    box-shadow: 0 0 0 0.2rem #FF2C2C;
+  }
+
+  &__validation-error {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: $white;
+    font-family: $monserrat;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.5;
   }
 
   &__submit {
