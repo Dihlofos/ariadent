@@ -12,7 +12,7 @@
   <form method="post" action="./appointment.php">
     <input type="hidden" name="name" value="Ariadent Test">
     <input type="hidden" name="phone" value="0000000000">
-    <p><label>Ваш адрес для проверки Reply-To <input type="email" name="email" required></label></p>
+    <p><label>Ваш адрес для проверки Reply-To <input type="email" name="email" required maxlength="254" pattern="[^@]+@[^@]+\.[^@]+" placeholder="name@example.com" title="Введите полный адрес, например name@example.com"></label></p>
     <input type="hidden" name="message" value="TEST - geen echte afspraak.">
     <input type="hidden" name="privacyConsent" value="1">
     <button type="submit">Отправить тестовое письмо</button>
